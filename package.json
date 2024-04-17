@@ -9,13 +9,12 @@
     "node": ">=14.0.0"
   },
   "scripts": {
-    "dev": "vite --config ./config/vite.config.dev.ts",
-    "build": "vue-tsc --noEmit && vite build --config ./config/vite.config.prod.ts",
-    "report": "cross-env REPORT=true npm run build",
-    "preview": "npm run build && vite preview --host",
-    "lint": "eslint .",
-    "lint:fix": "eslint . --fix",
-    "type:check": "vue-tsc --noEmit --skipLibCheck"
+    "dev": "pnpm install && vite --config ./config/vite.config.dev.ts",
+    "build": "pnpm install && vite build --config ./config/vite.config.prod.ts",
+    "report": "cross-env REPORT=true pnpm build",
+    "preview": "pnpm build && vite preview --host",
+    "lint": "pnpm install && eslint .",
+    "lint:fix": "pnpm install && eslint . --fix"
   },
   "dependencies": {
     "@arco-design/web-vue": "^2.44.7",
