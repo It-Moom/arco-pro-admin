@@ -1,14 +1,14 @@
 import type { RouteLocationNormalized } from 'vue-router';
 import { defineStore } from 'pinia';
+import type { TabBarState, TagProps } from './types';
 import {
   DEFAULT_ROUTE,
   DEFAULT_ROUTE_NAME,
   REDIRECT_ROUTE_NAME,
 } from '@/router/constants';
 import { isString } from '@/utils/is';
-import { TabBarState, TagProps } from './types';
 
-const formatTag = (route: RouteLocationNormalized): TagProps => {
+function formatTag(route: RouteLocationNormalized): TagProps {
   const { name, meta, fullPath, query } = route;
   return {
     title: meta.locale || '',
@@ -17,7 +17,7 @@ const formatTag = (route: RouteLocationNormalized): TagProps => {
     query,
     ignoreCache: meta.ignoreCache,
   };
-};
+}
 
 const BAN_LIST = [REDIRECT_ROUTE_NAME];
 
@@ -40,9 +40,8 @@ const useAppStore = defineStore('tabBar', {
     updateTabList(route: RouteLocationNormalized) {
       if (BAN_LIST.includes(route.name as string)) return;
       this.tagList.push(formatTag(route));
-      if (!route.meta.ignoreCache) {
+      if (!route.meta.ignoreCache)
         this.cacheTabList.add(route.name as string);
-      }
     },
     deleteTag(idx: number, tag: TagProps) {
       this.tagList.splice(idx, 1);
@@ -59,9 +58,9 @@ const useAppStore = defineStore('tabBar', {
       this.cacheTabList.clear();
       // 要先判断ignoreCache
       this.tagList
-        .filter((el) => !el.ignoreCache)
-        .map((el) => el.name)
-        .forEach((x) => this.cacheTabList.add(x));
+        .filter(el => !el.ignoreCache)
+        .map(el => el.name)
+        .forEach(x => this.cacheTabList.add(x));
     },
     resetTabList() {
       this.tagList = [DEFAULT_ROUTE];

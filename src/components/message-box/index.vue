@@ -24,16 +24,18 @@
 </template>
 
 <script lang="ts" setup>
-  import { ref, reactive, toRefs, computed } from 'vue';
+  import { computed, reactive, ref, toRefs } from 'vue';
   import { useI18n } from 'vue-i18n';
+  import List from './list.vue';
+  import type {
+    MessageListType,
+    MessageRecord,
+  } from '@/api/message';
   import {
     queryMessageList,
     setMessageStatus,
-    MessageRecord,
-    MessageListType,
   } from '@/api/message';
   import useLoading from '@/hooks/loading';
-  import List from './list.vue';
 
   interface TabItem {
     key: string;
@@ -70,41 +72,43 @@
     try {
       const { data } = await queryMessageList();
       messageData.messageList = data;
-    } catch (err) {
+    }
+    catch (err) {
       // you can report use errorHandler or other
-    } finally {
+    }
+    finally {
       setLoading(false);
     }
   }
   async function readMessage(data: MessageListType) {
-    const ids = data.map((item) => item.id);
+    const ids = data.map(item => item.id);
     await setMessageStatus({ ids });
     fetchSourceData();
   }
   const renderList = computed(() => {
     return messageData.messageList.filter(
-      (item) => messageType.value === item.type
+      item => messageType.value === item.type,
     );
   });
   const unreadCount = computed(() => {
-    return renderList.value.filter((item) => !item.status).length;
+    return renderList.value.filter(item => !item.status).length;
   });
-  const getUnreadList = (type: string) => {
+  function getUnreadList(type: string) {
     const list = messageData.messageList.filter(
-      (item) => item.type === type && !item.status
+      item => item.type === type && !item.status,
     );
     return list;
-  };
-  const formatUnreadLength = (type: string) => {
+  }
+  function formatUnreadLength(type: string) {
     const list = getUnreadList(type);
     return list.length ? `(${list.length})` : ``;
-  };
-  const handleItemClick = (items: MessageListType) => {
+  }
+  function handleItemClick(items: MessageListType) {
     if (renderList.value.length) readMessage([...items]);
-  };
-  const emptyList = () => {
+  }
+  function emptyList() {
     messageData.messageList = [];
-  };
+  }
   fetchSourceData();
 </script>
 

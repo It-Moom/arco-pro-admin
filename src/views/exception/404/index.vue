@@ -6,8 +6,7 @@
         class="result"
         status="404"
         :subtitle="$t('exception.result.404.description')"
-      >
-      </a-result>
+      />
       <div class="operation-row">
         <a-button key="again" style="margin-right: 16px">
           {{ $t('exception.result.404.retry') }}

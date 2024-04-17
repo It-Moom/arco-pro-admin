@@ -31,7 +31,8 @@
 <script lang="ts" setup>
   import { computed, ref } from 'vue';
   import useLoading from '@/hooks/loading';
-  import { queryDataChainGrowth, DataChainGrowth } from '@/api/visualization';
+  import type { DataChainGrowth } from '@/api/visualization';
+  import { queryDataChainGrowth } from '@/api/visualization';
   import useChartOption from '@/hooks/chart-option';
 
   const props = defineProps({
@@ -78,23 +79,23 @@
           data: chartData.value,
           ...(props.chartType === 'bar'
             ? {
-                type: 'bar',
-                barWidth: 7,
-                barGap: '0',
-              }
+              type: 'bar',
+              barWidth: 7,
+              barGap: '0',
+            }
             : {
-                type: 'line',
-                showSymbol: false,
-                smooth: true,
-                lineStyle: {
-                  color: '#4080FF',
-                },
-              }),
+              type: 'line',
+              showSymbol: false,
+              smooth: true,
+              lineStyle: {
+                color: '#4080FF',
+              },
+            }),
         },
       ],
     };
   });
-  const fetchData = async (params: DataChainGrowth) => {
+  async function fetchData(params: DataChainGrowth) {
     try {
       const { data } = await queryDataChainGrowth(params);
       const { chartData: resChartData } = data;
@@ -108,16 +109,19 @@
               color: idx % 2 ? '#468DFF' : '#86DF6C',
             },
           });
-        } else {
+        }
+        else {
           chartData.value.push(el);
         }
       });
-    } catch (err) {
+    }
+    catch (err) {
       // you can report use errorHandler or other
-    } finally {
+    }
+    finally {
       setLoading(false);
     }
-  };
+  }
   fetchData({ quota: props.quota });
 </script>
 

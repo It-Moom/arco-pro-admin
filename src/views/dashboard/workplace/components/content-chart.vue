@@ -20,10 +20,11 @@
   import { ref } from 'vue';
   import { graphic } from 'echarts';
   import useLoading from '@/hooks/loading';
-  import { queryContentData, ContentDataRecord } from '@/api/dashboard';
+  import type { ContentDataRecord } from '@/api/dashboard';
+  import { queryContentData } from '@/api/dashboard';
   import useChartOption from '@/hooks/chart-option';
-  import { ToolTipFormatterParams } from '@/types/echarts';
-  import { AnyObject } from '@/types/global';
+  import type { ToolTipFormatterParams } from '@/types/echarts';
+  import type { AnyObject } from '@/types/global';
 
   function graphicFactory(side: AnyObject) {
     return {
@@ -118,7 +119,7 @@
             <p class="tooltip-title">${firstElement.axisValueLabel}</p>
             <div class="content-panel"><span>总内容量</span><span class="tooltip-value">${(
               Number(firstElement.value) * 10000
-            ).toLocaleString()}</span></div>
+          ).toLocaleString()}</span></div>
           </div>`;
         },
         className: 'echarts-tooltip-diy',
@@ -174,26 +175,27 @@
       ],
     };
   });
-  const fetchData = async () => {
+  async function fetchData() {
     setLoading(true);
     try {
       const { data: chartData } = await queryContentData();
       chartData.forEach((el: ContentDataRecord, idx: number) => {
         xAxis.value.push(el.x);
         chartsData.value.push(el.y);
-        if (idx === 0) {
+        if (idx === 0)
           graphicElements.value[0].style.text = el.x;
-        }
-        if (idx === chartData.length - 1) {
+
+        if (idx === chartData.length - 1)
           graphicElements.value[1].style.text = el.x;
-        }
       });
-    } catch (err) {
+    }
+    catch (err) {
       // you can report use errorHandler or other
-    } finally {
+    }
+    finally {
       setLoading(false);
     }
-  };
+  }
   fetchData();
 </script>
 

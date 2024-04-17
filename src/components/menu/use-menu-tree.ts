@@ -1,17 +1,17 @@
 import { computed } from 'vue';
-import { RouteRecordRaw, RouteRecordNormalized } from 'vue-router';
+import type { RouteRecordNormalized, RouteRecordRaw } from 'vue-router';
+import { cloneDeep } from 'lodash';
 import usePermission from '@/hooks/permission';
 import { useAppStore } from '@/store';
 import appClientMenus from '@/router/app-menus';
-import { cloneDeep } from 'lodash';
 
 export default function useMenuTree() {
   const permission = usePermission();
   const appStore = useAppStore();
   const appRoute = computed(() => {
-    if (appStore.menuFromServer) {
+    if (appStore.menuFromServer)
       return appStore.appAsyncMenus;
-    }
+
     return appClientMenus;
   });
   const menuTree = computed(() => {
@@ -24,9 +24,8 @@ export default function useMenuTree() {
 
       const collector: any = _routes.map((element) => {
         // no access
-        if (!permission.accessRouter(element)) {
+        if (!permission.accessRouter(element))
           return null;
-        }
 
         // leaf node
         if (element.meta?.hideChildrenInMenu || !element.children) {
@@ -36,7 +35,7 @@ export default function useMenuTree() {
 
         // route filter hideInMenu true
         element.children = element.children.filter(
-          (x) => x.meta?.hideInMenu !== true
+          x => x.meta?.hideInMenu !== true,
         );
 
         // Associated child node
@@ -52,9 +51,8 @@ export default function useMenuTree() {
           return element;
         }
 
-        if (element.meta?.hideInMenu === false) {
+        if (element.meta?.hideInMenu === false)
           return element;
-        }
 
         return null;
       });

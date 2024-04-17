@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { GeneralChart } from '@/types/global';
+import type { GeneralChart } from '@/types/global';
 
 export interface ChartDataRecord {
   x: string;
@@ -60,7 +60,7 @@ export interface PublicOpinionAnalysisRes {
 export function queryPublicOpinionAnalysis(data: DataChainGrowth) {
   return axios.post<PublicOpinionAnalysisRes>(
     '/api/public-opinion-analysis',
-    data
+    data,
   );
 }
 export interface DataOverviewRes {

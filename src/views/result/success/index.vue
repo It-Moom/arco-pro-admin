@@ -21,9 +21,11 @@
       </a-result>
 
       <div class="steps-wrapper">
-        <a-typography-paragraph bold>{{
-          $t('success.result.progress')
-        }}</a-typography-paragraph>
+        <a-typography-paragraph bold>
+          {{
+            $t('success.result.progress')
+          }}
+        </a-typography-paragraph>
         <a-steps type="dot" :current="2">
           <a-step
             :title="$t('success.submitApplication')"

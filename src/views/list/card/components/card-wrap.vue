@@ -1,7 +1,7 @@
 <template>
   <div class="card-wrap">
     <a-card v-if="loading" :bordered="false" hoverable>
-      <slot name="skeleton"></slot>
+      <slot name="skeleton" />
     </a-card>
     <a-card v-else :bordered="false" hoverable>
       <a-space align="start">
@@ -38,7 +38,7 @@
           </template>
           <template #description>
             {{ description }}
-            <slot></slot>
+            <slot />
           </template>
         </a-card-meta>
       </a-space>
@@ -133,13 +133,13 @@
     },
   });
   const [open, toggle] = useToggle(props.defaultValue);
-  const handleToggle = () => {
+  function handleToggle() {
     toggle();
-  };
+  }
   const isExpires = ref(props.expires);
-  const renew = () => {
+  function renew() {
     isExpires.value = false;
-  };
+  }
 </script>
 
 <style scoped lang="less">

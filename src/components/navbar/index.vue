@@ -5,7 +5,7 @@
         <img
           alt="logo"
           src="//p3-armor.byteimg.com/tos-cn-i-49unhts6dw/dfdba5317c0c20ce20e64fac803d52bc.svg~tplv-49unhts6dw-image.image"
-        />
+        >
         <a-typography-title
           :style="{ margin: 0, fontSize: '18px' }"
           :heading="5"
@@ -25,7 +25,7 @@
     <ul class="right-side">
       <li>
         <a-tooltip :content="$t('settings.search')">
-          <a-button class="nav-btn" type="outline" :shape="'circle'">
+          <a-button class="nav-btn" type="outline" shape="circle">
             <template #icon>
               <icon-search />
             </template>
@@ -37,7 +37,7 @@
           <a-button
             class="nav-btn"
             type="outline"
-            :shape="'circle'"
+            shape="circle"
             @click="setDropDownVisible"
           >
             <template #icon>
@@ -46,7 +46,7 @@
           </a-button>
         </a-tooltip>
         <a-dropdown trigger="click" @select="changeLocale as any">
-          <div ref="triggerBtn" class="trigger-btn"></div>
+          <div ref="triggerBtn" class="trigger-btn" />
           <template #content>
             <a-doption
               v-for="item in locales"
@@ -72,7 +72,7 @@
           <a-button
             class="nav-btn"
             type="outline"
-            :shape="'circle'"
+            shape="circle"
             @click="handleToggleTheme"
           >
             <template #icon>
@@ -89,7 +89,7 @@
               <a-button
                 class="nav-btn"
                 type="outline"
-                :shape="'circle'"
+                shape="circle"
                 @click="setPopoverVisible"
               >
                 <icon-notification />
@@ -103,9 +103,9 @@
           :content-style="{ padding: 0, minWidth: '400px' }"
           content-class="message-popover"
         >
-          <div ref="refBtn" class="ref-btn"></div>
+          <div ref="refBtn" class="ref-btn" />
           <template #content>
-            <message-box />
+            <MessageBox />
           </template>
         </a-popover>
       </li>
@@ -120,7 +120,7 @@
           <a-button
             class="nav-btn"
             type="outline"
-            :shape="'circle'"
+            shape="circle"
             @click="toggleFullScreen"
           >
             <template #icon>
@@ -135,7 +135,7 @@
           <a-button
             class="nav-btn"
             type="outline"
-            :shape="'circle'"
+            shape="circle"
             @click="setVisible"
           >
             <template #icon>
@@ -150,7 +150,7 @@
             :size="32"
             :style="{ marginRight: '8px', cursor: 'pointer' }"
           >
-            <img alt="avatar" :src="avatar" />
+            <img alt="avatar" :src="avatar">
           </a-avatar>
           <template #content>
             <a-doption>
@@ -193,15 +193,15 @@
 </template>
 
 <script lang="ts" setup>
-  import { computed, ref, inject } from 'vue';
+  import { computed, inject, ref } from 'vue';
   import { Message } from '@arco-design/web-vue';
-  import { useDark, useToggle, useFullscreen } from '@vueuse/core';
+  import { useDark, useFullscreen, useToggle } from '@vueuse/core';
+  import MessageBox from '../message-box/index.vue';
   import { useAppStore, useUserStore } from '@/store';
   import { LOCALE_OPTIONS } from '@/locale';
   import useLocale from '@/hooks/locale';
   import useUser from '@/hooks/user';
   import Menu from '@/components/menu/index.vue';
-  import MessageBox from '../message-box/index.vue';
 
   const appStore = useAppStore();
   const userStore = useUserStore();
@@ -228,37 +228,37 @@
     },
   });
   const toggleTheme = useToggle(isDark);
-  const handleToggleTheme = () => {
+  function handleToggleTheme() {
     toggleTheme();
-  };
-  const setVisible = () => {
+  }
+  function setVisible() {
     appStore.updateSettings({ globalSettings: true });
-  };
+  }
   const refBtn = ref();
   const triggerBtn = ref();
-  const setPopoverVisible = () => {
+  function setPopoverVisible() {
     const event = new MouseEvent('click', {
       view: window,
       bubbles: true,
       cancelable: true,
     });
     refBtn.value.dispatchEvent(event);
-  };
-  const handleLogout = () => {
+  }
+  function handleLogout() {
     logout();
-  };
-  const setDropDownVisible = () => {
+  }
+  function setDropDownVisible() {
     const event = new MouseEvent('click', {
       view: window,
       bubbles: true,
       cancelable: true,
     });
     triggerBtn.value.dispatchEvent(event);
-  };
-  const switchRoles = async () => {
+  }
+  async function switchRoles() {
     const res = await userStore.switchRoles();
     Message.success(res as string);
-  };
+  }
   const toggleDrawerMenu = inject('toggleDrawerMenu') as () => void;
 </script>
 

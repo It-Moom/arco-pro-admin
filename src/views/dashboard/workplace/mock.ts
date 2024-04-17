@@ -1,7 +1,7 @@
 import Mock from 'mockjs';
 import qs from 'query-string';
 import dayjs from 'dayjs';
-import { GetParams } from '@/types/global';
+import type { GetParams } from '@/types/global';
 import setupMock, { successResponseWrap } from '@/utils/setup-mock';
 
 const textList = [
@@ -106,7 +106,7 @@ setupMock({
       const presetData = [58, 81, 53, 90, 64, 88, 49, 79];
       const getLineData = () => {
         const count = 8;
-        return new Array(count).fill(0).map((el, idx) => ({
+        return Array.from({ length: count }).fill(0).map((el, idx) => ({
           x: dayjs()
             .day(idx - 2)
             .format('YYYY-MM-DD'),
@@ -117,12 +117,12 @@ setupMock({
     });
     Mock.mock(new RegExp('/api/popular/list'), (params: GetParams) => {
       const { type = 'text' } = qs.parseUrl(params.url).query;
-      if (type === 'image') {
+      if (type === 'image')
         return successResponseWrap([...videoList]);
-      }
-      if (type === 'video') {
+
+      if (type === 'video')
         return successResponseWrap([...imageList]);
-      }
+
       return successResponseWrap([...textList]);
     });
   },

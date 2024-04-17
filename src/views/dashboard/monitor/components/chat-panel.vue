@@ -44,22 +44,25 @@
 
 <script lang="ts" setup>
   import { ref } from 'vue';
-  import { queryChatList, ChatRecord } from '@/api/message';
-  import useLoading from '@/hooks/loading';
   import ChatList from './chat-list.vue';
+  import type { ChatRecord } from '@/api/message';
+  import { queryChatList } from '@/api/message';
+  import useLoading from '@/hooks/loading';
 
   const { loading, setLoading } = useLoading(true);
   const chatData = ref<ChatRecord[]>([]);
-  const fetchData = async () => {
+  async function fetchData() {
     try {
       const { data } = await queryChatList();
       chatData.value = data;
-    } catch (err) {
+    }
+    catch (err) {
       // you can report use errorHandler or other
-    } finally {
+    }
+    finally {
       setLoading(false);
     }
-  };
+  }
   fetchData();
 </script>
 

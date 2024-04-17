@@ -20,11 +20,11 @@
         <a-table-column :title="$t('userSetting.certification.columns.status')">
           <template #cell="{ record }">
             <p v-if="record.status === 0">
-              <span class="circle"></span>
+              <span class="circle" />
               <span>{{ $t('userSetting.certification.cell.auditing') }}</span>
             </p>
             <p v-if="record.status === 1">
-              <span class="circle pass"></span>
+              <span class="circle pass" />
               <span>{{ $t('userSetting.certification.cell.pass') }}</span>
             </p>
           </template>
@@ -53,8 +53,8 @@
 </template>
 
 <script lang="ts" setup>
-  import { PropType } from 'vue';
-  import { CertificationRecord } from '@/api/user-center';
+  import type { PropType } from 'vue';
+  import type { CertificationRecord } from '@/api/user-center';
 
   defineProps({
     renderData: {

@@ -19,7 +19,7 @@
 </template>
 
 <script lang="ts" setup>
-  import { computed, h, compile } from 'vue';
+  import { compile, computed, h } from 'vue';
   import { useI18n } from 'vue-i18n';
   import type {
     TableColumnData,
@@ -44,14 +44,14 @@
       status: -1,
     },
   ];
-  const renderTag = (status: number) => {
+  function renderTag(status: number) {
     if (status === -1) {
       return `<a-tag  color="red" class='data-statistic-list-cover-tag'>
             ${t('monitor.list.tag.auditFailed')}
         </a-tag>`;
     }
     return '';
-  };
+  }
   // Using the Render function is more flexible than using templates.
   // But, cannot bind context and local scopes are also lost
 

@@ -1,7 +1,8 @@
-import { ref, UnwrapRef } from 'vue';
-import { AxiosResponse } from 'axios';
-import { HttpResponse } from '@/api/interceptor';
+import type { UnwrapRef } from 'vue';
+import { ref } from 'vue';
+import type { AxiosResponse } from 'axios';
 import useLoading from './loading';
+import type { HttpResponse } from '@/api/interceptor';
 
 // use to fetch list
 // Don't use async function. It doesn't work in async function.
@@ -11,7 +12,7 @@ import useLoading from './loading';
 export default function useRequest<T>(
   api: () => Promise<AxiosResponse<HttpResponse>>,
   defaultValue = [] as unknown as T,
-  isLoading = true
+  isLoading = true,
 ) {
   const { loading, setLoading } = useLoading(isLoading);
   const response = ref<T>(defaultValue);

@@ -18,7 +18,7 @@
         <a-list-item-meta>
           <template v-if="item.avatar" #avatar>
             <a-avatar shape="circle">
-              <img v-if="item.avatar" :src="item.avatar" />
+              <img v-if="item.avatar" :src="item.avatar">
               <icon-desktop v-else />
             </a-avatar>
           </template>
@@ -36,8 +36,9 @@
                 :ellipsis="{
                   rows: 1,
                 }"
-                >{{ item.content }}</a-typography-paragraph
               >
+                {{ item.content }}
+              </a-typography-paragraph>
               <a-typography-text
                 v-if="item.type === 'message'"
                 class="time-text"
@@ -65,14 +66,14 @@
     </template>
     <div
       v-if="renderList.length && renderList.length < 3"
-      :style="{ height: (showMax - renderList.length) * 86 + 'px' }"
-    ></div>
+      :style="{ height: `${(showMax - renderList.length) * 86}px` }"
+    />
   </a-list>
 </template>
 
 <script lang="ts" setup>
-  import { PropType } from 'vue';
-  import { MessageRecord, MessageListType } from '@/api/message';
+  import type { PropType } from 'vue';
+  import type { MessageListType, MessageRecord } from '@/api/message';
 
   const props = defineProps({
     renderList: {
@@ -85,15 +86,14 @@
     },
   });
   const emit = defineEmits(['itemClick']);
-  const allRead = () => {
+  function allRead() {
     emit('itemClick', [...props.renderList]);
-  };
+  }
 
-  const onItemClick = (item: MessageRecord) => {
-    if (!item.status) {
+  function onItemClick(item: MessageRecord) {
+    if (!item.status)
       emit('itemClick', [item]);
-    }
-  };
+  }
   const showMax = 3;
 </script>
 

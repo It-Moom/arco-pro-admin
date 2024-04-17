@@ -27,8 +27,8 @@
   import { Message } from '@arco-design/web-vue';
   import { useI18n } from 'vue-i18n';
   import { useClipboard } from '@vueuse/core';
-  import { useAppStore } from '@/store';
   import Block from './block.vue';
+  import { useAppStore } from '@/store';
 
   const emit = defineEmits(['cancel']);
 
@@ -70,18 +70,18 @@
     },
   ]);
 
-  const cancel = () => {
+  function cancel() {
     appStore.updateSettings({ globalSettings: false });
     emit('cancel');
-  };
-  const copySettings = async () => {
+  }
+  async function copySettings() {
     const text = JSON.stringify(appStore.$state, null, 2);
     await copy(text);
     Message.success(t('settings.copySettings.message'));
-  };
-  const setVisible = () => {
+  }
+  function setVisible() {
     appStore.updateSettings({ globalSettings: true });
-  };
+  }
 </script>
 
 <style scoped lang="less">

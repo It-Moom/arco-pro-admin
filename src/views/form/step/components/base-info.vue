@@ -87,8 +87,8 @@
 
 <script lang="ts" setup>
   import { ref } from 'vue';
-  import { FormInstance } from '@arco-design/web-vue/es/form';
-  import { BaseInfoModel } from '@/api/form';
+  import type { FormInstance } from '@arco-design/web-vue/es/form';
+  import type { BaseInfoModel } from '@/api/form';
 
   const emits = defineEmits(['changeStep']);
   const formRef = ref<FormInstance>();
@@ -99,12 +99,11 @@
     promoteLink: 'https://arco.design',
   });
 
-  const onNextClick = async () => {
+  async function onNextClick() {
     const res = await formRef.value?.validate();
-    if (!res) {
+    if (!res)
       emits('changeStep', 'forward', { ...formData.value });
-    }
-  };
+  }
 </script>
 
 <style scoped lang="less">

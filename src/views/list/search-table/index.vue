@@ -81,7 +81,7 @@
           </a-form>
         </a-col>
         <a-divider style="height: 84px" direction="vertical" />
-        <a-col :flex="'86px'" style="text-align: right">
+        <a-col flex="86px" style="text-align: right">
           <a-space direction="vertical" :size="18">
             <a-button type="primary" @click="search">
               <template #icon>
@@ -128,9 +128,9 @@
             {{ $t('searchTable.operation.download') }}
           </a-button>
           <a-tooltip :content="$t('searchTable.actions.refresh')">
-            <div class="action-icon" @click="search"
-              ><icon-refresh size="18"
-            /></div>
+            <div class="action-icon" @click="search">
+              <icon-refresh size="18" />
+            </div>
           </a-tooltip>
           <a-dropdown @select="handleSelectDensity">
             <a-tooltip :content="$t('searchTable.actions.density')">
@@ -170,8 +170,7 @@
                         @change="
                           handleChange($event, item as TableColumnData, index)
                         "
-                      >
-                      </a-checkbox>
+                      />
                     </div>
                     <div class="title">
                       {{ item.title === '#' ? '序列号' : item.title }}
@@ -206,7 +205,7 @@
               <img
                 alt="avatar"
                 src="//p3-armor.byteimg.com/tos-cn-i-49unhts6dw/581b17753093199839f2e327e726b157.svg~tplv-49unhts6dw-image.image"
-              />
+              >
             </a-avatar>
             <a-avatar
               v-else-if="record.contentType === 'horizontalVideo'"
@@ -216,13 +215,13 @@
               <img
                 alt="avatar"
                 src="//p3-armor.byteimg.com/tos-cn-i-49unhts6dw/77721e365eb2ab786c889682cbc721c1.svg~tplv-49unhts6dw-image.image"
-              />
+              >
             </a-avatar>
             <a-avatar v-else :size="16" shape="square">
               <img
                 alt="avatar"
                 src="//p3-armor.byteimg.com/tos-cn-i-49unhts6dw/ea8b09190046da0ea7e070d83c5d1731.svg~tplv-49unhts6dw-image.image"
-              />
+              >
             </a-avatar>
             {{ $t(`searchTable.form.contentType.${record.contentType}`) }}
           </a-space>
@@ -231,8 +230,8 @@
           {{ $t(`searchTable.form.filterType.${record.filterType}`) }}
         </template>
         <template #status="{ record }">
-          <span v-if="record.status === 'offline'" class="circle"></span>
-          <span v-else class="circle pass"></span>
+          <span v-if="record.status === 'offline'" class="circle" />
+          <span v-else class="circle pass" />
           {{ $t(`searchTable.form.status.${record.status}`) }}
         </template>
         <template #operations>
@@ -246,20 +245,21 @@
 </template>
 
 <script lang="ts" setup>
-  import { computed, ref, reactive, watch, nextTick } from 'vue';
+  import { computed, nextTick, reactive, ref, watch } from 'vue';
   import { useI18n } from 'vue-i18n';
-  import useLoading from '@/hooks/loading';
-  import { queryPolicyList, PolicyRecord, PolicyParams } from '@/api/list';
-  import { Pagination } from '@/types/global';
   import type { SelectOptionData } from '@arco-design/web-vue/es/select/interface';
   import type { TableColumnData } from '@arco-design/web-vue/es/table/interface';
   import cloneDeep from 'lodash/cloneDeep';
   import Sortable from 'sortablejs';
+  import type { Pagination } from '@/types/global';
+  import type { PolicyParams, PolicyRecord } from '@/api/list';
+  import { queryPolicyList } from '@/api/list';
+  import useLoading from '@/hooks/loading';
 
   type SizeProps = 'mini' | 'small' | 'medium' | 'large';
   type Column = TableColumnData & { checked?: true };
 
-  const generateFormModel = () => {
+  function generateFormModel() {
     return {
       number: '',
       name: '',
@@ -268,7 +268,7 @@
       createdTime: [],
       status: '',
     };
-  };
+  }
   const { loading, setLoading } = useLoading(true);
   const { t } = useI18n();
   const renderData = ref<PolicyRecord[]>([]);
@@ -379,77 +379,66 @@
       value: 'offline',
     },
   ]);
-  const fetchData = async (
-    params: PolicyParams = { current: 1, pageSize: 20 }
-  ) => {
+  async function fetchData(params: PolicyParams = { current: 1, pageSize: 20 }) {
     setLoading(true);
     try {
       const { data } = await queryPolicyList(params);
       renderData.value = data.list;
       pagination.current = params.current;
       pagination.total = data.total;
-    } catch (err) {
+    }
+    catch (err) {
       // you can report use errorHandler or other
-    } finally {
+    }
+    finally {
       setLoading(false);
     }
-  };
+  }
 
-  const search = () => {
+  function search() {
     fetchData({
       ...basePagination,
       ...formModel.value,
     } as unknown as PolicyParams);
-  };
-  const onPageChange = (current: number) => {
+  }
+  function onPageChange(current: number) {
     fetchData({ ...basePagination, current });
-  };
+  }
 
   fetchData();
-  const reset = () => {
+  function reset() {
     formModel.value = generateFormModel();
-  };
+  }
 
-  const handleSelectDensity = (
-    val: string | number | Record<string, any> | undefined,
-    e: Event
-  ) => {
+  function handleSelectDensity(val: string | number | Record<string, any> | undefined, e: Event) {
     size.value = val as SizeProps;
-  };
+  }
 
-  const handleChange = (
-    checked: boolean | (string | boolean | number)[],
-    column: Column,
-    index: number
-  ) => {
+  function handleChange(checked: boolean | (string | boolean | number)[], column: Column, index: number) {
     if (!checked) {
       cloneColumns.value = showColumns.value.filter(
-        (item) => item.dataIndex !== column.dataIndex
+        item => item.dataIndex !== column.dataIndex,
       );
-    } else {
+    }
+    else {
       cloneColumns.value.splice(index, 0, column);
     }
-  };
+  }
 
-  const exchangeArray = <T extends Array<any>>(
-    array: T,
-    beforeIdx: number,
-    newIdx: number,
-    isDeep = false
-  ): T => {
+  function exchangeArray<T extends Array<any>>(array: T, beforeIdx: number, newIdx: number, isDeep = false): T {
     const newArray = isDeep ? cloneDeep(array) : array;
     if (beforeIdx > -1 && newIdx > -1) {
       // 先替换后面的，然后拿到替换的结果替换前面的
       newArray.splice(
         beforeIdx,
         1,
-        newArray.splice(newIdx, 1, newArray[beforeIdx]).pop()
+        newArray.splice(newIdx, 1, newArray[beforeIdx]).pop(),
       );
     }
     return newArray;
-  };
+  }
 
-  const popupVisibleChange = (val: boolean) => {
+  function popupVisibleChange(val: boolean) {
     if (val) {
       nextTick(() => {
         const el = document.getElementById('tableSetting') as HTMLElement;
@@ -462,7 +451,7 @@
         });
       });
     }
-  };
+  }
 
   watch(
     () => columns.value,
@@ -473,7 +462,7 @@
       });
       showColumns.value = cloneDeep(cloneColumns.value);
     },
-    { deep: true, immediate: true }
+    { deep: true, immediate: true },
   );
 </script>
 

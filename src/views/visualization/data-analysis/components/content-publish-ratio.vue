@@ -14,22 +14,24 @@
 
 <script lang="ts" setup>
   import { ref } from 'vue';
-  import { ToolTipFormatterParams } from '@/types/echarts';
+  import type { ToolTipFormatterParams } from '@/types/echarts';
   import useLoading from '@/hooks/loading';
+  import type {
+    ContentPublishRecord,
+  } from '@/api/visualization';
   import {
     queryContentPublish,
-    ContentPublishRecord,
   } from '@/api/visualization';
   import useChartOption from '@/hooks/chart-option';
 
-  const tooltipItemsHtmlString = (items: ToolTipFormatterParams[]) => {
+  function tooltipItemsHtmlString(items: ToolTipFormatterParams[]) {
     return items
       .map(
-        (el) => `<div class="content-panel">
+        el => `<div class="content-panel">
     <p>
       <span style="background-color: ${
-        el.color
-      }" class="tooltip-item-icon"></span>
+          el.color
+        }" class="tooltip-item-icon"></span>
       <span>
       ${el.seriesName}
       </span>
@@ -37,10 +39,10 @@
     <span class="tooltip-value">
       ${Number(el.value).toLocaleString()}
     </span>
-  </div>`
+  </div>`,
       )
       .join('');
-  };
+  }
 
   const { loading, setLoading } = useLoading(true);
   const xAxis = ref<string[]>([]);
@@ -137,25 +139,27 @@
       ],
     };
   });
-  const fetchData = async () => {
+  async function fetchData() {
     setLoading(true);
     try {
       const { data: chartData } = await queryContentPublish();
       xAxis.value = chartData[0].x;
       chartData.forEach((el: ContentPublishRecord) => {
-        if (el.name === '纯文本') {
+        if (el.name === '纯文本')
           textChartsData.value = el.y;
-        } else if (el.name === '图文类') {
+        else if (el.name === '图文类')
           imgChartsData.value = el.y;
-        }
+
         videoChartsData.value = el.y;
       });
-    } catch (err) {
+    }
+    catch (err) {
       // you can report use errorHandler or other
-    } finally {
+    }
+    finally {
       setLoading(false);
     }
-  };
+  }
   fetchData();
 </script>
 

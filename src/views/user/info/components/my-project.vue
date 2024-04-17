@@ -32,7 +32,7 @@
                   :key="idx"
                   :size="32"
                 >
-                  <img alt="avatar" :src="contributor.avatar" />
+                  <img alt="avatar" :src="contributor.avatar">
                 </a-avatar>
               </a-avatar-group>
               <a-typography-text type="secondary">
@@ -47,13 +47,14 @@
 </template>
 
 <script lang="ts" setup>
-  import { queryMyProjectList, MyProjectRecord } from '@/api/user-center';
+  import type { MyProjectRecord } from '@/api/user-center';
+  import { queryMyProjectList } from '@/api/user-center';
   import useRequest from '@/hooks/request';
 
   const defaultValue = Array(6).fill({} as MyProjectRecord);
   const { loading, response: projectList } = useRequest<MyProjectRecord[]>(
     queryMyProjectList,
-    defaultValue
+    defaultValue,
   );
 </script>
 

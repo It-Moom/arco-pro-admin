@@ -14,7 +14,7 @@
             <template #trigger-icon>
               <icon-camera />
             </template>
-            <img v-if="fileList.length" :src="fileList[0].url" />
+            <img v-if="fileList.length" :src="fileList[0].url">
           </a-avatar>
         </template>
       </a-upload>
@@ -56,9 +56,9 @@
     FileItem,
     RequestOption,
   } from '@arco-design/web-vue/es/upload/interfaces';
+  import type { DescData } from '@arco-design/web-vue/es/descriptions/interface';
   import { useUserStore } from '@/store';
   import { userUploadApi } from '@/api/user-center';
-  import type { DescData } from '@arco-design/web-vue/es/descriptions/interface';
 
   const userStore = useUserStore();
   const file = {
@@ -89,10 +89,10 @@
     },
   ] as DescData[];
   const fileList = ref<FileItem[]>([file]);
-  const uploadChange = (fileItemList: FileItem[], fileItem: FileItem) => {
+  function uploadChange(fileItemList: FileItem[], fileItem: FileItem) {
     fileList.value = [fileItem];
-  };
-  const customRequest = (options: RequestOption) => {
+  }
+  function customRequest(options: RequestOption) {
     // docs: https://axios-http.com/docs/cancellation
     const controller = new AbortController();
 
@@ -109,10 +109,10 @@
       formData.append(name as string, fileItem.file as Blob);
       const onUploadProgress = (event: ProgressEvent) => {
         let percent;
-        if (event.total > 0) {
+        if (event.total > 0)
           percent = (event.loaded / event.total) * 100;
-        }
-        onProgress(parseInt(String(percent), 10), event);
+
+        onProgress(Number.parseInt(String(percent), 10), event);
       };
 
       try {
@@ -124,7 +124,8 @@
           onUploadProgress,
         });
         onSuccess(res);
-      } catch (error) {
+      }
+      catch (error) {
         onError(error);
       }
     })();
@@ -133,7 +134,7 @@
         controller.abort();
       },
     };
-  };
+  }
 </script>
 
 <style scoped lang="less">

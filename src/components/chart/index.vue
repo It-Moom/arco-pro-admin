@@ -8,7 +8,7 @@
 </template>
 
 <script lang="ts" setup>
-  import { ref, nextTick } from 'vue';
+  import { nextTick, ref } from 'vue';
   import VCharts from 'vue-echarts';
   // import { useAppStore } from '@/store';
 

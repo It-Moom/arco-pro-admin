@@ -30,37 +30,42 @@
 
 <script lang="ts" setup>
   import { ref } from 'vue';
-  import useLoading from '@/hooks/loading';
-  import { queryProfileBasic, ProfileBasicRes } from '@/api/profile';
   import ProfileItem from './components/profile-item.vue';
   import OperationLog from './components/operation-log.vue';
+  import useLoading from '@/hooks/loading';
+  import type { ProfileBasicRes } from '@/api/profile';
+  import { queryProfileBasic } from '@/api/profile';
 
   const { loading, setLoading } = useLoading(true);
   const { loading: preLoading, setLoading: preSetLoading } = useLoading(true);
   const currentData = ref<ProfileBasicRes>({} as ProfileBasicRes);
   const preData = ref<ProfileBasicRes>({} as ProfileBasicRes);
   const step = ref(1);
-  const fetchCurrentData = async () => {
+  async function fetchCurrentData() {
     try {
       const { data } = await queryProfileBasic();
       currentData.value = data;
       step.value = 2;
-    } catch (err) {
+    }
+    catch (err) {
       // you can report use errorHandler or other
-    } finally {
+    }
+    finally {
       setLoading(false);
     }
-  };
-  const fetchPreData = async () => {
+  }
+  async function fetchPreData() {
     try {
       const { data } = await queryProfileBasic();
       preData.value = data;
-    } catch (err) {
+    }
+    catch (err) {
       // you can report use errorHandler or other
-    } finally {
+    }
+    finally {
       preSetLoading(false);
     }
-  };
+  }
   fetchCurrentData();
   fetchPreData();
 </script>

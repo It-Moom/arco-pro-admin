@@ -67,14 +67,15 @@
 </template>
 
 <script lang="ts" setup>
-  import { queryInspectionList, ServiceRecord } from '@/api/list';
-  import useRequest from '@/hooks/request';
   import CardWrap from './card-wrap.vue';
+  import type { ServiceRecord } from '@/api/list';
+  import { queryInspectionList } from '@/api/list';
+  import useRequest from '@/hooks/request';
 
-  const defaultValue: ServiceRecord[] = new Array(3).fill({});
+  const defaultValue: ServiceRecord[] = Array.from({ length: 3 }).fill({});
   const { loading, response: renderData } = useRequest<ServiceRecord[]>(
     queryInspectionList,
-    defaultValue
+    defaultValue,
   );
 </script>
 

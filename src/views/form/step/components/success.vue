@@ -27,9 +27,9 @@
 
 <script lang="ts" setup>
   const emits = defineEmits(['changeStep']);
-  const oneMore = () => {
+  function oneMore() {
     emits('changeStep', 1);
-  };
+  }
 </script>
 
 <style scoped lang="less">

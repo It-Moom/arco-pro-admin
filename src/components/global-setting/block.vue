@@ -3,7 +3,7 @@
     <h5 class="title">{{ title }}</h5>
     <div v-for="option in options" :key="option.name" class="switch-wrapper">
       <span>{{ $t(option.name) }}</span>
-      <form-wrapper
+      <FormWrapper
         :type="option.type || 'switch'"
         :name="option.key"
         :default-value="option.defaultVal"
@@ -14,9 +14,9 @@
 </template>
 
 <script lang="ts" setup>
-  import { PropType } from 'vue';
-  import { useAppStore } from '@/store';
+  import type { PropType } from 'vue';
   import FormWrapper from './form-wrapper.vue';
+  import { useAppStore } from '@/store';
 
   interface OptionsProps {
     name: string;
@@ -37,26 +37,26 @@
     },
   });
   const appStore = useAppStore();
-  const handleChange = async ({
+  async function handleChange({
     key,
     value,
   }: {
     key: string;
     value: unknown;
-  }) => {
-    if (key === 'colorWeak') {
+  }) {
+    if (key === 'colorWeak')
       document.body.style.filter = value ? 'invert(80%)' : 'none';
-    }
-    if (key === 'menuFromServer' && value) {
+
+    if (key === 'menuFromServer' && value)
       await appStore.fetchServerMenuConfig();
-    }
+
     if (key === 'topMenu') {
       appStore.updateSettings({
         menuCollapse: false,
       });
     }
     appStore.updateSettings({ [key]: value });
-  };
+  }
 </script>
 
 <style scoped lang="less">

@@ -64,10 +64,10 @@
 </template>
 
 <script lang="ts" setup>
-  import { ref, reactive } from 'vue';
+  import { reactive, ref } from 'vue';
   import { useRouter } from 'vue-router';
   import { Message } from '@arco-design/web-vue';
-  import { ValidatedError } from '@arco-design/web-vue/es/form/interface';
+  import type { ValidatedError } from '@arco-design/web-vue/es/form/interface';
   import { useI18n } from 'vue-i18n';
   import { useStorage } from '@vueuse/core';
   import { useUserStore } from '@/store';
@@ -90,13 +90,13 @@
     password: loginConfig.value.password,
   });
 
-  const handleSubmit = async ({
+  async function handleSubmit({
     errors,
     values,
   }: {
     errors: Record<string, ValidatedError> | undefined;
     values: Record<string, any>;
-  }) => {
+  }) {
     if (loading.value) return;
     if (!errors) {
       setLoading(true);
@@ -116,16 +116,18 @@
         // The actual production environment requires encrypted storage.
         loginConfig.value.username = rememberPassword ? username : '';
         loginConfig.value.password = rememberPassword ? password : '';
-      } catch (err) {
+      }
+      catch (err) {
         errorMessage.value = (err as Error).message;
-      } finally {
+      }
+      finally {
         setLoading(false);
       }
     }
-  };
-  const setRememberPassword = (value: boolean) => {
+  }
+  function setRememberPassword(value: boolean) {
     loginConfig.value.rememberPassword = value;
-  };
+  }
 </script>
 
 <style lang="less" scoped>

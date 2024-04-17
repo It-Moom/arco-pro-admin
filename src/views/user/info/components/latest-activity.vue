@@ -31,7 +31,7 @@
         >
           <template #avatar>
             <a-avatar>
-              <img :src="activity.avatar" />
+              <img :src="activity.avatar">
             </a-avatar>
           </template>
         </a-list-item-meta>
@@ -42,21 +42,24 @@
 
 <script lang="ts" setup>
   import { ref } from 'vue';
-  import { queryLatestActivity, LatestActivity } from '@/api/user-center';
+  import type { LatestActivity } from '@/api/user-center';
+  import { queryLatestActivity } from '@/api/user-center';
   import useLoading from '@/hooks/loading';
 
   const { loading, setLoading } = useLoading(true);
-  const activityList = ref<LatestActivity[]>(new Array(7).fill({}));
-  const fetchData = async () => {
+  const activityList = ref<LatestActivity[]>(Array.from({ length: 7 }).fill({}));
+  async function fetchData() {
     try {
       const { data } = await queryLatestActivity();
       activityList.value = data;
-    } catch (err) {
+    }
+    catch (err) {
       // you can report use errorHandler or other
-    } finally {
+    }
+    finally {
       setLoading(false);
     }
-  };
+  }
   fetchData();
 </script>
 

@@ -13,13 +13,13 @@
   import { ref } from 'vue';
   import useLoading from '@/hooks/loading';
   import { queryContentPeriodAnalysis } from '@/api/visualization';
-  import { ToolTipFormatterParams } from '@/types/echarts';
+  import type { ToolTipFormatterParams } from '@/types/echarts';
   import useChartOption from '@/hooks/chart-option';
 
-  const tooltipItemsHtmlString = (items: ToolTipFormatterParams[]) => {
+  function tooltipItemsHtmlString(items: ToolTipFormatterParams[]) {
     return items
       .map(
-        (el) => `<div class="content-panel">
+        el => `<div class="content-panel">
         <p>
           <span style="background-color: ${el.color}" class="tooltip-item-icon"></span>
           <span>${el.seriesName}</span>
@@ -27,10 +27,10 @@
         <span class="tooltip-value">
         ${el.value}%
         </span>
-      </div>`
+      </div>`,
       )
       .join('');
-  };
+  }
 
   const { loading, setLoading } = useLoading(true);
   const xAxis = ref<string[]>([]);
@@ -186,25 +186,27 @@
       ],
     };
   });
-  const fetchData = async () => {
+  async function fetchData() {
     setLoading(true);
     try {
       const { data: chartData } = await queryContentPeriodAnalysis();
       xAxis.value = chartData.xAxis;
       chartData.data.forEach((el) => {
-        if (el.name === '纯文本') {
+        if (el.name === '纯文本')
           textChartsData.value = el.value;
-        } else if (el.name === '图文类') {
+        else if (el.name === '图文类')
           imgChartsData.value = el.value;
-        }
+
         videoChartsData.value = el.value;
       });
-    } catch (err) {
+    }
+    catch (err) {
       // you can report use errorHandler or other
-    } finally {
+    }
+    finally {
       setLoading(false);
     }
-  };
+  }
   fetchData();
 </script>
 

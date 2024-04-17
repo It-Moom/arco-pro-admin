@@ -18,29 +18,25 @@
           <a-table-column
             :title="$t('dataAnalysis.popularAuthor.column.ranking')"
             data-index="ranking"
-          >
-          </a-table-column>
+          />
           <a-table-column
             :title="$t('dataAnalysis.popularAuthor.column.author')"
             data-index="author"
-          >
-          </a-table-column>
+          />
           <a-table-column
             :title="$t('dataAnalysis.popularAuthor.column.content')"
             data-index="contentCount"
             :sortable="{
               sortDirections: ['ascend', 'descend'],
             }"
-          >
-          </a-table-column>
+          />
           <a-table-column
             :title="$t('dataAnalysis.popularAuthor.column.click')"
             data-index="clickCount"
             :sortable="{
               sortDirections: ['ascend', 'descend'],
             }"
-          >
-          </a-table-column>
+          />
         </template>
       </a-table>
     </a-card>
@@ -50,21 +46,24 @@
 <script lang="ts" setup>
   import { ref } from 'vue';
   import useLoading from '@/hooks/loading';
-  import { queryPopularAuthor, PopularAuthorRes } from '@/api/visualization';
+  import type { PopularAuthorRes } from '@/api/visualization';
+  import { queryPopularAuthor } from '@/api/visualization';
 
   const { loading, setLoading } = useLoading();
   const tableData = ref<PopularAuthorRes>({ list: [] });
-  const fetchData = async () => {
+  async function fetchData() {
     try {
       setLoading(true);
       const { data } = await queryPopularAuthor();
       tableData.value = data;
-    } catch (err) {
+    }
+    catch (err) {
       // you can report use errorHandler or other
-    } finally {
+    }
+    finally {
       setLoading(false);
     }
-  };
+  }
   fetchData();
 </script>
 

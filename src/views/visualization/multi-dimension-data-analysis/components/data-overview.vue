@@ -35,35 +35,30 @@
 <script lang="ts" setup>
   import { computed, ref } from 'vue';
   import { useI18n } from 'vue-i18n';
-  import { LineSeriesOption } from 'echarts';
+  import type { LineSeriesOption } from 'echarts';
   import { queryDataOverview } from '@/api/visualization';
   import useLoading from '@/hooks/loading';
-  import { ToolTipFormatterParams } from '@/types/echarts';
+  import type { ToolTipFormatterParams } from '@/types/echarts';
   import useThemes from '@/hooks/themes';
   import useChartOption from '@/hooks/chart-option';
 
-  const tooltipItemsHtmlString = (items: ToolTipFormatterParams[]) => {
+  function tooltipItemsHtmlString(items: ToolTipFormatterParams[]) {
     return items
       .map(
-        (el) => `<div class="content-panel">
+        el => `<div class="content-panel">
         <p>
           <span style="background-color: ${
-            el.color
-          }" class="tooltip-item-icon"></span><span>${el.seriesName}</span>
+          el.color
+        }" class="tooltip-item-icon"></span><span>${el.seriesName}</span>
         </p>
         <span class="tooltip-value">${el.value.toLocaleString()}</span>
-      </div>`
+      </div>`,
       )
       .reverse()
       .join('');
-  };
+  }
 
-  const generateSeries = (
-    name: string,
-    lineColor: string,
-    itemBorderColor: string,
-    data: number[]
-  ): LineSeriesOption => {
+  function generateSeries(name: string, lineColor: string, itemBorderColor: string, data: number[]): LineSeriesOption {
     return {
       name,
       data,
@@ -93,7 +88,7 @@
         color: lineColor,
       },
     };
-  };
+  }
   const { t } = useI18n();
   const { loading, setLoading } = useLoading(true);
   const { isDark } = useThemes();
@@ -237,50 +232,52 @@
           '内容生产量',
           '#722ED1',
           '#F5E8FF',
-          contentProductionData.value
+          contentProductionData.value,
         ),
         generateSeries(
           '内容点击量',
           '#F77234',
           '#FFE4BA',
-          contentClickData.value
+          contentClickData.value,
         ),
         generateSeries(
           '内容曝光量',
           '#33D1C9',
           '#E8FFFB',
-          contentExposureData.value
+          contentExposureData.value,
         ),
         generateSeries(
           '活跃用户数',
           '#3469FF',
           '#E8F3FF',
-          activeUsersData.value
+          activeUsersData.value,
         ),
       ],
     };
   });
-  const fetchData = async () => {
+  async function fetchData() {
     setLoading(true);
     try {
       const { data } = await queryDataOverview();
       xAxis.value = data.xAxis;
       data.data.forEach((el) => {
-        if (el.name === '内容生产量') {
+        if (el.name === '内容生产量')
           contentProductionData.value = el.value;
-        } else if (el.name === '内容点击量') {
+        else if (el.name === '内容点击量')
           contentClickData.value = el.value;
-        } else if (el.name === '内容曝光量') {
+        else if (el.name === '内容曝光量')
           contentExposureData.value = el.value;
-        }
+
         activeUsersData.value = el.value;
       });
-    } catch (err) {
+    }
+    catch (err) {
       // you can report use errorHandler or other
-    } finally {
+    }
+    finally {
       setLoading(false);
     }
-  };
+  }
   fetchData();
 </script>
 

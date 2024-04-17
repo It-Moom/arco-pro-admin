@@ -36,36 +36,37 @@
 
 <script lang="ts" setup>
   import { ref } from 'vue';
-  import useLoading from '@/hooks/loading';
-  import {
-    submitChannelForm,
+  import BaseInfo from './components/base-info.vue';
+  import ChannelInfo from './components/channel-info.vue';
+  import Success from './components/success.vue';
+  import type {
     BaseInfoModel,
     ChannelInfoModel,
     UnitChannelModel,
   } from '@/api/form';
-  import BaseInfo from './components/base-info.vue';
-  import ChannelInfo from './components/channel-info.vue';
-  import Success from './components/success.vue';
+  import {
+    submitChannelForm,
+  } from '@/api/form';
+  import useLoading from '@/hooks/loading';
 
   const { loading, setLoading } = useLoading(false);
   const step = ref(1);
   const submitModel = ref<UnitChannelModel>({} as UnitChannelModel);
-  const submitForm = async () => {
+  async function submitForm() {
     setLoading(true);
     try {
       await submitChannelForm(submitModel.value); // The mock api default success
       step.value = 3;
       submitModel.value = {} as UnitChannelModel; // init
-    } catch (err) {
+    }
+    catch (err) {
       // you can report use errorHandler or other
-    } finally {
+    }
+    finally {
       setLoading(false);
     }
-  };
-  const changeStep = (
-    direction: string | number,
-    model: BaseInfoModel | ChannelInfoModel
-  ) => {
+  }
+  function changeStep(direction: string | number, model: BaseInfoModel | ChannelInfoModel) {
     if (typeof direction === 'number') {
       step.value = direction;
       return;
@@ -81,10 +82,11 @@
         return;
       }
       step.value += 1;
-    } else if (direction === 'backward') {
+    }
+    else if (direction === 'backward') {
       step.value -= 1;
     }
-  };
+  }
 </script>
 
 <script lang="ts">

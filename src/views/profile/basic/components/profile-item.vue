@@ -26,9 +26,10 @@
 </template>
 
 <script lang="ts" setup>
-  import { computed, PropType } from 'vue';
+  import type { PropType } from 'vue';
+  import { computed } from 'vue';
   import { useI18n } from 'vue-i18n';
-  import { ProfileBasicRes } from '@/api/profile';
+  import type { ProfileBasicRes } from '@/api/profile';
 
   type BlockList = {
     title: string;
@@ -114,13 +115,13 @@
         {
           label: t('basicProfile.label.audio.acquisition.channels'),
           value: `${renderData?.audio?.acquisition.channels || '-'} ${t(
-            'basicProfile.unit.audio.channels'
+            'basicProfile.unit.audio.channels',
           )}`,
         },
         {
           label: t('basicProfile.label.audio.encoding.channels'),
           value: `${renderData?.audio?.encoding.channels || '-'} ${t(
-            'basicProfile.unit.audio.channels'
+            'basicProfile.unit.audio.channels',
           )}`,
         },
         {

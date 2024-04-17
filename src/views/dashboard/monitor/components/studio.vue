@@ -7,12 +7,12 @@
       <img
         src="http://p1-arco.byteimg.com/tos-cn-i-uwbnlip3yd/c788fc704d32cf3b1136c7d45afc2669.png~tplv-uwbnlip3yd-webp.webp"
         class="studio-preview"
-      />
+      >
       <div class="studio-bar">
         <div v-if="userInfo">
           <a-space :size="12">
             <a-avatar :size="24">
-              <img :src="userInfo.avatar" />
+              <img :src="userInfo.avatar">
             </a-avatar>
             <a-typography-text>
               {{ userInfo.name }} {{ $t('monitor.studioPreview.studio') }}

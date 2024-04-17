@@ -12,21 +12,21 @@
             />
           </div>
         </div>
-        <div class="tag-bar-operation"></div>
+        <div class="tag-bar-operation" />
       </div>
     </a-affix>
   </div>
 </template>
 
 <script lang="ts" setup>
-  import { ref, computed, watch, onUnmounted } from 'vue';
+  import { computed, onUnmounted, ref, watch } from 'vue';
   import type { RouteLocationNormalized } from 'vue-router';
+  import tabItem from './tab-item.vue';
   import {
     listenerRouteChange,
     removeRouteListener,
   } from '@/utils/route-listener';
   import { useAppStore, useTabBarStore } from '@/store';
-  import tabItem from './tab-item.vue';
 
   const appStore = useAppStore();
   const tabBarStore = useTabBarStore();
@@ -43,15 +43,14 @@
     () => appStore.navbar,
     () => {
       affixRef.value.updatePosition();
-    }
+    },
   );
   listenerRouteChange((route: RouteLocationNormalized) => {
     if (
-      !route.meta.noAffix &&
-      !tagList.value.some((tag) => tag.fullPath === route.fullPath)
-    ) {
+      !route.meta.noAffix
+      && !tagList.value.some(tag => tag.fullPath === route.fullPath)
+    )
       tabBarStore.updateTabList(route);
-    }
   }, true);
 
   onUnmounted(() => {

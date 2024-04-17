@@ -20,11 +20,11 @@
           >
             <template #cell="{ record }">
               <p v-if="record.status === 0">
-                <span class="circle"></span>
+                <span class="circle" />
                 <span>{{ $t('basicProfile.cell.auditing') }}</span>
               </p>
               <p v-if="record.status === 1">
-                <span class="circle pass"></span>
+                <span class="circle pass" />
                 <span>{{ $t('basicProfile.cell.pass') }}</span>
               </p>
             </template>
@@ -35,9 +35,11 @@
           />
           <a-table-column :title="$t('basicProfile.column.operation')">
             <template #cell>
-              <a-button type="text">{{
-                $t('basicProfile.cell.view')
-              }}</a-button>
+              <a-button type="text">
+                {{
+                  $t('basicProfile.cell.view')
+                }}
+              </a-button>
             </template>
           </a-table-column>
         </template>
@@ -48,21 +50,24 @@
 
 <script lang="ts" setup>
   import { ref } from 'vue';
-  import { queryOperationLog, operationLogRes } from '@/api/profile';
+  import type { operationLogRes } from '@/api/profile';
+  import { queryOperationLog } from '@/api/profile';
   import useLoading from '@/hooks/loading';
 
   const { loading, setLoading } = useLoading(true);
   const renderData = ref<operationLogRes>([]);
-  const fetchData = async () => {
+  async function fetchData() {
     try {
       const { data } = await queryOperationLog();
       renderData.value = data;
-    } catch (err) {
+    }
+    catch (err) {
       // you can report use errorHandler or other
-    } finally {
+    }
+    finally {
       setLoading(false);
     }
-  };
+  }
   fetchData();
 </script>
 

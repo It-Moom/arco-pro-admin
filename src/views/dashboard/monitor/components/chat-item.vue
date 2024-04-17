@@ -1,5 +1,5 @@
 <template>
-  <div :class="['chat-item', itemData.isCollect ? 'chat-item-collected' : '']">
+  <div class="chat-item" :class="[itemData.isCollect ? 'chat-item-collected' : '']">
     <a-space :size="4" direction="vertical" fill>
       <a-typography-text type="warning">
         {{ itemData.username }}
@@ -25,8 +25,8 @@
 </template>
 
 <script lang="ts" setup>
-  import { PropType } from 'vue';
-  import { ChatRecord } from '@/api/message';
+  import type { PropType } from 'vue';
+  import type { ChatRecord } from '@/api/message';
 
   defineProps({
     itemData: {

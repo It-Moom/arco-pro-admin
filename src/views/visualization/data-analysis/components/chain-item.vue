@@ -29,16 +29,40 @@
 </template>
 
 <script lang="ts" setup>
-  import { ref, PropType, CSSProperties } from 'vue';
+  import type { CSSProperties, PropType } from 'vue';
+  import { ref } from 'vue';
   import useLoading from '@/hooks/loading';
-  import {
-    queryPublicOpinionAnalysis,
+  import type {
     PublicOpinionAnalysis,
     PublicOpinionAnalysisRes,
   } from '@/api/visualization';
+  import {
+    queryPublicOpinionAnalysis,
+  } from '@/api/visualization';
   import useChartOption from '@/hooks/chart-option';
 
-  const barChartOptionsFactory = () => {
+  const props = defineProps({
+    title: {
+      type: String,
+      default: '',
+    },
+    quota: {
+      type: String,
+      default: '',
+    },
+    chartType: {
+      type: String,
+      default: '',
+    },
+    cardStyle: {
+      type: Object as PropType<CSSProperties>,
+      default: () => {
+        return {};
+      },
+    },
+  });
+
+  function barChartOptionsFactory() {
     const data = ref<any>([]);
     const { chartOption } = useChartOption(() => {
       return {
@@ -74,9 +98,9 @@
       data,
       chartOption,
     };
-  };
+  }
 
-  const lineChartOptionsFactory = () => {
+  function lineChartOptionsFactory() {
     const data = ref<number[][]>([[], []]);
     const { chartOption } = useChartOption(() => {
       return {
@@ -128,9 +152,9 @@
       data,
       chartOption,
     };
-  };
+  }
 
-  const pieChartOptionsFactory = () => {
+  function pieChartOptionsFactory() {
     const data = ref<any>([]);
     const { chartOption } = useChartOption(() => {
       return {
@@ -172,43 +196,22 @@
       data,
       chartOption,
     };
-  };
-
-  const props = defineProps({
-    title: {
-      type: String,
-      default: '',
-    },
-    quota: {
-      type: String,
-      default: '',
-    },
-    chartType: {
-      type: String,
-      default: '',
-    },
-    cardStyle: {
-      type: Object as PropType<CSSProperties>,
-      default: () => {
-        return {};
-      },
-    },
-  });
+  }
 
   const { loading, setLoading } = useLoading(true);
-  const { chartOption: lineChartOption, data: lineData } =
-    lineChartOptionsFactory();
-  const { chartOption: barChartOption, data: barData } =
-    barChartOptionsFactory();
-  const { chartOption: pieChartOption, data: pieData } =
-    pieChartOptionsFactory();
+  const { chartOption: lineChartOption, data: lineData }
+    = lineChartOptionsFactory();
+  const { chartOption: barChartOption, data: barData }
+    = barChartOptionsFactory();
+  const { chartOption: pieChartOption, data: pieData }
+    = pieChartOptionsFactory();
   const renderData = ref<PublicOpinionAnalysisRes>({
     count: 0,
     growth: 0,
     chartData: [],
   });
   const chartOption = ref({});
-  const fetchData = async (params: PublicOpinionAnalysis) => {
+  async function fetchData(params: PublicOpinionAnalysis) {
     try {
       const { data } = await queryPublicOpinionAnalysis(params);
       renderData.value = data;
@@ -223,27 +226,30 @@
           });
         });
         chartOption.value = barChartOption.value;
-      } else if (props.chartType === 'line') {
+      }
+      else if (props.chartType === 'line') {
         chartData.forEach((el) => {
-          if (el.name === '2021') {
+          if (el.name === '2021')
             lineData.value[0].push(el.y);
-          } else {
+          else
             lineData.value[1].push(el.y);
-          }
         });
         chartOption.value = lineChartOption.value;
-      } else {
+      }
+      else {
         chartData.forEach((el) => {
           pieData.value.push(el);
         });
         chartOption.value = pieChartOption.value;
       }
-    } catch (err) {
+    }
+    catch (err) {
       // you can report use errorHandler or other
-    } finally {
+    }
+    finally {
       setLoading(false);
     }
-  };
+  }
   fetchData({ quota: props.quota });
 </script>
 

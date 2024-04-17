@@ -1,10 +1,7 @@
 import Mock from 'mockjs';
-import setupMock, {
-  successResponseWrap,
-  failResponseWrap,
-} from '@/utils/setup-mock';
+import setupMock, { failResponseWrap, successResponseWrap } from '@/utils/setup-mock';
 
-import { MockParams } from '@/types/mock';
+import type { MockParams } from '@/types/mock';
 import { isLogin } from '@/utils/auth';
 
 setupMock({
@@ -41,12 +38,12 @@ setupMock({
     // 登录
     Mock.mock(new RegExp('/api/user/login'), (params: MockParams) => {
       const { username, password } = JSON.parse(params.body);
-      if (!username) {
+      if (!username)
         return failResponseWrap(null, '用户名不能为空', 50000);
-      }
-      if (!password) {
+
+      if (!password)
         return failResponseWrap(null, '密码不能为空', 50000);
-      }
+
       if (username === 'admin' && password === 'admin') {
         window.localStorage.setItem('userRole', 'admin');
         return successResponseWrap({

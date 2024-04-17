@@ -30,10 +30,10 @@
     },
   });
   const emit = defineEmits(['inputChange']);
-  const handleChange = (value: unknown) => {
+  function handleChange(value: unknown) {
     emit('inputChange', {
       value,
       key: props.name,
     });
-  };
+  }
 </script>

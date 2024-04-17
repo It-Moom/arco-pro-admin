@@ -45,8 +45,9 @@
 </template>
 
 <script lang="ts" setup>
-  import { ref, computed, watch, provide, onMounted } from 'vue';
-  import { useRouter, useRoute } from 'vue-router';
+  import { computed, onMounted, provide, ref, watch } from 'vue';
+  import { useRoute, useRouter } from 'vue-router';
+  import PageLayout from './page-layout.vue';
   import { useAppStore, useUserStore } from '@/store';
   import NavBar from '@/components/navbar/index.vue';
   import Menu from '@/components/menu/index.vue';
@@ -54,7 +55,6 @@
   import TabBar from '@/components/tab-bar/index.vue';
   import usePermission from '@/hooks/permission';
   import useResponsive from '@/hooks/responsive';
-  import PageLayout from './page-layout.vue';
 
   const isInit = ref(false);
   const appStore = useAppStore();
@@ -75,28 +75,28 @@
     return appStore.menuCollapse;
   });
   const paddingStyle = computed(() => {
-    const paddingLeft =
-      renderMenu.value && !hideMenu.value
+    const paddingLeft
+      = renderMenu.value && !hideMenu.value
         ? { paddingLeft: `${menuWidth.value}px` }
         : {};
     const paddingTop = navbar.value ? { paddingTop: navbarHeight } : {};
     return { ...paddingLeft, ...paddingTop };
   });
-  const setCollapsed = (val: boolean) => {
+  function setCollapsed(val: boolean) {
     if (!isInit.value) return; // for page initialization menu state problem
     appStore.updateSettings({ menuCollapse: val });
-  };
+  }
   watch(
     () => userStore.role,
     (roleValue) => {
       if (roleValue && !permission.accessRouter(route))
         router.push({ name: 'notFound' });
-    }
+    },
   );
   const drawerVisible = ref(false);
-  const drawerCancel = () => {
+  function drawerCancel() {
     drawerVisible.value = false;
-  };
+  }
   provide('toggleDrawerMenu', () => {
     drawerVisible.value = !drawerVisible.value;
   });
