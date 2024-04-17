@@ -20,7 +20,6 @@
   "dependencies": {
     "@arco-design/web-vue": "^2.44.7",
     "@vueuse/core": "^9.3.0",
-    "arco-design-pro-vue": "^2.7.2",
     "axios": "^0.24.0",
     "dayjs": "^1.11.5",
     "echarts": "^5.4.0",
@@ -56,12 +55,6 @@
     "prettier": "^2.7.1",
     "rollup": "^3.9.1",
     "rollup-plugin-visualizer": "^5.8.2",
-    "stylelint": "^14.13.0",
-    "stylelint-config-prettier": "^9.0.3",
-    "stylelint-config-rational-order": "^0.1.2",
-    "stylelint-config-recommended-vue": "^1.4.0",
-    "stylelint-config-standard": "^29.0.0",
-    "stylelint-order": "^5.0.0",
     "typescript": "^4.8.4",
     "unplugin-vue-components": "^0.24.1",
     "vite": "^3.2.5",
@@ -72,7 +65,6 @@
   },
   "resolutions": {
     "bin-wrapper": "npm:bin-wrapper-china",
-    "gifsicle": "5.2.0",
     "rollup": "^2.56.3"
   }
 }
