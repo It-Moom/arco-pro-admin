@@ -5,10 +5,10 @@
 
 - 安装依赖
 ```bash
-yarn 或 npm install
+pnpm install
 ```
 
 - 启动
 ```bash
-yarn dev 或 pnpm run dev
+pnpm dev
 ```
