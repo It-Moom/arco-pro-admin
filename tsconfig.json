@@ -1,20 +1,26 @@
 {
   "compilerOptions": {
-    "target": "ES2020",
+    "target": "ESNext",
     "jsx": "preserve",
-    "lib": ["es2020", "dom"],
-    "baseUrl": ".",
-    "module": "ES2020",
-    "moduleResolution": "node",
+    "jsxFactory": "h",
+    "jsxFragmentFactory": "Fragment",
+    "jsxImportSource": "vue",
+    "lib": ["ESNext", "DOM", "DOM.Iterable"],
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
     "paths": {
-      "@/*": ["src/*"]
+      "@/*": ["./src/*"]
     },
     "resolveJsonModule": true,
+    "allowJs": true,
     "strict": true,
-    "sourceMap": true,
+    "strictNullChecks": true,
     "esModuleInterop": true,
     "skipLibCheck": true
   },
-  "include": ["src/**/*", "src/**/*.vue"],
-  "exclude": ["node_modules"]
+  "exclude": [
+    "**/dist/**",
+    "**/node_modules/**",
+    "coverage"
+  ]
 }
