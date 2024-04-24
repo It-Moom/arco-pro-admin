@@ -4,7 +4,6 @@
     <div class="login-form-sub-title">{{ $t('login.form.title') }}</div>
     <div class="login-form-error-msg">{{ errorMessage }}</div>
     <a-form
-      ref="loginForm"
       :model="userInfo"
       class="login-form"
       layout="vertical"
