@@ -10,7 +10,7 @@ on:
       - main
 
 jobs:
-  build:
+  test:
     runs-on: ubuntu-latest
 
     steps:
@@ -23,6 +23,9 @@ jobs:
           node-version: 20
           registry-url: https://registry.npmjs.org/
           cache: pnpm
+
+      - name: lint
+        run: pnpm lint
 
       - name: build
         run: pnpm build
