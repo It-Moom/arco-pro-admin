@@ -11,7 +11,6 @@
   "scripts": {
     "dev": "pnpm install && vite --config ./config/vite.config.dev.ts",
     "build": "pnpm install && vite build --config ./config/vite.config.prod.ts",
-    "report": "cross-env REPORT=true pnpm build",
     "preview": "pnpm build && vite preview --host",
     "lint": "pnpm install && eslint .",
     "lint:fix": "pnpm install && eslint . --fix"
