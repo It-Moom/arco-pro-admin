@@ -99,26 +99,26 @@
                 : null;
               const node
                 = element?.children && element?.children.length !== 0
-? (
-  <a-sub-menu
-    key={element?.name}
-    v-slots={{
+                  ? (
+                    <a-sub-menu
+                      key={element?.name}
+                      v-slots={{
                       icon,
                       title: () => h(compile(t(element?.meta?.locale || ''))),
-    }}
-  >
-    {travel(element?.children)}
-  </a-sub-menu>
+                      }}
+                    >
+                      {travel(element?.children)}
+                    </a-sub-menu>
                 )
-: (
-  <a-menu-item
-    key={element?.name}
-    v-slots={{ icon }}
-    onClick={() => goto(element)}
-  >
-    {t(element?.meta?.locale || '')}
-  </a-menu-item>
-                );
+                  : (
+                    <a-menu-item
+                      key={element?.name}
+                      v-slots={{ icon }}
+                      onClick={() => goto(element)}
+                    >
+                      {t(element?.meta?.locale || '')}
+                    </a-menu-item>
+              );
               nodes.push(node as never);
             });
           }
