@@ -22,8 +22,8 @@ importers:
         specifier: ^1.6.8
         version: 1.6.8
       dayjs:
-        specifier: ^1.11.10
-        version: 1.11.10
+        specifier: ^1.11.11
+        version: 1.11.11
       echarts:
         specifier: ^5.5.0
         version: 5.5.0
@@ -50,7 +50,7 @@ importers:
         version: 3.4.25(typescript@5.4.5)
       vue-echarts:
         specifier: ^6.7.1
-        version: 6.7.1(@vue/runtime-core@3.2.47)(echarts@5.5.0)(vue@3.4.25(typescript@5.4.5))
+        version: 6.7.1(@vue/runtime-core@3.4.25)(echarts@5.5.0)(vue@3.4.25(typescript@5.4.5))
       vue-i18n:
         specifier: ^9.13.1
         version: 9.13.1(vue@3.4.25(typescript@5.4.5))
@@ -1032,14 +1032,8 @@ packages:
       typescript:
         optional: true
 
-  '@vue/reactivity@3.2.47':
-    resolution: {integrity: sha512-7khqQ/75oyyg+N/e+iwV6lpy1f5wq759NdlS1fpAhFXa8VeAIKGgk2E/C4VF59lx5b+Ezs5fpp/5WsRYXQiKxQ==}
-
   '@vue/reactivity@3.4.25':
     resolution: {integrity: sha512-mKbEtKr1iTxZkAG3vm3BtKHAOhuI4zzsVcN0epDldU/THsrvfXRKzq+lZnjczZGnTdh3ojd86/WrP+u9M51pWQ==}
-
-  '@vue/runtime-core@3.2.47':
-    resolution: {integrity: sha512-RZxbLQIRB/K0ev0K9FXhNbBzT32H9iRtYbaXb0ZIz2usLms/D55dJR2t6cIEUn6vyhS3ALNvNthI+Q95C+NOpA==}
 
   '@vue/runtime-core@3.4.25':
     resolution: {integrity: sha512-3qhsTqbEh8BMH3pXf009epCI5E7bKu28fJLi9O6W+ZGt/6xgSfMuGPqa5HRbUxLoehTNp5uWvzCr60KuiRIL0Q==}
@@ -1051,9 +1045,6 @@ packages:
     resolution: {integrity: sha512-8VTwq0Zcu3K4dWV0jOwIVINESE/gha3ifYCOKEhxOj6MEl5K5y8J8clQncTcDhKF+9U765nRw4UdUEXvrGhyVQ==}
     peerDependencies:
       vue: 3.4.25
-
-  '@vue/shared@3.2.47':
-    resolution: {integrity: sha512-BHGyyGN3Q97EZx0taMQ+OLNuZcW3d37ZEVmEAyeoA9ERdGvm9Irc/0Fua8SNyOtV1w6BS4q25wbMzJujO9HIfQ==}
 
   '@vue/shared@3.4.24':
     resolution: {integrity: sha512-BW4tajrJBM9AGAknnyEw5tO2xTmnqgup0VTnDAMcxYmqOX0RG0b9aSUGAbEKolD91tdwpA6oCwbltoJoNzpItw==}
@@ -1452,8 +1443,8 @@ packages:
     engines: {node: '>=10'}
     hasBin: true
 
-  dayjs@1.11.10:
-    resolution: {integrity: sha512-vjAczensTgRcqDERK0SR2XMwsF/tSvnvlv6VcF2GIhg6Sx4yOIt/irsr1RDJsKiIyBzJDpCoXiWWq28MqH2cnQ==}
+  dayjs@1.11.11:
+    resolution: {integrity: sha512-okzr3f11N6WuqYtZSvm+F776mB41wRZMhKP+hc34YdW+KmtYYK9iqvHSwo2k9FEH3fhGXvOPV6yz2IcSrfRUDg==}
 
   de-indent@1.0.2:
     resolution: {integrity: sha512-e/1zu3xH5MQryN2zdVaF0OrdNLUbvWxzMbi+iNA6Bky7l1RoP8a2fIbRocyHclXt/arDrrR6lL3TqFD9pMQTsg==}
@@ -2519,7 +2510,7 @@ packages:
     hasBin: true
 
   json-buffer@3.0.0:
-    resolution: {integrity: sha1-Wx85evx11ne96Lz8Dkfh+aPZqJg=}
+    resolution: {integrity: sha512-CuUqjv0FUZIdXkHPI8MezCnFCdaTAacej1TZYulLoAg1h/PhwkdXFN4V/gzY4g+fMBCOV2xF+rp7t2XD2ns/NQ==}
 
   json-buffer@3.0.1:
     resolution: {integrity: sha512-4bV5BfR2mqfQTJm+V5tPPdf+ZpuhiIvTuAB5g8kcrXOZpTT/QwwVRWBywX1ozr6lEuPdbHxwaJlm9G6mI2sfSQ==}
@@ -3910,7 +3901,7 @@ snapshots:
       b-tween: 0.3.3
       b-validate: 1.4.4
       compute-scroll-into-view: 1.0.20
-      dayjs: 1.11.10
+      dayjs: 1.11.11
       number-precision: 1.6.0
       resize-observer-polyfill: 1.5.1
       scroll-into-view-if-needed: 2.2.31
@@ -4858,20 +4849,9 @@ snapshots:
     optionalDependencies:
       typescript: 5.4.5
 
-  '@vue/reactivity@3.2.47':
-    dependencies:
-      '@vue/shared': 3.2.47
-    optional: true
-
   '@vue/reactivity@3.4.25':
     dependencies:
       '@vue/shared': 3.4.25
-
-  '@vue/runtime-core@3.2.47':
-    dependencies:
-      '@vue/reactivity': 3.2.47
-      '@vue/shared': 3.2.47
-    optional: true
 
   '@vue/runtime-core@3.4.25':
     dependencies:
@@ -4889,9 +4869,6 @@ snapshots:
       '@vue/compiler-ssr': 3.4.25
       '@vue/shared': 3.4.25
       vue: 3.4.25(typescript@5.4.5)
-
-  '@vue/shared@3.2.47':
-    optional: true
 
   '@vue/shared@3.4.24': {}
 
@@ -5322,7 +5299,7 @@ snapshots:
       bin-build: 3.0.0
       bin-wrapper: bin-wrapper-china@0.1.0
 
-  dayjs@1.11.10: {}
+  dayjs@1.11.11: {}
 
   de-indent@1.0.2: {}
 
@@ -7639,14 +7616,14 @@ snapshots:
     dependencies:
       vue: 3.4.25(typescript@5.4.5)
 
-  vue-echarts@6.7.1(@vue/runtime-core@3.2.47)(echarts@5.5.0)(vue@3.4.25(typescript@5.4.5)):
+  vue-echarts@6.7.1(@vue/runtime-core@3.4.25)(echarts@5.5.0)(vue@3.4.25(typescript@5.4.5)):
     dependencies:
       echarts: 5.5.0
       resize-detector: 0.3.0
       vue: 3.4.25(typescript@5.4.5)
       vue-demi: 0.13.11(vue@3.4.25(typescript@5.4.5))
     optionalDependencies:
-      '@vue/runtime-core': 3.2.47
+      '@vue/runtime-core': 3.4.25
 
   vue-eslint-parser@9.4.2(eslint@9.1.1):
     dependencies:

@@ -6,7 +6,7 @@
   "description": "Arco Design Pro for Vue",
   "author": "It-Moom Team",
   "engines": {
-    "node": ">=14.0.0"
+    "node": ">=14.21.3"
   },
   "scripts": {
     "dev": "pnpm install && vite --config ./config/vite.config.dev.ts",
@@ -20,7 +20,7 @@
     "@arco-design/web-vue": "^2.55.1",
     "@vueuse/core": "^10.9.0",
     "axios": "^1.6.8",
-    "dayjs": "^1.11.10",
+    "dayjs": "^1.11.11",
     "echarts": "^5.5.0",
     "lodash": "^4.17.21",
     "mitt": "^3.0.1",
