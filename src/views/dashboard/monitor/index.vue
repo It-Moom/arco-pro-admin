@@ -62,7 +62,7 @@
 
 <style lang="less" scoped>
   // responsive
-  @media (max-width: @screen-lg) {
+  @media (max-width: 992px) {
     .layout {
       flex-wrap: wrap;
       &-left-side {

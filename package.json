@@ -5,12 +5,9 @@
   "packageManager": "pnpm@9.0.6",
   "description": "Arco Design Pro for Vue",
   "author": "It-Moom Team",
-  "engines": {
-    "node": ">=14.21.3"
-  },
   "scripts": {
-    "dev": "pnpm install && vite --config ./config/vite.config.dev.ts",
-    "build": "pnpm install && vite build --config ./config/vite.config.prod.ts",
+    "dev": "pnpm install && vite --host",
+    "build": "pnpm install && vite build",
     "preview": "pnpm build && vite preview --host",
     "up": "npx taze latest -w -i",
     "lint": "pnpm install && eslint .",
@@ -36,6 +33,7 @@
   "devDependencies": {
     "@arco-plugins/vite-vue": "^1.4.5",
     "@moomfe/eslint-config": "^3.0.0",
+    "@rollup/pluginutils": "^5.1.0",
     "@types/lodash": "^4.17.0",
     "@types/mockjs": "^1.0.10",
     "@types/nprogress": "^0.2.3",
@@ -46,6 +44,7 @@
     "consola": "^3.2.3",
     "cross-env": "^7.0.3",
     "eslint": "^9.1.1",
+    "fs-extra": "^11.2.0",
     "less": "^4.2.0",
     "lint-staged": "^15.2.2",
     "mockjs": "^1.1.0",
@@ -55,6 +54,8 @@
     "rollup": "^4.17.0",
     "rollup-plugin-visualizer": "^5.12.0",
     "typescript": "^5.4.5",
+    "unocss": "^0.59.4",
+    "unocss-preset-extra": "^0.5.3",
     "unplugin-vue-components": "^0.26.0",
     "vite": "^5.2.10",
     "vite-plugin-compression": "^0.5.1",
