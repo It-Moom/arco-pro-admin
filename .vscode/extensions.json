@@ -1,0 +1,14 @@
+{
+  "recommendations": [
+    "vue.volar",
+    "dbaeumer.vscode-eslint",
+    "antfu.iconify",
+    "antfu.unocss",
+    "csstools.postcss",
+    "syler.sass-indented"
+  ],
+  "unwantedRecommendations": [
+    "octref.vetur",
+    "vue.vscode-typescript-vue-plugin"
+  ]
+}
