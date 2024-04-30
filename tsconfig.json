@@ -12,9 +12,14 @@
       "@/*": ["./src/*"]
     },
     "resolveJsonModule": true,
+    "types": [
+      "vite/client",
+      "unplugin-icons/types/vue"
+    ],
     "allowJs": true,
     "strict": true,
     "strictNullChecks": true,
+    "noUnusedLocals": true,
     "esModuleInterop": true,
     "skipLibCheck": true
   },
