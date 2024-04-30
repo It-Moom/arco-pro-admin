@@ -4,6 +4,8 @@ import { defineConfig } from 'vite';
 import Vue from '@vitejs/plugin-vue';
 import VueJsx from '@vitejs/plugin-vue-jsx';
 import Unocss from 'unocss/vite';
+import Icons from 'unplugin-icons/vite';
+import IconsResolver from 'unplugin-icons/resolver';
 import Components from 'unplugin-vue-components/vite';
 import { ArcoResolver } from 'unplugin-vue-components/resolvers';
 import AutoImport from 'unplugin-auto-import/vite';
@@ -26,6 +28,11 @@ export default defineConfig({
     VueJsx(),
     // 原子化 CSS 引擎
     Unocss(),
+    // 将图标作为图标组件可进行导入
+    Icons({
+      scale: 1,
+      compiler: 'vue3',
+    }),
     // 自动导入使用到的组件
     Components({
       dts: resolve(__dirname, './types/components.d.ts'),
@@ -33,6 +40,9 @@ export default defineConfig({
         resolve(__dirname, './src/components'),
       ],
       resolvers: [
+        // 自动导入图标组件
+        IconsResolver({ prefix: 'i' }),
+        // 自动导入 Arco 组件
         ArcoResolver({ importStyle: false }),
       ],
     }),
