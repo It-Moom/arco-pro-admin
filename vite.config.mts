@@ -9,6 +9,7 @@ import IconsResolver from 'unplugin-icons/resolver';
 import Components from 'unplugin-vue-components/vite';
 import { ArcoResolver } from 'unplugin-vue-components/resolvers';
 import AutoImport from 'unplugin-auto-import/vite';
+import { MixteUseAutoImport } from '@mixte/use/register';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
@@ -54,6 +55,9 @@ export default defineConfig({
         'vue',
         'vue-router',
         'vue-i18n',
+        '@vueuse/core',
+        '@vueuse/math',
+        MixteUseAutoImport({ useWithVueUseCore: true }),
       ],
       resolvers: [
         ArcoResolver(),
