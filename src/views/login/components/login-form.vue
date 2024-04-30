@@ -1,11 +1,11 @@
 <template>
-  <div class="login-form-wrapper">
-    <div class="login-form-title">{{ $t('login.form.title') }}</div>
-    <div class="login-form-sub-title">{{ $t('login.form.title') }}</div>
-    <div class="login-form-error-msg">{{ errorMessage }}</div>
+  <div w-82 px-2>
+    <div class="fw-500 text-2xl c-[var(--color-text-1)]">{{ $t('login.form.title') }}</div>
+    <div class="text-bse c-[var(--color-text-3)]">{{ $t('login.form.title') }}</div>
+    <div class="h-8 lh-8 c-[rgba(var(--red-6))]">{{ errorMessage }}</div>
+
     <a-form
       :model="userInfo"
-      class="login-form"
       layout="vertical"
       @submit="handleSubmit"
     >
@@ -41,7 +41,7 @@
         </a-input-password>
       </a-form-item>
       <a-space :size="16" direction="vertical">
-        <div class="login-form-password-actions">
+        <div flex justify-between>
           <a-checkbox
             checked="rememberPassword"
             :model-value="loginConfig.rememberPassword"
@@ -54,7 +54,7 @@
         <a-button type="primary" html-type="submit" long :loading="loading">
           {{ $t('login.form.login') }}
         </a-button>
-        <a-button type="text" long class="login-form-register-btn">
+        <a-button type="text" long class="text-[var(--color-text-3)]!">
           {{ $t('login.form.register') }}
         </a-button>
       </a-space>
@@ -128,39 +128,3 @@
     loginConfig.value.rememberPassword = value;
   }
 </script>
-
-<style lang="less" scoped>
-  .login-form {
-    &-wrapper {
-      width: 320px;
-    }
-
-    &-title {
-      color: var(--color-text-1);
-      font-weight: 500;
-      font-size: 24px;
-      line-height: 32px;
-    }
-
-    &-sub-title {
-      color: var(--color-text-3);
-      font-size: 16px;
-      line-height: 24px;
-    }
-
-    &-error-msg {
-      height: 32px;
-      color: rgb(var(--red-6));
-      line-height: 32px;
-    }
-
-    &-password-actions {
-      display: flex;
-      justify-content: space-between;
-    }
-
-    &-register-btn {
-      color: var(--color-text-3) !important;
-    }
-  }
-</style>
