@@ -198,7 +198,7 @@
   import { useDark, useFullscreen, useToggle } from '@vueuse/core';
   import MessageBox from '../message-box/index.vue';
   import { useAppStore, useUserStore } from '@/store';
-  import { LOCALE_OPTIONS } from '@/locale';
+  import { LOCALE_OPTIONS } from '@/modules/i18n/index';
   import useLocale from '@/hooks/locale';
   import useUser from '@/hooks/user';
   import Menu from '@/components/menu/index.vue';
