@@ -2,7 +2,7 @@
   "name": "arco-design-pro-vue",
   "version": "1.0.0",
   "private": true,
-  "packageManager": "pnpm@9.0.6",
+  "packageManager": "pnpm@9.1.0",
   "description": "Arco Design Pro for Vue",
   "author": "It-Moom Team",
   "scripts": {
@@ -35,7 +35,7 @@
   },
   "devDependencies": {
     "@arco-plugins/vite-vue": "^1.4.5",
-    "@iconify/json": "^2.2.206",
+    "@iconify/json": "^2.2.207",
     "@moomfe/eslint-config": "^3.0.0",
     "@rollup/pluginutils": "^5.1.0",
     "@types/lodash": "^4.17.1",
@@ -52,7 +52,7 @@
     "less": "^4.2.0",
     "lint-staged": "^15.2.2",
     "mockjs": "^1.1.0",
-    "pnpm": "^9.0.6",
+    "pnpm": "^9.1.0",
     "postcss-html": "^1.6.0",
     "prettier": "^3.2.5",
     "typescript": "^5.4.5",
