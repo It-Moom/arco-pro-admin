@@ -67,8 +67,8 @@ importers:
         specifier: ^1.4.5
         version: 1.4.5
       '@iconify/json':
-        specifier: ^2.2.206
-        version: 2.2.206
+        specifier: ^2.2.207
+        version: 2.2.207
       '@moomfe/eslint-config':
         specifier: ^3.0.0
         version: 3.0.0(@vue/compiler-sfc@3.4.26)
@@ -118,8 +118,8 @@ importers:
         specifier: ^1.1.0
         version: 1.1.0
       pnpm:
-        specifier: ^9.0.6
-        version: 9.0.6
+        specifier: ^9.1.0
+        version: 9.1.0
       postcss-html:
         specifier: ^1.6.0
         version: 1.6.0
@@ -643,8 +643,8 @@ packages:
     resolution: {integrity: sha512-X38nUbachlb01YMlvPFojKoiXq+LzZvuSce70KPMPdeM1Rj03k4dR7lDslhbqXn3Ang4EU3+EAmwEAsbrjHW3g==}
     engines: {node: '>=18.18'}
 
-  '@iconify/json@2.2.206':
-    resolution: {integrity: sha512-Vbi8BTvbEKZtCQDJDqMRDZenU8HYMHFtMkEx92pvyQN/Il5OfGwCNaR+bf9Sv2TkotnoiyqqickeWpdo0hllGQ==}
+  '@iconify/json@2.2.207':
+    resolution: {integrity: sha512-3ZsZcJHHCDoSbRKcpvdTk4e5ZnTLD902BjeNysj8NZIB5V9WaTh6L91eHyQgEaCt4j1shmAXrIr6LoImL6+GpA==}
 
   '@iconify/types@2.0.0':
     resolution: {integrity: sha512-+wluvCrRhXrhyOmRDJ3q8mux9JkKy5SJ/v8ol2tu4FVjyYvtEzkc/3pK15ET6RKg4b4w4BmTk1+gsCUhf21Ykg==}
@@ -3226,8 +3226,8 @@ packages:
     engines: {node: '>=10'}
     hasBin: true
 
-  pnpm@9.0.6:
-    resolution: {integrity: sha512-9thjEwlzIHy3ozbWtDmiQqJqyAaAd99TDWqGBpQZhT3B/+ZAKexZSpxQWjpBDRlkPIcKumd2Mw9c/dzxCpwWFw==}
+  pnpm@9.1.0:
+    resolution: {integrity: sha512-Z/WHmRapKT5c8FnCOFPVcb6vT3U8cH9AyyK+1fsVeMaq07bEEHzLO6CzW+AD62IaFkcayDbIe+tT+dVLtGEnJA==}
     engines: {node: '>=18.12'}
     hasBin: true
 
@@ -4560,7 +4560,7 @@ snapshots:
 
   '@humanwhocodes/retry@0.2.3': {}
 
-  '@iconify/json@2.2.206':
+  '@iconify/json@2.2.207':
     dependencies:
       '@iconify/types': 2.0.0
       pathe: 1.1.2
@@ -7452,7 +7452,7 @@ snapshots:
       bin-wrapper: 4.1.0
       execa: 4.1.0
 
-  pnpm@9.0.6: {}
+  pnpm@9.1.0: {}
 
   postcss-html@1.6.0:
     dependencies:
