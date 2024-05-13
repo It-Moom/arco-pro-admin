@@ -19,8 +19,8 @@
 <script lang="ts" setup>
   import { ref } from 'vue';
   import { graphic } from 'echarts';
-  import type { ContentDataRecord } from '@/api/dashboard';
-  import { queryContentData } from '@/api/dashboard';
+  import type { ContentDataRecord } from '@/apis/dashboard';
+  import { queryContentData } from '@/apis/dashboard';
   import type { ToolTipFormatterParams } from '@/types/echarts';
   import type { AnyObject } from '@/types/global';
 

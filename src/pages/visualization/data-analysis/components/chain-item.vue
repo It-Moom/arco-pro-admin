@@ -34,10 +34,10 @@
   import type {
     PublicOpinionAnalysis,
     PublicOpinionAnalysisRes,
-  } from '@/api/visualization';
+  } from '@/apis/visualization';
   import {
     queryPublicOpinionAnalysis,
-  } from '@/api/visualization';
+  } from '@/apis/visualization';
 
   const props = defineProps({
     title: {

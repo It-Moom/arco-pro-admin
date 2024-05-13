@@ -252,8 +252,8 @@
   import cloneDeep from 'lodash/cloneDeep';
   import Sortable from 'sortablejs';
   import type { Pagination } from '@/types/global';
-  import type { PolicyParams, PolicyRecord } from '@/api/list';
-  import { queryPolicyList } from '@/api/list';
+  import type { PolicyParams, PolicyRecord } from '@/apis/list';
+  import { queryPolicyList } from '@/apis/list';
 
   type SizeProps = 'mini' | 'small' | 'medium' | 'large';
   type Column = TableColumnData & { checked?: true };

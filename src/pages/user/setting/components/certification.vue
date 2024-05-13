@@ -12,10 +12,10 @@
   import type {
     EnterpriseCertificationModel,
     UnitCertification,
-  } from '@/api/user-center';
+  } from '@/apis/user-center';
   import {
     queryCertification,
-  } from '@/api/user-center';
+  } from '@/apis/user-center';
 
   const { loading, setLoading } = useLoading(true);
   const data = ref<UnitCertification>({

@@ -43,10 +43,10 @@
     BaseInfoModel,
     ChannelInfoModel,
     UnitChannelModel,
-  } from '@/api/form';
+  } from '@/apis/form';
   import {
     submitChannelForm,
-  } from '@/api/form';
+  } from '@/apis/form';
 
   const { loading, setLoading } = useLoading(false);
   const step = ref(1);

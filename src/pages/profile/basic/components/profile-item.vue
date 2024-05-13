@@ -29,7 +29,7 @@
   import type { PropType } from 'vue';
   import { computed } from 'vue';
   import { useI18n } from 'vue-i18n';
-  import type { ProfileBasicRes } from '@/api/profile';
+  import type { ProfileBasicRes } from '@/apis/profile';
 
   type BlockList = {
     title: string;

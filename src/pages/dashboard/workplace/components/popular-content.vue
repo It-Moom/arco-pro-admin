@@ -74,7 +74,7 @@
 <script lang="ts" setup>
   import { ref } from 'vue';
   import type { TableData } from '@arco-design/web-vue/es/table/interface';
-  import { queryPopularList } from '@/api/dashboard';
+  import { queryPopularList } from '@/apis/dashboard';
 
   const type = ref('text');
   const { loading, setLoading } = useLoading();

@@ -30,8 +30,8 @@
 
 <script lang="ts" setup>
   import { computed, ref } from 'vue';
-  import type { DataChainGrowth } from '@/api/visualization';
-  import { queryDataChainGrowth } from '@/api/visualization';
+  import type { DataChainGrowth } from '@/apis/visualization';
+  import { queryDataChainGrowth } from '@/apis/visualization';
 
   const props = defineProps({
     title: {

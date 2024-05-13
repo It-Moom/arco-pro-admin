@@ -69,7 +69,7 @@
   import type { ValidatedError } from '@arco-design/web-vue/es/form/interface';
   import { useI18n } from 'vue-i18n';
   import { useStorage } from '@vueuse/core';
-  import type { LoginData } from '@/api/user';
+  import type { LoginData } from '@/apis/user';
 
   const router = useRouter();
   const { t } = useI18n();

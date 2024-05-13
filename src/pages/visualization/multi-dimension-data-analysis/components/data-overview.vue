@@ -36,7 +36,7 @@
   import { computed, ref } from 'vue';
   import { useI18n } from 'vue-i18n';
   import type { LineSeriesOption } from 'echarts';
-  import { queryDataOverview } from '@/api/visualization';
+  import { queryDataOverview } from '@/apis/visualization';
   import type { ToolTipFormatterParams } from '@/types/echarts';
 
   function tooltipItemsHtmlString(items: ToolTipFormatterParams[]) {

@@ -68,8 +68,8 @@
 
 <script lang="ts" setup>
   import CardWrap from './card-wrap.vue';
-  import type { ServiceRecord } from '@/api/list';
-  import { queryInspectionList } from '@/api/list';
+  import type { ServiceRecord } from '@/apis/list';
+  import { queryInspectionList } from '@/apis/list';
 
   const defaultValue: ServiceRecord[] = Array.from({ length: 3 }).fill({});
   const { loading, response: renderData } = useRequest<ServiceRecord[]>(

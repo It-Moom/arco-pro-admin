@@ -1,6 +1,6 @@
 import { defineStore } from 'pinia';
-import type { LoginData } from '@/api/user';
-import { getUserInfo, login as userLogin, logout as userLogout } from '@/api/user';
+import type { LoginData } from '@/apis/user';
+import { getUserInfo, login as userLogin, logout as userLogout } from '@/apis/user';
 import { clearToken, setToken } from '@/utils/auth';
 import { removeRouteListener } from '@/utils/route-listener';
 

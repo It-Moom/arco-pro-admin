@@ -32,8 +32,8 @@
   import { ref } from 'vue';
   import ProfileItem from './components/profile-item.vue';
   import OperationLog from './components/operation-log.vue';
-  import type { ProfileBasicRes } from '@/api/profile';
-  import { queryProfileBasic } from '@/api/profile';
+  import type { ProfileBasicRes } from '@/apis/profile';
+  import { queryProfileBasic } from '@/apis/profile';
 
   const { loading, setLoading } = useLoading(true);
   const { loading: preLoading, setLoading: preSetLoading } = useLoading(true);

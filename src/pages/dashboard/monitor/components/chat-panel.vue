@@ -45,8 +45,8 @@
 <script lang="ts" setup>
   import { ref } from 'vue';
   import ChatList from './chat-list.vue';
-  import type { ChatRecord } from '@/api/message';
-  import { queryChatList } from '@/api/message';
+  import type { ChatRecord } from '@/apis/message';
+  import { queryChatList } from '@/apis/message';
 
   const { loading, setLoading } = useLoading(true);
   const chatData = ref<ChatRecord[]>([]);

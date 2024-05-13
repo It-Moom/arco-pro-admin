@@ -30,11 +30,11 @@
   import type {
     MessageListType,
     MessageRecord,
-  } from '@/api/message';
+  } from '@/apis/message';
   import {
     queryMessageList,
     setMessageStatus,
-  } from '@/api/message';
+  } from '@/apis/message';
 
   interface TabItem {
     key: string;

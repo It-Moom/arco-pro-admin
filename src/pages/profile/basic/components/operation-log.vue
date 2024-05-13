@@ -50,8 +50,8 @@
 
 <script lang="ts" setup>
   import { ref } from 'vue';
-  import type { operationLogRes } from '@/api/profile';
-  import { queryOperationLog } from '@/api/profile';
+  import type { operationLogRes } from '@/apis/profile';
+  import { queryOperationLog } from '@/apis/profile';
 
   const { loading, setLoading } = useLoading(true);
   const renderData = ref<operationLogRes>([]);

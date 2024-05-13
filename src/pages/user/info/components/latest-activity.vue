@@ -42,8 +42,8 @@
 
 <script lang="ts" setup>
   import { ref } from 'vue';
-  import type { LatestActivity } from '@/api/user-center';
-  import { queryLatestActivity } from '@/api/user-center';
+  import type { LatestActivity } from '@/apis/user-center';
+  import { queryLatestActivity } from '@/apis/user-center';
 
   const { loading, setLoading } = useLoading(true);
   const activityList = ref<LatestActivity[]>(Array.from({ length: 7 }).fill({}));

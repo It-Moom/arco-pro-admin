@@ -17,10 +17,10 @@
   import type { ToolTipFormatterParams } from '@/types/echarts';
   import type {
     ContentPublishRecord,
-  } from '@/api/visualization';
+  } from '@/apis/visualization';
   import {
     queryContentPublish,
-  } from '@/api/visualization';
+  } from '@/apis/visualization';
 
   function tooltipItemsHtmlString(items: ToolTipFormatterParams[]) {
     return items

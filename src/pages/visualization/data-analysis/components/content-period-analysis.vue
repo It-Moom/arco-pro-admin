@@ -11,7 +11,7 @@
 
 <script lang="ts" setup>
   import { ref } from 'vue';
-  import { queryContentPeriodAnalysis } from '@/api/visualization';
+  import { queryContentPeriodAnalysis } from '@/apis/visualization';
   import type { ToolTipFormatterParams } from '@/types/echarts';
 
   function tooltipItemsHtmlString(items: ToolTipFormatterParams[]) {

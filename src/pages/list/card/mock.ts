@@ -1,6 +1,6 @@
 import Mock from 'mockjs';
 import setupMock, { successResponseWrap } from '@/utils/setup-mock';
-import type { ServiceRecord } from '@/api/list';
+import type { ServiceRecord } from '@/apis/list';
 
 const qualityInspectionList: ServiceRecord[] = [
   {
