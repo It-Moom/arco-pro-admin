@@ -1,18 +1,30 @@
 import { defineStore } from 'pinia';
-import useAppStore from '../app';
-import type { UserState } from './types';
-import type {
-  LoginData,
-} from '@/api/user';
-import {
-  getUserInfo,
-  login as userLogin,
-  logout as userLogout,
-} from '@/api/user';
+import type { LoginData } from '@/api/user';
+import { getUserInfo, login as userLogin, logout as userLogout } from '@/api/user';
 import { clearToken, setToken } from '@/utils/auth';
 import { removeRouteListener } from '@/utils/route-listener';
 
-const useUserStore = defineStore('user', {
+export type RoleType = '' | '*' | 'admin' | 'user';
+export interface UserState {
+  name?: string;
+  avatar?: string;
+  job?: string;
+  organization?: string;
+  location?: string;
+  email?: string;
+  introduction?: string;
+  personalWebsite?: string;
+  jobName?: string;
+  organizationName?: string;
+  locationName?: string;
+  phone?: string;
+  registrationDate?: string;
+  accountId?: string;
+  certification?: number;
+  role: RoleType;
+}
+
+export const useUserStore = defineStore('user', {
   state: (): UserState => ({
     name: undefined,
     avatar: undefined,
@@ -91,5 +103,3 @@ const useUserStore = defineStore('user', {
     },
   },
 });
-
-export default useUserStore;

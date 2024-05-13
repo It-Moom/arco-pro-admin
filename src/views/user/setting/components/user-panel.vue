@@ -57,7 +57,6 @@
     RequestOption,
   } from '@arco-design/web-vue/es/upload/interfaces';
   import type { DescData } from '@arco-design/web-vue/es/descriptions/interface';
-  import { useUserStore } from '@/store';
   import { userUploadApi } from '@/api/user-center';
 
   const userStore = useUserStore();

@@ -26,7 +26,6 @@
     listenerRouteChange,
     removeRouteListener,
   } from '@/utils/route-listener';
-  import { useAppStore, useTabBarStore } from '@/store';
 
   const appStore = useAppStore();
   const tabBarStore = useTabBarStore();

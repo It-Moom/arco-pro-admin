@@ -16,7 +16,6 @@
 <script lang="ts" setup>
   import type { PropType } from 'vue';
   import FormWrapper from './form-wrapper.vue';
-  import { useAppStore } from '@/store';
 
   interface OptionsProps {
     name: string;

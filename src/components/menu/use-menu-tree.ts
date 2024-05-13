@@ -2,7 +2,6 @@ import { computed } from 'vue';
 import type { RouteRecordNormalized, RouteRecordRaw } from 'vue-router';
 import { cloneDeep } from 'lodash';
 import usePermission from '@/hooks/permission';
-import { useAppStore } from '@/store';
 import appClientMenus from '@/router/app-menus';
 
 export default function useMenuTree() {

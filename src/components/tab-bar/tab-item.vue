@@ -60,9 +60,8 @@
   import type { PropType } from 'vue';
   import { computed } from 'vue';
   import { useRoute, useRouter } from 'vue-router';
-  import { useTabBarStore } from '@/store';
-  import type { TagProps } from '@/store/modules/tab-bar/types';
   import { DEFAULT_ROUTE_NAME, REDIRECT_ROUTE_NAME } from '@/router/constants';
+  import type { TagProps } from '@/stores/tabBar';
 
   const props = defineProps({
     itemData: {

@@ -2,11 +2,29 @@ import { defineStore } from 'pinia';
 import { Notification } from '@arco-design/web-vue';
 import type { NotificationReturn } from '@arco-design/web-vue/es/notification/interface';
 import type { RouteRecordNormalized } from 'vue-router';
-import type { AppState } from './types';
 import defaultSettings from '@/config/settings.json';
 import { getMenuList } from '@/api/user';
 
-const useAppStore = defineStore('app', {
+export interface AppState {
+  theme: string;
+  colorWeak: boolean;
+  navbar: boolean;
+  menu: boolean;
+  topMenu: boolean;
+  hideMenu: boolean;
+  menuCollapse: boolean;
+  footer: boolean;
+  themeColor: string;
+  menuWidth: number;
+  globalSettings: boolean;
+  device: string;
+  tabBar: boolean;
+  menuFromServer: boolean;
+  serverMenu: RouteRecordNormalized[];
+  [key: string]: unknown;
+}
+
+export const useAppStore = defineStore('app', {
   state: (): AppState => ({ ...defaultSettings }),
 
   getters: {
@@ -75,5 +93,3 @@ const useAppStore = defineStore('app', {
     },
   },
 });
-
-export default useAppStore;

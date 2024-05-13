@@ -1,6 +1,5 @@
 import { onBeforeMount, onBeforeUnmount, onMounted } from 'vue';
 import { useDebounceFn } from '@vueuse/core';
-import { useAppStore } from '@/store';
 import { addEventListen, removeEventListen } from '@/utils/event';
 
 const WIDTH = 992; // https://arco.design/vue/component/grid#responsivevalue

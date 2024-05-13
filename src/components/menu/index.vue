@@ -4,7 +4,6 @@
   import { useRoute, useRouter } from 'vue-router';
   import type { RouteMeta, RouteRecordRaw } from 'vue-router';
   import useMenuTree from './use-menu-tree';
-  import { useAppStore } from '@/store';
   import { listenerRouteChange } from '@/utils/route-listener';
   import { openWindow, regexUrl } from '@/utils';
 

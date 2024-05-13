@@ -197,7 +197,6 @@
   import { Message } from '@arco-design/web-vue';
   import { useDark, useFullscreen, useToggle } from '@vueuse/core';
   import MessageBox from '../message-box/index.vue';
-  import { useAppStore, useUserStore } from '@/store';
   import { LOCALE_OPTIONS } from '@/modules/i18n/index';
   import useLocale from '@/hooks/locale';
   import useUser from '@/hooks/user';

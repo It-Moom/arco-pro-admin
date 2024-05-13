@@ -59,6 +59,10 @@ export default defineConfig({
         '@vueuse/math',
         MixteUseAutoImport({ useWithVueUseCore: true }),
       ],
+      dirs: [
+        resolve(__dirname, './src/composables'),
+        resolve(__dirname, './src/stores'),
+      ],
       resolvers: [
         ArcoResolver(),
       ],
