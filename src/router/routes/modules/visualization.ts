@@ -15,7 +15,7 @@ const VISUALIZATION: AppRouteRecordRaw = {
     {
       path: 'data-analysis',
       name: 'DataAnalysis',
-      component: () => import('@/views/visualization/data-analysis/index.vue'),
+      component: () => import('@/pages/visualization/data-analysis/index.vue'),
       meta: {
         locale: 'menu.visualization.dataAnalysis',
         requiresAuth: true,
@@ -26,7 +26,7 @@ const VISUALIZATION: AppRouteRecordRaw = {
       path: 'multi-dimension-data-analysis',
       name: 'MultiDimensionDataAnalysis',
       component: () =>
-        import('@/views/visualization/multi-dimension-data-analysis/index.vue'),
+        import('@/pages/visualization/multi-dimension-data-analysis/index.vue'),
       meta: {
         locale: 'menu.visualization.multiDimensionDataAnalysis',
         requiresAuth: true,

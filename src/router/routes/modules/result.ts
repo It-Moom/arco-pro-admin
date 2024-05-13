@@ -15,7 +15,7 @@ const RESULT: AppRouteRecordRaw = {
     {
       path: 'success',
       name: 'Success',
-      component: () => import('@/views/result/success/index.vue'),
+      component: () => import('@/pages/result/success/index.vue'),
       meta: {
         locale: 'menu.result.success',
         requiresAuth: true,
@@ -25,7 +25,7 @@ const RESULT: AppRouteRecordRaw = {
     {
       path: 'error',
       name: 'Error',
-      component: () => import('@/views/result/error/index.vue'),
+      component: () => import('@/pages/result/error/index.vue'),
       meta: {
         locale: 'menu.result.error',
         requiresAuth: true,

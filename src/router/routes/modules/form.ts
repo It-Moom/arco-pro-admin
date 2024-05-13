@@ -15,7 +15,7 @@ const FORM: AppRouteRecordRaw = {
     {
       path: 'step',
       name: 'Step',
-      component: () => import('@/views/form/step/index.vue'),
+      component: () => import('@/pages/form/step/index.vue'),
       meta: {
         locale: 'menu.form.step',
         requiresAuth: true,
@@ -25,7 +25,7 @@ const FORM: AppRouteRecordRaw = {
     {
       path: 'group',
       name: 'Group',
-      component: () => import('@/views/form/group/index.vue'),
+      component: () => import('@/pages/form/group/index.vue'),
       meta: {
         locale: 'menu.form.group',
         requiresAuth: true,

@@ -9,6 +9,7 @@ import globalComponents from '@/components';
 import i18n from '@/modules/i18n/index';
 import pinia from '@/modules/pinia/index';
 import '@/api/interceptor';
+
 import '@unocss/reset/tailwind-compat.css';
 import 'uno.css';
 import '@arco-design/web-vue/dist/arco.css';
