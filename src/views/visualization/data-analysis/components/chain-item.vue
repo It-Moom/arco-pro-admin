@@ -31,7 +31,6 @@
 <script lang="ts" setup>
   import type { CSSProperties, PropType } from 'vue';
   import { ref } from 'vue';
-  import useLoading from '@/hooks/loading';
   import type {
     PublicOpinionAnalysis,
     PublicOpinionAnalysisRes,
@@ -39,7 +38,6 @@
   import {
     queryPublicOpinionAnalysis,
   } from '@/api/visualization';
-  import useChartOption from '@/hooks/chart-option';
 
   const props = defineProps({
     title: {

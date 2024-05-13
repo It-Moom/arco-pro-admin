@@ -9,7 +9,7 @@ function queryDevice() {
   return rect.width - 1 < WIDTH;
 }
 
-export default function useResponsive(immediate?: boolean) {
+export function useResponsive(immediate?: boolean) {
   const appStore = useAppStore();
   function resizeHandler() {
     if (!document.hidden) {

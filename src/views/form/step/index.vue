@@ -47,7 +47,6 @@
   import {
     submitChannelForm,
   } from '@/api/form';
-  import useLoading from '@/hooks/loading';
 
   const { loading, setLoading } = useLoading(false);
   const step = ref(1);

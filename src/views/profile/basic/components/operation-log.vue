@@ -52,7 +52,6 @@
   import { ref } from 'vue';
   import type { operationLogRes } from '@/api/profile';
   import { queryOperationLog } from '@/api/profile';
-  import useLoading from '@/hooks/loading';
 
   const { loading, setLoading } = useLoading(true);
   const renderData = ref<operationLogRes>([]);

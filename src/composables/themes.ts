@@ -1,6 +1,6 @@
 import { computed } from 'vue';
 
-export default function useThemes() {
+export function useThemes() {
   const appStore = useAppStore();
   const isDark = computed(() => {
     return appStore.theme === 'dark';

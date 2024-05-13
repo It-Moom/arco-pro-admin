@@ -1,7 +1,7 @@
 import { useRouter } from 'vue-router';
 import { Message } from '@arco-design/web-vue';
 
-export default function useUser() {
+export function useUser() {
   const router = useRouter();
   const userStore = useUserStore();
   const logout = async (logoutTo?: string) => {

@@ -35,7 +35,6 @@
     queryMessageList,
     setMessageStatus,
   } from '@/api/message';
-  import useLoading from '@/hooks/loading';
 
   interface TabItem {
     key: string;

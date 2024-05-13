@@ -37,7 +37,6 @@
 <script lang="ts" setup>
   import type { MyTeamRecord } from '@/api/user-center';
   import { queryMyTeamList } from '@/api/user-center';
-  import useRequest from '@/hooks/request';
 
   const defaultValue: MyTeamRecord[] = Array.from({ length: 4 }).fill({});
   const { loading, response: teamList } = useRequest<MyTeamRecord[]>(

@@ -30,10 +30,8 @@
 
 <script lang="ts" setup>
   import { computed, ref } from 'vue';
-  import useLoading from '@/hooks/loading';
   import type { DataChainGrowth } from '@/api/visualization';
   import { queryDataChainGrowth } from '@/api/visualization';
-  import useChartOption from '@/hooks/chart-option';
 
   const props = defineProps({
     title: {

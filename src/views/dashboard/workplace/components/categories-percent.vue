@@ -16,9 +16,6 @@
 </template>
 
 <script lang="ts" setup>
-  import useLoading from '@/hooks/loading';
-  import useChartOption from '@/hooks/chart-option';
-
   const { loading } = useLoading();
   const { chartOption } = useChartOption((isDark) => {
     // echarts support https://echarts.apache.org/zh/theme-builder.html

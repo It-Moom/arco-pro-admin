@@ -32,7 +32,6 @@
   import { ref } from 'vue';
   import ProfileItem from './components/profile-item.vue';
   import OperationLog from './components/operation-log.vue';
-  import useLoading from '@/hooks/loading';
   import type { ProfileBasicRes } from '@/api/profile';
   import { queryProfileBasic } from '@/api/profile';
 

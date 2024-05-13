@@ -254,7 +254,6 @@
   import type { Pagination } from '@/types/global';
   import type { PolicyParams, PolicyRecord } from '@/api/list';
   import { queryPolicyList } from '@/api/list';
-  import useLoading from '@/hooks/loading';
 
   type SizeProps = 'mini' | 'small' | 'medium' | 'large';
   type Column = TableColumnData & { checked?: true };

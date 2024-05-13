@@ -10,9 +10,6 @@
 </template>
 
 <script lang="ts" setup>
-  import useLoading from '@/hooks/loading';
-  import useChartOption from '@/hooks/chart-option';
-
   const { chartOption } = useChartOption((isDark) => {
     const graphicElementStyle = {
       textAlign: 'center',

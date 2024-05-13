@@ -16,7 +16,6 @@
   import {
     queryCertification,
   } from '@/api/user-center';
-  import useLoading from '@/hooks/loading';
 
   const { loading, setLoading } = useLoading(true);
   const data = ref<UnitCertification>({

@@ -15,14 +15,12 @@
 <script lang="ts" setup>
   import { ref } from 'vue';
   import type { ToolTipFormatterParams } from '@/types/echarts';
-  import useLoading from '@/hooks/loading';
   import type {
     ContentPublishRecord,
   } from '@/api/visualization';
   import {
     queryContentPublish,
   } from '@/api/visualization';
-  import useChartOption from '@/hooks/chart-option';
 
   function tooltipItemsHtmlString(items: ToolTipFormatterParams[]) {
     return items

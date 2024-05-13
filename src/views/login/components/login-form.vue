@@ -69,7 +69,6 @@
   import type { ValidatedError } from '@arco-design/web-vue/es/form/interface';
   import { useI18n } from 'vue-i18n';
   import { useStorage } from '@vueuse/core';
-  import useLoading from '@/hooks/loading';
   import type { LoginData } from '@/api/user';
 
   const router = useRouter();

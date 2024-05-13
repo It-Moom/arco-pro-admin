@@ -59,7 +59,6 @@
 
 <script lang="ts" setup>
   import ChainItem from './chain-item.vue';
-  import useThemes from '@/hooks/themes';
 
   const { isDark } = useThemes();
 </script>

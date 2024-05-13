@@ -52,8 +52,6 @@
   import Menu from '@/components/menu/index.vue';
   import Footer from '@/components/footer/index.vue';
   import TabBar from '@/components/tab-bar/index.vue';
-  import usePermission from '@/hooks/permission';
-  import useResponsive from '@/hooks/responsive';
 
   const isInit = ref(false);
   const appStore = useAppStore();

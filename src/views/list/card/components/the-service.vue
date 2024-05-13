@@ -46,7 +46,6 @@
   import CardWrap from './card-wrap.vue';
   import type { ServiceRecord } from '@/api/list';
   import { queryTheServiceList } from '@/api/list';
-  import useRequest from '@/hooks/request';
 
   const defaultValue: ServiceRecord[] = Array.from({ length: 4 }).fill({});
   const { loading, response: renderData } = useRequest<ServiceRecord[]>(

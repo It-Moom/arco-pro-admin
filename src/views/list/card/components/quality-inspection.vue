@@ -70,7 +70,6 @@
   import CardWrap from './card-wrap.vue';
   import type { ServiceRecord } from '@/api/list';
   import { queryInspectionList } from '@/api/list';
-  import useRequest from '@/hooks/request';
 
   const defaultValue: ServiceRecord[] = Array.from({ length: 3 }).fill({});
   const { loading, response: renderData } = useRequest<ServiceRecord[]>(
