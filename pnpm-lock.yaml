@@ -11,9 +11,18 @@ importers:
       '@arco-design/web-vue':
         specifier: ^2.55.2
         version: 2.55.2(vue@3.4.27(typescript@5.4.5))
+      '@mixte/components':
+        specifier: ^1.13.0-beta.1
+        version: 1.13.0-beta.1(vue@3.4.27(typescript@5.4.5))
+      '@mixte/snippets':
+        specifier: ^1.13.0-beta.1
+        version: 1.13.0-beta.1
       '@mixte/use':
-        specifier: ^1.11.0
-        version: 1.11.0(vue@3.4.27(typescript@5.4.5))
+        specifier: ^1.13.0-beta.1
+        version: 1.13.0-beta.1(vue@3.4.27(typescript@5.4.5))
+      '@mixte/validator':
+        specifier: ^1.13.0-beta.1
+        version: 1.13.0-beta.1
       '@vueuse/core':
         specifier: ^10.9.0
         version: 10.9.0(vue@3.4.27(typescript@5.4.5))
@@ -36,8 +45,8 @@ importers:
         specifier: ^3.0.1
         version: 3.0.1
       mixte:
-        specifier: ^1.11.0
-        version: 1.11.0
+        specifier: ^1.13.0-beta.1
+        version: 1.13.0-beta.1
       nprogress:
         specifier: ^0.2.0
         version: 0.2.0
@@ -719,8 +728,17 @@ packages:
     resolution: {integrity: sha512-f5DRIOZf7wxogefH03RjMPMdBF7ADTWUMoOs9kaJo06EfwF+aFhMZMDZxHg/Xe12hptN9xoZjGso2fdjapBRIA==}
     engines: {node: '>=10'}
 
-  '@mixte/use@1.11.0':
-    resolution: {integrity: sha512-tIFKUkprWCaiWl2dJqe3MS+iSAtMCV/2KKj1p0j1pdoOoPJ2KgZM/o+IbBEgUHbuas65FMZ/kUF3D2EesHvzFw==}
+  '@mixte/components@1.13.0-beta.1':
+    resolution: {integrity: sha512-8rBWJyJ/nYqXye7P4sWUzuxTnY6vEhU33u4AqcnIjhs3JLDddu4q6PtVSbAZXOxaOUZiGJUZRsu177jm7puM1w==}
+
+  '@mixte/snippets@1.13.0-beta.1':
+    resolution: {integrity: sha512-J2YBqrMv7OrcDqaldlu9hxWsu+Vw+AXtY6X0Gyb6XQP9kSVqZHn8EZZj282PEbrIhhH4TdbH5TOJiz+wwBi6Yw==}
+
+  '@mixte/use@1.13.0-beta.1':
+    resolution: {integrity: sha512-aHm68+6RedaXG6QOfhDWHM9gIoz2Y0UYkIGU2NpBUZFsc96q5FM5JPBII9EGKllKt3dpDlMEwECsmlVBXCNdvw==}
+
+  '@mixte/validator@1.13.0-beta.1':
+    resolution: {integrity: sha512-FFFBj0gwzvcMD8KLnSGESeiADvebS/jotNrkcTC2pHjmehaJ9Z33S9XptRxXy0hg1FcDNGHCVP8rh2dpq/CP3g==}
 
   '@moomfe/eslint-config@3.0.0':
     resolution: {integrity: sha512-kc04auvNIrERVbb6d1BRm6b+VReaktFPMGJdXw6KkqVjl3ZKmDglR061SRCtDRTnAxi7FyYMBPXuwYB6JHjoFQ==}
@@ -2170,8 +2188,8 @@ packages:
   mitt@3.0.1:
     resolution: {integrity: sha512-vKivATfr97l2/QBCYAkXYDbrIWPM2IIKEl7YPhjCvKlG3kE2gm+uBo6nEXK3M5/Ffh/FLpKExzOQ3JJoJGFKBw==}
 
-  mixte@1.11.0:
-    resolution: {integrity: sha512-G4if9mjZ1CcVB/te7tuBwN6a1BwNa7lyKJe5gZNnKJtzkShrkDlWK/zZ8rI/zs5fQCKS9wOmKJFeZnZUMIEE/A==}
+  mixte@1.13.0-beta.1:
+    resolution: {integrity: sha512-5tSi+k85B31Sv3uxw5HYnw61rR22Uqq/TmlRYz4rAOOYhOnOdtLe0WwJ1h+2z+SkLaWuzSpdoFYT0v+jegef+A==}
 
   mlly@1.6.1:
     resolution: {integrity: sha512-vLgaHvaeunuOXHSmEbZ9izxPx3USsk8KCQ8iC+aTlp5sKRSoZvwhHh5L9VbKSaVC6sJDqbyohIS76E2VmHIPAA==}
@@ -3649,14 +3667,28 @@ snapshots:
       string-argv: 0.3.2
       type-detect: 4.0.8
 
-  '@mixte/use@1.11.0(vue@3.4.27(typescript@5.4.5))':
+  '@mixte/components@1.13.0-beta.1(vue@3.4.27(typescript@5.4.5))':
     dependencies:
+      '@mixte/use': 1.13.0-beta.1(vue@3.4.27(typescript@5.4.5))
       '@vueuse/core': 10.9.0(vue@3.4.27(typescript@5.4.5))
-      mixte: 1.11.0
+      mixte: 1.13.0-beta.1
       vue-demi: 0.14.7(vue@3.4.27(typescript@5.4.5))
     transitivePeerDependencies:
       - '@vue/composition-api'
       - vue
+
+  '@mixte/snippets@1.13.0-beta.1': {}
+
+  '@mixte/use@1.13.0-beta.1(vue@3.4.27(typescript@5.4.5))':
+    dependencies:
+      '@vueuse/core': 10.9.0(vue@3.4.27(typescript@5.4.5))
+      mixte: 1.13.0-beta.1
+      vue-demi: 0.14.7(vue@3.4.27(typescript@5.4.5))
+    transitivePeerDependencies:
+      - '@vue/composition-api'
+      - vue
+
+  '@mixte/validator@1.13.0-beta.1': {}
 
   '@moomfe/eslint-config@3.0.0(@vue/compiler-sfc@3.4.27)':
     dependencies:
@@ -5323,7 +5355,7 @@ snapshots:
 
   mitt@3.0.1: {}
 
-  mixte@1.11.0: {}
+  mixte@1.13.0-beta.1: {}
 
   mlly@1.6.1:
     dependencies:
