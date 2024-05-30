@@ -1,7 +1,6 @@
 <template>
   <div w-82 px-2>
     <div class="fw-500 text-2xl c-[var(--color-text-1)]">{{ $t('login.form.title') }}</div>
-    <div class="text-bse c-[var(--color-text-3)]">{{ $t('login.form.title') }}</div>
     <div class="h-8 lh-8 c-[rgba(var(--red-6))]">{{ errorMessage }}</div>
 
     <a-form
@@ -45,7 +44,7 @@
           <a-checkbox
             checked="rememberPassword"
             :model-value="loginConfig.rememberPassword"
-            @change="setRememberPassword as any"
+            @change="(setRememberPassword as any)"
           >
             {{ $t('login.form.rememberPassword') }}
           </a-checkbox>
@@ -63,12 +62,8 @@
 </template>
 
 <script lang="ts" setup>
-  import { reactive, ref } from 'vue';
-  import { useRouter } from 'vue-router';
   import { Message } from '@arco-design/web-vue';
   import type { ValidatedError } from '@arco-design/web-vue/es/form/interface';
-  import { useI18n } from 'vue-i18n';
-  import { useStorage } from '@vueuse/core';
   import type { LoginData } from '@/apis/user';
 
   const router = useRouter();
