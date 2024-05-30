@@ -12,27 +12,27 @@ const DASHBOARD: AppRouteRecordRaw = {
     order: 0,
   },
   children: [
-    {
-      path: 'workplace',
-      name: 'Workplace',
-      component: () => import('@/pages/dashboard/workplace/index.vue'),
-      meta: {
-        locale: 'menu.dashboard.workplace',
-        requiresAuth: true,
-        roles: ['*'],
-      },
-    },
+    // {
+    //   path: 'workplace',
+    //   name: 'Workplace',
+    //   component: () => import('@/pages/dashboard/workplace/index.vue'),
+    //   meta: {
+    //     locale: 'menu.dashboard.workplace',
+    //     requiresAuth: true,
+    //     roles: ['*'],
+    //   },
+    // },
 
-    {
-      path: 'monitor',
-      name: 'Monitor',
-      component: () => import('@/pages/dashboard/monitor/index.vue'),
-      meta: {
-        locale: 'menu.dashboard.monitor',
-        requiresAuth: true,
-        roles: ['admin'],
-      },
-    },
+    // {
+    //   path: 'monitor',
+    //   name: 'Monitor',
+    //   component: () => import('@/pages/dashboard/monitor/index.vue'),
+    //   meta: {
+    //     locale: 'menu.dashboard.monitor',
+    //     requiresAuth: true,
+    //     roles: ['admin'],
+    //   },
+    // },
   ],
 };
 

@@ -52,6 +52,16 @@
   import Announcement from './components/announcement.vue';
   import Carousel from './components/carousel.vue';
   import Docs from './components/docs.vue';
+
+  definePage({
+    name: 'Workplace',
+    meta: {
+      layout: 'admin',
+      locale: 'menu.dashboard.workplace',
+      requiresAuth: true,
+      roles: ['*'],
+    },
+  });
 </script>
 
 <script lang="ts">

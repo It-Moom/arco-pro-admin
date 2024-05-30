@@ -52,6 +52,10 @@
       "name": "Components Private"
     },
     {
+      "path": "src/router",
+      "name": "Router"
+    },
+    {
       "path": "src/layouts",
       "name": "Layouts"
     },

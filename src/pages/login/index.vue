@@ -25,4 +25,9 @@
   import LoginBanner from './components/banner.vue';
   import LoginForm from './components/login-form.vue';
   import Footer from '@/components/footer/index.vue';
+
+  definePage({
+    name: 'Login',
+    meta: { requiresAuth: false },
+  });
 </script>

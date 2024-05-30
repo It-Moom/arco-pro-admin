@@ -29,6 +29,16 @@
   import StudioStatus from './components/studio-status.vue';
   import QuickOperation from './components/quick-operation.vue';
   import StudioInformation from './components/studio-information.vue';
+
+  definePage({
+    name: 'Monitor',
+    meta: {
+      layout: 'admin',
+      locale: 'menu.dashboard.monitor',
+      requiresAuth: true,
+      roles: ['admin'],
+    },
+  });
 </script>
 
 <script lang="ts">
