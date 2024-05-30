@@ -3,12 +3,15 @@ import { fileURLToPath } from 'node:url';
 import { defineConfig } from 'vite';
 import Vue from '@vitejs/plugin-vue';
 import VueJsx from '@vitejs/plugin-vue-jsx';
+import VueRouter from 'unplugin-vue-router/vite';
+import Layouts from 'vite-plugin-vue-layouts';
 import Unocss from 'unocss/vite';
 import Icons from 'unplugin-icons/vite';
 import IconsResolver from 'unplugin-icons/resolver';
 import Components from 'unplugin-vue-components/vite';
 import { ArcoResolver } from 'unplugin-vue-components/resolvers';
 import AutoImport from 'unplugin-auto-import/vite';
+import { VueRouterAutoImports } from 'unplugin-vue-router';
 import { MixteUseAutoImport } from '@mixte/use/register';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
@@ -26,6 +29,13 @@ export default defineConfig({
   },
   // 插件
   plugins: [
+    // 基于文件的路由
+    VueRouter({
+      dts: resolve(__dirname, './types/typed-router.d.ts'),
+      exclude: ['**/components', '**/composables'],
+    }),
+    // 页面布局系统
+    Layouts(),
     // Vue 3 支持
     Vue(),
     // JSX 支持
@@ -56,7 +66,7 @@ export default defineConfig({
       vueTemplate: true,
       imports: [
         'vue',
-        'vue-router',
+        VueRouterAutoImports,
         'vue-i18n',
         '@vueuse/core',
         '@vueuse/math',
