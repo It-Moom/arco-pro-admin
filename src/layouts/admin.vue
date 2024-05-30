@@ -47,7 +47,7 @@
 <script lang="ts" setup>
   import { computed, onMounted, provide, ref, watch } from 'vue';
   import { useRoute, useRouter } from 'vue-router';
-  import PageLayout from './page-layout.vue';
+  import PageLayout from './page.vue';
   import NavBar from '@/components/navbar/index.vue';
   import Menu from '@/components/menu/index.vue';
   import Footer from '@/components/footer/index.vue';
