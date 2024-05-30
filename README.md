@@ -25,6 +25,9 @@
   - [Iconify](https://iconify.design/) - 使用任意的图标集, 使用 [Icônes](https://icones.netlify.app/) 或 [iconify](https://icon-sets.iconify.design/) 查看或搜索图标
     - [用 CSS 的方式使用图标](https://github.com/antfu/unocss/tree/main/packages/preset-icons)
 
+### 组件库
+  - [Arco Design][arco-design-href] - 能力全面的企业级产品设计系统
+
 ### 插件
   - [Pinia](https://pinia.vuejs.org) - 直接的, 类型安全的, 使用 Composition API 的轻便灵活的 Vue 状态管理
   - [vite-plugin-uni-components](https://github.com/uni-helper/vite-plugin-uni-components) - 自动加载组件
