@@ -63,4 +63,7 @@ export default defineConfig({
     // 变体组功能
     transformerVariantGroup(),
   ],
+  blocklist: [
+    'container',
+  ],
 });
