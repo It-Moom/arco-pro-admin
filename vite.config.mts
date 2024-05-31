@@ -52,6 +52,7 @@ export default defineConfig({
       dts: resolve(__dirname, './types/components.d.ts'),
       dirs: [
         resolve(__dirname, './src/components'),
+        resolve(__dirname, './src/components-private'),
       ],
       resolvers: [
         // 自动导入图标组件

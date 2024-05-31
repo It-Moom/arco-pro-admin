@@ -1,13 +1,13 @@
 import { computed } from 'vue';
 import type { RouteRecordRaw } from 'vue-router';
 import { deepClone } from 'mixte';
-import { finalRoutes } from '@/modules/router';
+import finalRoutes from '@/modules/router/routes';
 
 function formatRoute(originRoutes: RouteRecordRaw[]) {
-  const routes = originRoutes.map((_route) => {
-    return _route.meta?.isLayout
-      ? { ..._route.children![0] as RouteRecordRaw, path: _route.path }
-      : _route;
+  const routes = originRoutes.map((route) => {
+    return route.meta?.isLayout
+      ? { ...route.children![0] as RouteRecordRaw, path: route.path }
+      : route;
   });
 
   routes.forEach((route) => {
