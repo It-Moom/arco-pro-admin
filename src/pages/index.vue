@@ -3,7 +3,6 @@
     redirect: 'Login',
     meta: {
       requiresAuth: false,
-      hideInMenu: true,
     },
   });
 </script>

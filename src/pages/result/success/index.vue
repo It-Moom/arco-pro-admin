@@ -55,9 +55,9 @@
 
 <script lang="ts" setup>
   definePage({
-    name: 'Error',
+    name: 'Success',
     meta: {
-      locale: 'menu.result.error',
+      locale: 'menu.result.success',
       requiresAuth: true,
       roles: ['*'],
     },

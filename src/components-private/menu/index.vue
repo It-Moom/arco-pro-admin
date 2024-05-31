@@ -92,6 +92,8 @@
         function travel(_route: RouteRecordRaw[], nodes = []) {
           if (_route) {
             _route.forEach((element) => {
+              if (!element.meta?.locale) return;
+
               // This is demo, modify nodes as needed
               const icon = element?.meta?.icon
                 ? () => h(compile(`<${element?.meta?.icon}/>`))
@@ -102,8 +104,8 @@
                     <a-sub-menu
                       key={element?.name}
                       v-slots={{
-                      icon,
-                      title: () => h(compile(t(element?.meta?.locale || ''))),
+                        icon,
+                        title: () => h(compile(t(element?.meta?.locale || ''))),
                       }}
                     >
                       {travel(element?.children)}
