@@ -255,6 +255,15 @@
   import type { PolicyParams, PolicyRecord } from '@/apis/list';
   import { queryPolicyList } from '@/apis/list';
 
+  definePage({
+    name: 'SearchTable',
+    meta: {
+      locale: 'menu.list.searchTable',
+      requiresAuth: true,
+      roles: ['*'],
+    },
+  });
+
   type SizeProps = 'mini' | 'small' | 'medium' | 'large';
   type Column = TableColumnData & { checked?: true };
 

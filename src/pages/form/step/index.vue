@@ -48,6 +48,15 @@
     submitChannelForm,
   } from '@/apis/form';
 
+  definePage({
+    name: 'Step',
+    meta: {
+      locale: 'menu.form.step',
+      requiresAuth: true,
+      roles: ['admin'],
+    },
+  });
+
   const { loading, setLoading } = useLoading(false);
   const step = ref(1);
   const submitModel = ref<UnitChannelModel>({} as UnitChannelModel);

@@ -253,6 +253,15 @@
   import { ref } from 'vue';
   import type { FormInstance } from '@arco-design/web-vue/es/form';
 
+  definePage({
+    name: 'Group',
+    meta: {
+      locale: 'menu.form.group',
+      requiresAuth: true,
+      roles: ['admin'],
+    },
+  });
+
   const formData = ref({});
   const formRef = ref<FormInstance>();
   const { loading, setLoading } = useLoading();

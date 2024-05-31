@@ -38,6 +38,15 @@
   import QualityInspection from './components/quality-inspection.vue';
   import TheService from './components/the-service.vue';
   import RulesPreset from './components/rules-preset.vue';
+
+  definePage({
+    name: 'Card',
+    meta: {
+      locale: 'menu.list.cardList',
+      requiresAuth: true,
+      roles: ['*'],
+    },
+  });
 </script>
 
 <script lang="ts">
