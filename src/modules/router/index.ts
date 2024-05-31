@@ -1,12 +1,13 @@
+import type { Router } from 'vue-router';
 import { createRouter, createWebHistory } from 'vue-router/auto';
-import { routes } from 'vue-router/auto-routes';
-import { setupLayouts } from 'virtual:generated-layouts';
-
-const finalRoutes = setupLayouts(routes);
+import { routeListener } from './guard/route-listener';
+import { userLoginInfo } from './guard/user-login-info';
+import routes from './routes';
+import NProgress from '@/modules/nprogress';
 
 const router = createRouter({
   history: createWebHistory(),
-  routes: finalRoutes,
+  routes,
   scrollBehavior() {
     return {
       top: 0,
@@ -14,7 +15,17 @@ const router = createRouter({
   },
 });
 
+router.beforeEach((to, from, next) => {
+  NProgress.start();
+  next();
+});
+
+routeListener(router as Router);
+userLoginInfo(router as Router);
+
+router.beforeEach((to, from, next) => {
+  NProgress.done();
+  next();
+});
+
 export default router;
-export {
-  finalRoutes,
-};

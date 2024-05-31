@@ -90,6 +90,9 @@ importers:
       '@types/mockjs':
         specifier: ^1.0.10
         version: 1.0.10
+      '@types/nprogress':
+        specifier: ^0.2.3
+        version: 0.2.3
       '@types/sortablejs':
         specifier: ^1.15.8
         version: 1.15.8
@@ -920,6 +923,9 @@ packages:
 
   '@types/normalize-package-data@2.4.1':
     resolution: {integrity: sha512-Gj7cI7z+98M282Tqmp2K5EIsoouUEzbBJhQQzDE3jSIRk6r9gsz0oUokqIUR4u1R3dMHo0pDHM7sNOHyhulypw==}
+
+  '@types/nprogress@0.2.3':
+    resolution: {integrity: sha512-k7kRA033QNtC+gLc4VPlfnue58CM1iQLgn1IMAU8VPHGOj7oIHPp9UlhedEnD/Gl8evoCjwkZjlBORtZ3JByUA==}
 
   '@types/semver@7.5.8':
     resolution: {integrity: sha512-I8EUhyrgfLrcTkzV3TSsGyl1tSuPrEDzr0yd5m90UgNxQkyDXULk3b6MlQqTCpZpNtWe1K0hzclnZkTcLBe2UQ==}
@@ -3929,6 +3935,8 @@ snapshots:
     optional: true
 
   '@types/normalize-package-data@2.4.1': {}
+
+  '@types/nprogress@0.2.3': {}
 
   '@types/semver@7.5.8': {}
 

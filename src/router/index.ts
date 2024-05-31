@@ -4,25 +4,12 @@ import 'nprogress/nprogress.css';
 
 import { appRoutes } from './routes';
 import { NOT_FOUND_ROUTE, REDIRECT_MAIN } from './routes/base';
-import createRouteGuard from './guard';
 
 NProgress.configure({ showSpinner: false }); // NProgress Configuration
 
 const router = createRouter({
   history: createWebHistory(),
   routes: [
-    // {
-    //   path: '/',
-    //   redirect: 'login',
-    // },
-    // {
-    //   path: '/login',
-    //   name: 'login',
-    //   component: () => import('@/pages/login/index.vue'),
-    //   meta: {
-    //     requiresAuth: false,
-    //   },
-    // },
     ...appRoutes,
     REDIRECT_MAIN,
     NOT_FOUND_ROUTE,
@@ -31,7 +18,5 @@ const router = createRouter({
     return { top: 0 };
   },
 });
-
-createRouteGuard(router);
 
 export default router;

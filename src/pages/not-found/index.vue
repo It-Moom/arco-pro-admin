@@ -10,6 +10,13 @@
 <script lang="ts" setup>
   import { useRouter } from 'vue-router';
 
+  definePage({
+    name: 'NotFound',
+    meta: {
+      requiresAuth: false,
+    },
+  });
+
   const router = useRouter();
   function back() {
     // warning： Go to the node that has the permission

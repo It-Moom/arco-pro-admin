@@ -1,33 +1,33 @@
 import type { RouteRecordNormalized, Router } from 'vue-router';
-import NProgress from 'nprogress'; // progress bar
+import { NOT_FOUND, WHITE_LIST } from '../const';
+import routes from '../routes';
 
-import { appRoutes } from '../routes';
-import { NOT_FOUND, WHITE_LIST } from '../constants';
-
-export default function setupPermissionGuard(router: Router) {
+/**
+ * 路由权限守卫
+ */
+export function permission(router: Router) {
   router.beforeEach(async (to, from, next) => {
     const appStore = useAppStore();
     const userStore = useUserStore();
     const Permission = usePermission();
     const permissionsAllow = Permission.accessRouter(to);
-    if (appStore.menuFromServer) {
-      // 针对来自服务端的菜单配置进行处理
-      // Handle routing configuration from the server
 
-      // 根据需要自行完善来源于服务端的菜单配置的permission逻辑
-      // Refine the permission logic from the server's menu configuration as needed
-      if (
-        !appStore.appAsyncMenus.length
-        && !WHITE_LIST.find(el => el.name === to.name)
-      )
+    // 针对来自服务端的菜单配置进行处理
+    // 根据需要自行完善来源于服务端的菜单配置的 permission 逻辑
+    if (appStore.menuFromServer) {
+      // 没有务端菜单 && 不在白名单中, 则获取服务端菜单配置
+      if (!appStore.appAsyncMenus.length && !WHITE_LIST.find(({ name }) => name === to.name))
         await appStore.fetchServerMenuConfig();
 
       const serverMenuConfig = [...appStore.appAsyncMenus, ...WHITE_LIST];
 
       let exist = false;
+
       while (serverMenuConfig.length && !exist) {
         const element = serverMenuConfig.shift();
-        if (element?.name === to.name) exist = true;
+
+        if (element?.name === to.name)
+          exist = true;
 
         if (element?.children) {
           serverMenuConfig.push(
@@ -35,21 +35,21 @@ export default function setupPermissionGuard(router: Router) {
           );
         }
       }
+
       if (exist && permissionsAllow)
         next();
-      else next(NOT_FOUND);
+      else
+        next(NOT_FOUND);
     }
     else {
       if (permissionsAllow) {
         next();
       }
       else {
-        const destination
-          = Permission.findFirstPermissionRoute(appRoutes, userStore.role)
-          || NOT_FOUND;
-        next(destination);
+        next(
+          Permission.findFirstPermissionRoute(routes, userStore.role) || NOT_FOUND,
+        );
       }
     }
-    NProgress.done();
   });
 }
