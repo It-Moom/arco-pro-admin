@@ -56,7 +56,6 @@
   definePage({
     name: 'Workplace',
     meta: {
-      layout: 'admin',
       locale: 'menu.dashboard.workplace',
       requiresAuth: true,
       roles: ['*'],

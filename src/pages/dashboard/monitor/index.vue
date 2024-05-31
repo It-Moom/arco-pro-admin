@@ -33,7 +33,6 @@
   definePage({
     name: 'Monitor',
     meta: {
-      layout: 'admin',
       locale: 'menu.dashboard.monitor',
       requiresAuth: true,
       roles: ['admin'],

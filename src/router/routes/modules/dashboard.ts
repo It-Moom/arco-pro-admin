@@ -3,7 +3,7 @@ import type { AppRouteRecordRaw } from '../types';
 
 const DASHBOARD: AppRouteRecordRaw = {
   path: '/dashboard',
-  name: 'dashboard',
+  name: 'Dashboard',
   component: DEFAULT_LAYOUT,
   meta: {
     locale: 'menu.dashboard',
