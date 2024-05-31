@@ -4,13 +4,13 @@
 
 <script lang="ts" setup>
   definePage({
-    name: 'List',
+    name: 'Profile',
     meta: {
       layout: 'admin',
-      locale: 'menu.list',
+      locale: 'menu.profile',
       requiresAuth: true,
-      icon: 'icon-list',
-      order: 2,
+      icon: 'icon-file',
+      order: 4,
     },
   });
 </script>

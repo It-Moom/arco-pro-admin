@@ -35,6 +35,15 @@
   import type { ProfileBasicRes } from '@/apis/profile';
   import { queryProfileBasic } from '@/apis/profile';
 
+  definePage({
+    name: 'Basic',
+    meta: {
+      locale: 'menu.profile.basic',
+      requiresAuth: true,
+      roles: ['admin'],
+    },
+  });
+
   const { loading, setLoading } = useLoading(true);
   const { loading: preLoading, setLoading: preSetLoading } = useLoading(true);
   const currentData = ref<ProfileBasicRes>({} as ProfileBasicRes);

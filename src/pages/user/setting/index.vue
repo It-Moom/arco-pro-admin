@@ -29,6 +29,15 @@
   import BasicInformation from './components/basic-information.vue';
   import SecuritySettings from './components/security-settings.vue';
   import Certification from './components/certification.vue';
+
+  definePage({
+    name: 'Setting',
+    meta: {
+      locale: 'menu.user.setting',
+      requiresAuth: true,
+      roles: ['*'],
+    },
+  });
 </script>
 
 <script lang="ts">

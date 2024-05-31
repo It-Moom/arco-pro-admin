@@ -33,6 +33,15 @@
   import MyProject from './components/my-project.vue';
   import LatestActivity from './components/latest-activity.vue';
   import MyTeam from './components/my-team.vue';
+
+  definePage({
+    name: 'Info',
+    meta: {
+      locale: 'menu.user.info',
+      requiresAuth: true,
+      roles: ['*'],
+    },
+  });
 </script>
 
 <script lang="ts">

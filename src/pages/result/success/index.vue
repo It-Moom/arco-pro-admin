@@ -53,7 +53,16 @@
   </div>
 </template>
 
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+  definePage({
+    name: 'Error',
+    meta: {
+      locale: 'menu.result.error',
+      requiresAuth: true,
+      roles: ['*'],
+    },
+  });
+</script>
 
 <script lang="ts">
   export default {

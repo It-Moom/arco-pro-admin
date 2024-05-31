@@ -41,7 +41,16 @@
   </div>
 </template>
 
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+  definePage({
+    name: 'Success',
+    meta: {
+      locale: 'menu.result.success',
+      requiresAuth: true,
+      roles: ['*'],
+    },
+  });
+</script>
 
 <script lang="ts">
   export default {
