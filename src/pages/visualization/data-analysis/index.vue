@@ -35,6 +35,15 @@
   import ContentPeriodAnalysis from './components/content-period-analysis.vue';
   import ContentPublishRatio from './components/content-publish-ratio.vue';
   import PopularAuthor from './components/popular-author.vue';
+
+  definePage({
+    name: 'DataAnalysis',
+    meta: {
+      locale: 'menu.visualization.dataAnalysis',
+      requiresAuth: true,
+      roles: ['admin'],
+    },
+  });
 </script>
 
 <script lang="ts">

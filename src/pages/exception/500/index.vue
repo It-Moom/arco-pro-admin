@@ -14,7 +14,16 @@
   </div>
 </template>
 
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+  definePage({
+    name: '500',
+    meta: {
+      locale: 'menu.exception.500',
+      requiresAuth: true,
+      roles: ['*'],
+    },
+  });
+</script>
 
 <script lang="ts">
   export default {

@@ -30,6 +30,15 @@
   import UserActions from './components/user-actions.vue';
   import ContentTypeDistribution from './components/content-type-distribution.vue';
   import ContentPublishingSource from './components/content-publishing-source.vue';
+
+  definePage({
+    name: 'MultiDimensionDataAnalysis',
+    meta: {
+      locale: 'menu.visualization.multiDimensionDataAnalysis',
+      requiresAuth: true,
+      roles: ['admin'],
+    },
+  });
 </script>
 
 <script lang="ts">
