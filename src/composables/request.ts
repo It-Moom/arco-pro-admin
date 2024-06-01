@@ -13,7 +13,7 @@ export function useRequest<T>(
   defaultValue = [] as unknown as T,
   isLoading = true,
 ) {
-  const { loading, setLoading } = useLoading(isLoading);
+  const [loading, setLoading] = useToggle(isLoading);
   const response = ref<T>(defaultValue);
   api()
     .then((res) => {

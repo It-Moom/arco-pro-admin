@@ -41,7 +41,7 @@
     title: string;
     avatar?: string;
   }
-  const { loading, setLoading } = useLoading(true);
+  const [loading, setLoading] = useToggle(true);
   const messageType = ref('message');
   const { t } = useI18n();
   const messageData = reactive<{

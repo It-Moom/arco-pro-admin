@@ -48,7 +48,7 @@
   import type { ChatRecord } from '@/apis/message';
   import { queryChatList } from '@/apis/message';
 
-  const { loading, setLoading } = useLoading(true);
+  const [loading, setLoading] = useToggle(true);
   const chatData = ref<ChatRecord[]>([]);
   async function fetchData() {
     try {

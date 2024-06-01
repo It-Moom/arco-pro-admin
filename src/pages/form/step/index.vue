@@ -56,7 +56,7 @@
     },
   });
 
-  const { loading, setLoading } = useLoading(false);
+  const [loading, setLoading] = useToggle();
   const step = ref(1);
   const submitModel = ref<UnitChannelModel>({} as UnitChannelModel);
   async function submitForm() {

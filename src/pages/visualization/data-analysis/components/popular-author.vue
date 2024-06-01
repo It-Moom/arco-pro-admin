@@ -48,7 +48,7 @@
   import type { PopularAuthorRes } from '@/apis/visualization';
   import { queryPopularAuthor } from '@/apis/visualization';
 
-  const { loading, setLoading } = useLoading();
+  const [loading, setLoading] = useToggle();
   const tableData = ref<PopularAuthorRes>({ list: [] });
   async function fetchData() {
     try {

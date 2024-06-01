@@ -77,7 +77,7 @@
   import { queryPopularList } from '@/apis/dashboard';
 
   const type = ref('text');
-  const { loading, setLoading } = useLoading();
+  const [loading, setLoading] = useToggle();
   const renderList = ref<TableData[]>();
   async function fetchData(contentType: string) {
     try {

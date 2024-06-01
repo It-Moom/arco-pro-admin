@@ -47,7 +47,7 @@
       default: '',
     },
   });
-  const { loading, setLoading } = useLoading(true);
+  const [loading, setLoading] = useToggle(true);
   const count = ref(0);
   const growth = ref(100);
   const isUp = computed(() => growth.value > 50);

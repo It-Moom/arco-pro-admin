@@ -42,7 +42,7 @@
       .join('');
   }
 
-  const { loading, setLoading } = useLoading(true);
+  const [loading, setLoading] = useToggle(true);
   const xAxis = ref<string[]>([]);
   const textChartsData = ref<number[]>([]);
   const imgChartsData = ref<number[]>([]);

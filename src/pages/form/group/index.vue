@@ -263,7 +263,7 @@
 
   const formData = ref({});
   const formRef = ref<FormInstance>();
-  const { loading, setLoading } = useLoading();
+  const [loading, setLoading] = useToggle();
   async function onSubmitClick() {
     const res = await formRef.value?.validate();
     if (!res)

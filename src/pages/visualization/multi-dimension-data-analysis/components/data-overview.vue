@@ -87,7 +87,7 @@
     };
   }
   const { t } = useI18n();
-  const { loading, setLoading } = useLoading(true);
+  const [loading, setLoading] = useToggle(true);
   const { isDark } = useThemes();
   const renderData = computed(() => [
     {

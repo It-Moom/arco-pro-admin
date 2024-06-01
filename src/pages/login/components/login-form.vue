@@ -70,7 +70,7 @@
   const router = useRouter();
   const { t } = useI18n();
   const errorMessage = ref('');
-  const { loading, setLoading } = useLoading();
+  const [loading, setLoading] = useToggle();
   const userStore = useUserStore();
 
   const loginConfig = useStorage('login-config', {

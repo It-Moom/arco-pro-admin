@@ -45,7 +45,7 @@
   import type { LatestActivity } from '@/apis/user-center';
   import { queryLatestActivity } from '@/apis/user-center';
 
-  const { loading, setLoading } = useLoading(true);
+  const [loading, setLoading] = useToggle(true);
   const activityList = ref<LatestActivity[]>(Array.from({ length: 7 }).fill({}));
   async function fetchData() {
     try {

@@ -12,7 +12,7 @@
 </template>
 
 <script lang="ts" setup>
-  const { loading, setLoading } = useLoading(true);
+  const [loading, setLoading] = useToggle(true);
   setTimeout(() => {
     setLoading(false);
   }, 500);

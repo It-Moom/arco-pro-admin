@@ -16,7 +16,7 @@
 </template>
 
 <script lang="ts" setup>
-  const { loading } = useLoading();
+  const [loading] = useToggle();
   const { chartOption } = useChartOption((isDark) => {
     // echarts support https://echarts.apache.org/zh/theme-builder.html
     // It's not used here

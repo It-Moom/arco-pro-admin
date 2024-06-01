@@ -221,7 +221,8 @@
       ],
     };
   });
-  const { loading } = useLoading(false);
+
+  const [loading] = useToggle();
 </script>
 
 <style scoped lang="less"></style>

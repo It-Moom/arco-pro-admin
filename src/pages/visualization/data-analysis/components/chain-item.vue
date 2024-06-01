@@ -196,7 +196,7 @@
     };
   }
 
-  const { loading, setLoading } = useLoading(true);
+  const [loading, setLoading] = useToggle(true);
   const { chartOption: lineChartOption, data: lineData }
     = lineChartOptionsFactory();
   const { chartOption: barChartOption, data: barData }

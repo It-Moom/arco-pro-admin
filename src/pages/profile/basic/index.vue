@@ -43,8 +43,8 @@
     },
   });
 
-  const { loading, setLoading } = useLoading(true);
-  const { loading: preLoading, setLoading: preSetLoading } = useLoading(true);
+  const [loading, setLoading] = useToggle(true);
+  const [preLoading, preSetLoading] = useToggle(true);
   const currentData = ref<ProfileBasicRes>({} as ProfileBasicRes);
   const preData = ref<ProfileBasicRes>({} as ProfileBasicRes);
   const step = ref(1);

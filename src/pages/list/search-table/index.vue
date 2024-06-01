@@ -275,7 +275,7 @@
       status: '',
     };
   }
-  const { loading, setLoading } = useLoading(true);
+  const [loading, setLoading] = useToggle(true);
   const { t } = useI18n();
   const renderData = ref<PolicyRecord[]>([]);
   const formModel = ref(generateFormModel());

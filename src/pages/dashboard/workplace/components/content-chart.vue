@@ -37,7 +37,7 @@
       },
     };
   }
-  const { loading, setLoading } = useLoading(true);
+  const [loading, setLoading] = useToggle(true);
   const xAxis = ref<string[]>([]);
   const chartsData = ref<number[]>([]);
   const graphicElements = ref([

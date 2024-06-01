@@ -53,7 +53,7 @@
   import type { operationLogRes } from '@/apis/profile';
   import { queryOperationLog } from '@/apis/profile';
 
-  const { loading, setLoading } = useLoading(true);
+  const [loading, setLoading] = useToggle(true);
   const renderData = ref<operationLogRes>([]);
   async function fetchData() {
     try {

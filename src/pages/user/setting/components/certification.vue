@@ -17,7 +17,7 @@
     queryCertification,
   } from '@/apis/user-center';
 
-  const { loading, setLoading } = useLoading(true);
+  const [loading, setLoading] = useToggle(true);
   const data = ref<UnitCertification>({
     enterpriseInfo: {} as EnterpriseCertificationModel,
     record: [],
