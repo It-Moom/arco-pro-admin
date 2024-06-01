@@ -24,7 +24,7 @@ export function userLoginInfo(router: Router) {
       }
     }
     else {
-      if (to.name === LOGIN_ROUTE_NAME)
+      if (to.meta.requiresAuth === false)
         return next();
     }
 
