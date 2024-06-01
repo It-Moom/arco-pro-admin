@@ -19,7 +19,6 @@
     name: '403',
     meta: {
       locale: 'menu.exception.403',
-      roles: ['*'],
     },
   });
 </script>

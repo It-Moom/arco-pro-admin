@@ -24,7 +24,6 @@
     name: '404',
     meta: {
       locale: 'menu.exception.404',
-      roles: ['*'],
     },
   });
 </script>

@@ -46,7 +46,6 @@
     name: 'Error',
     meta: {
       locale: 'menu.result.error',
-      roles: ['*'],
     },
   });
 </script>

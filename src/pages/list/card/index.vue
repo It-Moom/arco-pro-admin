@@ -43,7 +43,6 @@
     name: 'Card',
     meta: {
       locale: 'menu.list.cardList',
-      roles: ['*'],
     },
   });
 </script>

@@ -38,7 +38,6 @@
     name: 'Info',
     meta: {
       locale: 'menu.user.info',
-      roles: ['*'],
     },
   });
 </script>

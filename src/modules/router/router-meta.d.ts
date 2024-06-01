@@ -3,11 +3,15 @@ import 'vue-router';
 declare module 'vue-router' {
   interface RouteMeta {
     /**
-     * 是否需要登录才能访问当前页面, 默认为 true
+     * 是否需要登录才能访问当前页面 ( 不设置默认为 true )
      * @default true
      */
     requiresAuth?: boolean;
-    /** 控制可以访问该页面的角色 */
+    /**
+     * 控制可以访问该页面的角色列表 ( 不设置则默认任何角色都可以访问 )
+     * @default ['*']
+     * @example ['admin', 'user']、['admin']、['user']、['*']
+     */
     roles?: string[];
     /** 在侧边菜单中显示的图标 */
     icon?: string;
