@@ -6,21 +6,37 @@ import { removeRouteListener } from '@/utils/route-listener';
 
 export type RoleType = '' | '*' | 'admin' | 'user';
 export interface UserState {
+  /** 用户名 */
   name?: string;
+  /** 头像 */
   avatar?: string;
-  job?: string;
-  organization?: string;
-  location?: string;
+  /** 邮箱 */
   email?: string;
-  introduction?: string;
-  personalWebsite?: string;
+  /** 职位 */
+  job?: string;
+  /** 职位名称 */
   jobName?: string;
+  /** 组织 */
+  organization?: string;
+  /** 组织名称 */
   organizationName?: string;
+  /** 位置 */
+  location?: string;
+  /** 位置名称 */
   locationName?: string;
+  /** 介绍 */
+  introduction?: string;
+  /** 个人网站 */
+  personalWebsite?: string;
+  /** 电话号码 */
   phone?: string;
+  /** 注册日期 */
   registrationDate?: string;
+  /** 账户ID */
   accountId?: string;
+  /** 认证 */
   certification?: number;
+  /** 角色 */
   role: RoleType;
 }
 

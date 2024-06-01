@@ -1,5 +1,5 @@
 export default ({ mock, setup }: { mock?: boolean; setup: () => void }) => {
-  if (import.meta.env.DEV && mock !== false) setup();
+  if (mock !== false) setup();
 };
 
 export function successResponseWrap(data: unknown) {
