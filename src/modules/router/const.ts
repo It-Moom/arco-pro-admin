@@ -13,16 +13,19 @@ export const DEFAULT_ROUTE = {
 export const REDIRECT_ROUTE_NAME = 'Redirect';
 
 /**
- * 404 路由
+ * 登录路由名称
  */
-export const NOT_FOUND = {
-  name: 'NotFound',
-};
+export const LOGIN_ROUTE_NAME = 'Login';
+
+/**
+ * 404 路由名称
+ */
+export const NOT_FOUND_ROUTE_NAME = 'NotFound';
 
 /**
  * 白名单路由
  */
 export const WHITE_LIST = [
-  { name: 'NotFound', children: [] },
-  { name: 'Login', children: [] },
+  { name: NOT_FOUND_ROUTE_NAME, children: [] },
+  { name: LOGIN_ROUTE_NAME, children: [] },
 ];

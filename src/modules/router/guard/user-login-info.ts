@@ -1,4 +1,5 @@
 import type { LocationQueryRaw, Router } from 'vue-router';
+import { LOGIN_ROUTE_NAME } from '../const';
 import { isLogin } from '@/utils/auth';
 
 /**
@@ -23,12 +24,12 @@ export function userLoginInfo(router: Router) {
       }
     }
     else {
-      if (to.name === 'Login')
+      if (to.name === LOGIN_ROUTE_NAME)
         return next();
     }
 
     next({
-      name: 'Login',
+      name: LOGIN_ROUTE_NAME,
       query: { redirect: to.name, ...to.query } as LocationQueryRaw,
     });
   });

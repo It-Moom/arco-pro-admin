@@ -1,5 +1,5 @@
 import type { RouteRecordNormalized, Router } from 'vue-router';
-import { NOT_FOUND, WHITE_LIST } from '../const';
+import { NOT_FOUND_ROUTE_NAME, WHITE_LIST } from '../const';
 import routes from '../routes';
 
 /**
@@ -39,7 +39,7 @@ export function permission(router: Router) {
       if (exist && permissionsAllow)
         next();
       else
-        next(NOT_FOUND);
+        next({ name: NOT_FOUND_ROUTE_NAME });
     }
     else {
       if (permissionsAllow) {
@@ -47,7 +47,7 @@ export function permission(router: Router) {
       }
       else {
         next(
-          Permission.findFirstPermissionRoute(routes, userStore.role) || NOT_FOUND,
+          Permission.findFirstPermissionRoute(routes, userStore.role) || { name: NOT_FOUND_ROUTE_NAME },
         );
       }
     }

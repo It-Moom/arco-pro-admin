@@ -51,6 +51,7 @@
   import NavBar from '@/components/navbar/index.vue';
   import Footer from '@/components/footer/index.vue';
   import TabBar from '@/components/tab-bar/index.vue';
+  import { NOT_FOUND_ROUTE_NAME } from '@/modules/router/const';
 
   const isInit = ref(false);
   const appStore = useAppStore();
@@ -86,7 +87,7 @@
     () => userStore.role,
     (roleValue) => {
       if (roleValue && !permission.accessRouter(route))
-        router.push({ name: 'notFound' });
+        router.push({ name: NOT_FOUND_ROUTE_NAME });
     },
   );
   const drawerVisible = ref(false);
