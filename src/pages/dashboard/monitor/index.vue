@@ -36,6 +36,7 @@
       locale: 'menu.dashboard.monitor',
       requiresAuth: true,
       roles: ['admin'],
+      order: 1,
     },
   });
 </script>

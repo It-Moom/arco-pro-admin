@@ -59,6 +59,7 @@
       locale: 'menu.dashboard.workplace',
       requiresAuth: true,
       roles: ['*'],
+      order: 0,
     },
   });
 </script>

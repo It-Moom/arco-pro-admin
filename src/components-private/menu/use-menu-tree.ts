@@ -10,6 +10,10 @@ function formatRoute(originRoutes: RouteRecordRaw[]) {
       : route;
   });
 
+  routes.sort((a: RouteRecordRaw, b: RouteRecordRaw) => {
+    return (a.meta?.order || 0) - (b.meta?.order || 0);
+  });
+
   routes.forEach((route) => {
     if (!route.children?.length) return;
 
@@ -37,10 +41,6 @@ export default function useMenuTree() {
   });
   const menuTree = computed(() => {
     const copyRouter = formatRoute(deepClone(appRoute.value));
-
-    copyRouter.sort((a: RouteRecordRaw, b: RouteRecordRaw) => {
-      return (a.meta?.order || 0) - (b.meta?.order || 0);
-    });
 
     function travel(_routes: RouteRecordRaw[], layer: number) {
       if (!_routes) return null;
