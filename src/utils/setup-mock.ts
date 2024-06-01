@@ -1,7 +1,5 @@
-import debug from './env';
-
 export default ({ mock, setup }: { mock?: boolean; setup: () => void }) => {
-  if (mock !== false && debug) setup();
+  if (import.meta.env.DEV && mock !== false) setup();
 };
 
 export function successResponseWrap(data: unknown) {

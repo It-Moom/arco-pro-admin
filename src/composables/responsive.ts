@@ -1,7 +1,3 @@
-import { onBeforeMount, onBeforeUnmount, onMounted } from 'vue';
-import { useDebounceFn } from '@vueuse/core';
-import { addEventListen, removeEventListen } from '@/utils/event';
-
 const WIDTH = 992; // https://arco.design/vue/component/grid#responsivevalue
 
 function queryDevice() {
@@ -19,13 +15,10 @@ export function useResponsive(immediate?: boolean) {
     }
   }
   const debounceFn = useDebounceFn(resizeHandler, 100);
+
   onMounted(() => {
     if (immediate) debounceFn();
   });
-  onBeforeMount(() => {
-    addEventListen(window, 'resize', debounceFn);
-  });
-  onBeforeUnmount(() => {
-    removeEventListen(window, 'resize', debounceFn);
-  });
+
+  useEventListener(window, 'resize', debounceFn);
 }
