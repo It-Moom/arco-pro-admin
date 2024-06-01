@@ -52,7 +52,6 @@
     name: 'Step',
     meta: {
       locale: 'menu.form.step',
-      requiresAuth: true,
       roles: ['admin'],
     },
   });

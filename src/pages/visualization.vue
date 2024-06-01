@@ -8,7 +8,6 @@
     meta: {
       layout: 'admin',
       locale: 'menu.visualization',
-      requiresAuth: true,
       icon: 'icon-apps',
       order: 1,
     },

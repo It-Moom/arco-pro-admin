@@ -257,7 +257,6 @@
     name: 'Group',
     meta: {
       locale: 'menu.form.group',
-      requiresAuth: true,
       roles: ['admin'],
     },
   });

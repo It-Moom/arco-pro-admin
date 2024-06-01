@@ -35,7 +35,6 @@
     name: 'MultiDimensionDataAnalysis',
     meta: {
       locale: 'menu.visualization.multiDimensionDataAnalysis',
-      requiresAuth: true,
       roles: ['admin'],
     },
   });

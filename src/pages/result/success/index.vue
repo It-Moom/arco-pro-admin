@@ -58,7 +58,6 @@
     name: 'Success',
     meta: {
       locale: 'menu.result.success',
-      requiresAuth: true,
       roles: ['*'],
     },
   });

@@ -7,7 +7,6 @@
     name: 'Redirect',
     meta: {
       layout: 'admin',
-      requiresAuth: true,
     },
   });
 

@@ -34,7 +34,6 @@
     name: 'Monitor',
     meta: {
       locale: 'menu.dashboard.monitor',
-      requiresAuth: true,
       roles: ['admin'],
       order: 1,
     },

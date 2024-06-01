@@ -9,7 +9,6 @@
       layout: 'admin',
       locale: 'menu.user',
       icon: 'icon-user',
-      requiresAuth: true,
       order: 7,
     },
   });

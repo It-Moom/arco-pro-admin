@@ -57,7 +57,6 @@
     name: 'Workplace',
     meta: {
       locale: 'menu.dashboard.workplace',
-      requiresAuth: true,
       roles: ['*'],
       order: 0,
     },

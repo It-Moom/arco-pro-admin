@@ -70,7 +70,8 @@
       };
       listenerRouteChange((newRoute) => {
         const { requiresAuth, activeMenu, hideInMenu } = newRoute.meta;
-        if (requiresAuth && (!hideInMenu || activeMenu)) {
+
+        if ((requiresAuth ?? true) && (!hideInMenu || activeMenu)) {
           const menuOpenKeys = findMenuOpenKeys(
             (activeMenu || newRoute.name) as string,
           );

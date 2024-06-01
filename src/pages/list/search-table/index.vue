@@ -259,7 +259,6 @@
     name: 'SearchTable',
     meta: {
       locale: 'menu.list.searchTable',
-      requiresAuth: true,
       roles: ['*'],
     },
   });

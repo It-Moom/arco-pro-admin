@@ -19,7 +19,6 @@
     name: '500',
     meta: {
       locale: 'menu.exception.500',
-      requiresAuth: true,
       roles: ['*'],
     },
   });

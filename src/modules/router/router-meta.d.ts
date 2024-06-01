@@ -2,10 +2,13 @@ import 'vue-router';
 
 declare module 'vue-router' {
   interface RouteMeta {
+    /**
+     * 是否需要登录才能访问当前页面, 默认为 true
+     * @default true
+     */
+    requiresAuth?: boolean;
     /** 控制可以访问该页面的角色 */
     roles?: string[];
-    /** 是否需要登录才能访问当前页面 ( 每个路由都必须声明 ) */
-    requiresAuth: boolean;
     /** 在侧边菜单中显示的图标 */
     icon?: string;
     /** 在侧边菜单和面包屑中显示的本地化名称 */

@@ -34,7 +34,6 @@
     name: 'Setting',
     meta: {
       locale: 'menu.user.setting',
-      requiresAuth: true,
       roles: ['*'],
     },
   });
