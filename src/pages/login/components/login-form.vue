@@ -62,8 +62,9 @@
 </template>
 
 <script lang="ts" setup>
-  import { Message } from '@arco-design/web-vue';
   import type { ValidatedError } from '@arco-design/web-vue/es/form/interface';
+  import { Message } from '@arco-design/web-vue';
+  import { DEFAULT_ROUTE_NAME } from '@/modules/router/const';
   import type { LoginData } from '@/apis/user';
 
   const router = useRouter();
@@ -96,7 +97,7 @@
         await userStore.login(values as LoginData);
         const { redirect, ...othersQuery } = router.currentRoute.value.query;
         router.push({
-          name: (redirect as any) || 'Workplace',
+          name: (redirect as any) || DEFAULT_ROUTE_NAME,
           query: {
             ...othersQuery,
           },

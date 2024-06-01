@@ -8,7 +8,6 @@
 </template>
 
 <script lang="ts" setup>
-  import { useRouter } from 'vue-router';
   import { DEFAULT_ROUTE_NAME } from '@/modules/router/const';
 
   definePage({

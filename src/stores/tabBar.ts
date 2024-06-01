@@ -1,7 +1,7 @@
 import type { RouteLocationNormalized } from 'vue-router';
 import { defineStore } from 'pinia';
-import { DEFAULT_ROUTE, DEFAULT_ROUTE_NAME, REDIRECT_ROUTE_NAME } from '@/router/constants';
 import { isString } from '@/utils/is';
+import { DEFAULT_ROUTE, DEFAULT_ROUTE_NAME, REDIRECT_ROUTE_NAME } from '@/modules/router/const';
 
 export interface TagProps {
   title: string;

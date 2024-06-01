@@ -24,6 +24,11 @@ declare module 'vue-router' {
     ignoreCache?: boolean;
 
     /**
+     * 配置该页面使用的布局, 布局名称为 layouts 目录下的文件名
+     */
+    layout?: string;
+
+    /**
      * 由 vite-plugin-vue-layouts 插件生成的布局层标志, 请勿手动设置
      */
     isLayout?: boolean;
