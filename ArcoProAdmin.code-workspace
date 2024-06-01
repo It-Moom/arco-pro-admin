@@ -1,67 +1,68 @@
 {
   "folders": [
     {
+      "name": "arco-pro-admin",
       "path": "."
     },
     {
-      "path": "src/assets",
-      "name": "Assets"
+      "name": "Assets",
+      "path": "src/assets"
     },
     {
-      "path": "src/styles",
-      "name": "Styles"
+      "name": "Styles",
+      "path": "src/styles"
     },
     {
-      "path": "src/shared",
-      "name": "Shared"
+      "name": "Shared",
+      "path": "src/shared"
     },
     {
-      "path": "src/apis",
-      "name": "Apis"
+      "name": "Apis",
+      "path": "src/apis"
     },
     {
-      "path": "src/libs",
-      "name": "Libs"
+      "name": "Libs",
+      "path": "src/libs"
     },
     {
-      "path": "src/utils",
-      "name": "Utils"
+      "name": "Utils",
+      "path": "src/utils"
     },
     {
-      "path": "src/modules",
-      "name": "Modules"
+      "name": "Modules",
+      "path": "src/modules"
     },
     {
-      "path": "src/workers",
-      "name": "Workers"
+      "name": "Workers",
+      "path": "src/workers"
     },
     {
-      "path": "src/stores",
-      "name": "Stores"
+      "name": "Stores",
+      "path": "src/stores"
     },
     {
-      "path": "src/composables",
-      "name": "Composables"
+      "name": "Composables",
+      "path": "src/composables"
     },
     {
-      "path": "src/components",
-      "name": "Components"
+      "name": "Components",
+      "path": "src/components"
     },
     {
-      "path": "src/components-private",
-      "name": "Components Private"
+      "name": "Components Private",
+      "path": "src/components-private"
     },
     {
-      "path": "src/router",
-      "name": "Router"
+      "name": "Router",
+      "path": "src/router"
     },
     {
-      "path": "src/layouts",
-      "name": "Layouts"
+      "name": "Layouts",
+      "path": "src/layouts"
     },
     {
-      "path": "src/pages",
-      "name": "Pages"
+      "name": "Pages",
+      "path": "src/pages"
     }
   ],
   "settings": {
