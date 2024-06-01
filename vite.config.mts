@@ -9,6 +9,7 @@ import Unocss from 'unocss/vite';
 import Icons from 'unplugin-icons/vite';
 import IconsResolver from 'unplugin-icons/resolver';
 import Components from 'unplugin-vue-components/vite';
+import VueDevTools from 'vite-plugin-vue-devtools';
 import { ArcoResolver } from 'unplugin-vue-components/resolvers';
 import AutoImport from 'unplugin-auto-import/vite';
 import { VueRouterAutoImports } from 'unplugin-vue-router';
@@ -85,6 +86,8 @@ export default defineConfig({
         filepath: resolve(__dirname, './.eslintrc-auto-import.json'),
       },
     }),
+    // Vue 开发工具
+    VueDevTools(),
   ],
   // 开发服务器选项
   server: {
