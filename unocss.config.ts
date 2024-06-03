@@ -4,33 +4,10 @@ import { presetExtra } from 'unocss-preset-extra';
 export default defineConfig({
   shortcuts: [
     // 动态颜色
-    ['text-dynamic', 'text-[#333639] dark:text-white dark:text-op-82'],
-    ['bg-dynamic', 'bg-white dark:bg-[#101014]'],
+    ['text-dynamic', 'text-[var(--color-text-1)]'],
+    ['bg-dynamic', 'bg-[var(--color-bg-2)]'],
   ],
   theme: {
-    // 颜色
-    colors: {
-      // Primary 颜色
-      'primary': '#2080f0',
-      'primary-hover': '#4098fc',
-      'primary-active': '#1060c9',
-      // Info 颜色
-      'info': '#909399',
-      'info-hover': '#a6a9ad',
-      'info-active': '#82848a',
-      // Success 颜色
-      'success': '#18a058',
-      'success-hover': '#36ad6a',
-      'success-active': '#0c7a43',
-      // Warning 颜色
-      'warning': '#f0a020',
-      'warning-hover': '#fcb040',
-      'warning-active': '#c97c10',
-      // Error 颜色
-      'error': '#d03050',
-      'error-hover': '#de576d',
-      'error-active': '#ab1f3f',
-    },
     // 断点
     breakpoints: {
       'xs': '480px',
