@@ -1,6 +1,6 @@
-import axios from 'axios';
 import qs from 'query-string';
 import type { DescData } from '@arco-design/web-vue/es/descriptions/interface';
+import { request } from '@/utils/request';
 
 export interface PolicyRecord {
   id: string;
@@ -24,12 +24,14 @@ export interface PolicyListRes {
 }
 
 export function queryPolicyList(params: PolicyParams) {
-  return axios.get<PolicyListRes>('/api/list/policy', {
-    params,
-    paramsSerializer: (obj) => {
-      return qs.stringify(obj);
-    },
-  });
+  return request
+    .get<PolicyListRes>('/api/list/policy', {
+      params,
+      paramsSerializer: (obj) => {
+        return qs.stringify(obj);
+      },
+    })
+    .then(res => res.data);
 }
 
 export interface ServiceRecord {
@@ -44,13 +46,13 @@ export interface ServiceRecord {
   expires?: boolean;
 }
 export function queryInspectionList() {
-  return axios.get('/api/list/quality-inspection');
+  return request.get('/api/list/quality-inspection').then(res => res.data);
 }
 
 export function queryTheServiceList() {
-  return axios.get('/api/list/the-service');
+  return request.get('/api/list/the-service').then(res => res.data);
 }
 
 export function queryRulesPresetList() {
-  return axios.get('/api/list/rules-preset');
+  return request.get('/api/list/rules-preset').then(res => res.data);
 }

@@ -1,4 +1,4 @@
-import axios from 'axios';
+import { request } from '@/utils/request';
 import type { GeneralChart } from '@/types/global';
 
 export interface ChartDataRecord {
@@ -19,7 +19,7 @@ export interface DataChainGrowthRes {
   };
 }
 export function queryDataChainGrowth(data: DataChainGrowth) {
-  return axios.post<DataChainGrowthRes>('/api/data-chain-growth', data);
+  return request.post<DataChainGrowthRes>('/api/data-chain-growth', data).then(res => res.data);
 }
 
 export interface PopularAuthorRes {
@@ -32,7 +32,7 @@ export interface PopularAuthorRes {
 }
 
 export function queryPopularAuthor() {
-  return axios.get<PopularAuthorRes>('/api/popular-author/list');
+  return request.get<PopularAuthorRes>('/api/popular-author/list').then(res => res.data);
 }
 
 export interface ContentPublishRecord {
@@ -42,11 +42,11 @@ export interface ContentPublishRecord {
 }
 
 export function queryContentPublish() {
-  return axios.get<ContentPublishRecord[]>('/api/content-publish');
+  return request.get<ContentPublishRecord[]>('/api/content-publish').then(res => res.data);
 }
 
 export function queryContentPeriodAnalysis() {
-  return axios.post<GeneralChart>('/api/content-period-analysis');
+  return request.post<GeneralChart>('/api/content-period-analysis').then(res => res.data);
 }
 
 export interface PublicOpinionAnalysis {
@@ -58,10 +58,12 @@ export interface PublicOpinionAnalysisRes {
   chartData: ChartDataRecord[];
 }
 export function queryPublicOpinionAnalysis(data: DataChainGrowth) {
-  return axios.post<PublicOpinionAnalysisRes>(
-    '/api/public-opinion-analysis',
-    data,
-  );
+  return request
+    .post<PublicOpinionAnalysisRes>(
+      '/api/public-opinion-analysis',
+      data,
+    )
+    .then(res => res.data);
 }
 export interface DataOverviewRes {
   xAxis: string[];
@@ -69,5 +71,5 @@ export interface DataOverviewRes {
 }
 
 export function queryDataOverview() {
-  return axios.post<DataOverviewRes>('/api/data-overview');
+  return request.post<DataOverviewRes>('/api/data-overview').then(res => res.data);
 }

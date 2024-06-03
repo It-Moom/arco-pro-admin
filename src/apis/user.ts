@@ -1,5 +1,5 @@
-import axios from 'axios';
 import type { RouteRecordNormalized } from 'vue-router';
+import { request } from '@/utils/request';
 import type { UserState } from '@/stores/user';
 
 export interface LoginData {
@@ -11,17 +11,17 @@ export interface LoginRes {
   token: string;
 }
 export function login(data: LoginData) {
-  return axios.post<LoginRes>('/api/user/login', data);
+  return request.post<LoginRes>('/api/user/login', data).then(res => res.data);
 }
 
 export function logout() {
-  return axios.post<LoginRes>('/api/user/logout');
+  return request.post<LoginRes>('/api/user/logout').then(res => res.data);
 }
 
 export function getUserInfo() {
-  return axios.post<UserState>('/api/user/info');
+  return request.post<UserState>('/api/user/info').then(res => res.data);
 }
 
 export function getMenuList() {
-  return axios.post<RouteRecordNormalized[]>('/api/user/menu');
+  return request.post<RouteRecordNormalized[]>('/api/user/menu').then(res => res.data);
 }

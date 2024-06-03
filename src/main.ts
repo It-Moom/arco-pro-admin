@@ -8,7 +8,6 @@ import i18n from '@/modules/i18n/index';
 import pinia from '@/modules/pinia/index';
 
 import '@/components/chart/import-components';
-import '@/apis/interceptor';
 import './mock';
 
 import '@unocss/reset/tailwind-compat.css';

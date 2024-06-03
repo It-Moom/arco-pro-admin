@@ -1,7 +1,7 @@
 import type { UnwrapRef } from 'vue';
 import { ref } from 'vue';
 import type { AxiosResponse } from 'axios';
-import type { HttpResponse } from '@/apis/interceptor';
+import type { HttpResponse } from '@/modules/axios/types';
 
 // use to fetch list
 // Don't use async function. It doesn't work in async function.

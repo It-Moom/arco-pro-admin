@@ -1,4 +1,4 @@
-import axios from 'axios';
+import { request } from '@/utils/request';
 
 export interface MyProjectRecord {
   id: number;
@@ -12,7 +12,7 @@ export interface MyProjectRecord {
   }[];
 }
 export function queryMyProjectList() {
-  return axios.post('/api/user/my-project/list');
+  return request.post('/api/user/my-project/list').then(res => res.data);
 }
 
 export interface MyTeamRecord {
@@ -22,7 +22,7 @@ export interface MyTeamRecord {
   peopleNumber: number;
 }
 export function queryMyTeamList() {
-  return axios.post('/api/user/my-team/list');
+  return request.post('/api/user/my-team/list').then(res => res.data);
 }
 
 export interface LatestActivity {
@@ -32,11 +32,11 @@ export interface LatestActivity {
   avatar: string;
 }
 export function queryLatestActivity() {
-  return axios.post<LatestActivity[]>('/api/user/latest-activity');
+  return request.post<LatestActivity[]>('/api/user/latest-activity').then(res => res.data);
 }
 
 export function saveUserInfo() {
-  return axios.post('/api/user/save-info');
+  return request.post('/api/user/save-info').then(res => res.data);
 }
 
 export interface BasicInfoModel {
@@ -73,7 +73,7 @@ export interface UnitCertification {
 }
 
 export function queryCertification() {
-  return axios.post<UnitCertification>('/api/user/certification');
+  return request.post<UnitCertification>('/api/user/certification').then(res => res.data);
 }
 
 export function userUploadApi(
@@ -84,5 +84,5 @@ export function userUploadApi(
   },
 ) {
   // const controller = new AbortController();
-  return axios.post('/api/user/upload', data, config);
+  return request.post('/api/user/upload', data, config).then(res => res.data);
 }
