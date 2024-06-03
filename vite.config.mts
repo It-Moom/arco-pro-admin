@@ -93,4 +93,15 @@ export default defineConfig({
   server: {
     port: 666,
   },
+  // 构建选项
+  build: {
+    rollupOptions: {
+      // 重命名打包产物文件名
+      output: {
+        entryFileNames: 'assets/[hash].js',
+        chunkFileNames: 'assets/[hash].js',
+        assetFileNames: 'assets/[hash].[ext]',
+      },
+    },
+  },
 });
