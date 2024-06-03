@@ -1,6 +1,7 @@
 import qs from 'query-string';
 import type { DescData } from '@arco-design/web-vue/es/descriptions/interface';
 import { request } from '@/utils/request';
+import type { HttpResponse } from '@/modules/axios/types';
 
 export interface PolicyRecord {
   id: string;
@@ -46,13 +47,13 @@ export interface ServiceRecord {
   expires?: boolean;
 }
 export function queryInspectionList() {
-  return request.get('/api/list/quality-inspection').then(res => res.data);
+  return request.get<HttpResponse<ServiceRecord[]>>('/api/list/quality-inspection').then(res => res.data);
 }
 
 export function queryTheServiceList() {
-  return request.get('/api/list/the-service').then(res => res.data);
+  return request.get<HttpResponse<ServiceRecord[]>>('/api/list/the-service').then(res => res.data);
 }
 
 export function queryRulesPresetList() {
-  return request.get('/api/list/rules-preset').then(res => res.data);
+  return request.get<HttpResponse<ServiceRecord[]>>('/api/list/rules-preset').then(res => res.data);
 }

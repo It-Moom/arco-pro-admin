@@ -38,14 +38,14 @@
 
 <script lang="ts" setup>
   import CardWrap from './card-wrap.vue';
-  import type { ServiceRecord } from '@/apis/list';
   import { queryRulesPresetList } from '@/apis/list';
 
-  const defaultValue: ServiceRecord[] = Array.from({ length: 6 }).fill({});
-  const { loading, response: renderData } = useRequest<ServiceRecord[]>(
-    queryRulesPresetList,
-    defaultValue,
-  );
+  const {
+    isLoading: loading,
+    data: renderData,
+  } = useRequest(queryRulesPresetList, {
+    initialData: () => Array.from({ length: 6 }).fill({}),
+  });
 </script>
 
 <style scoped lang="less"></style>

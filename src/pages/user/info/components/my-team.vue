@@ -35,14 +35,14 @@
 </template>
 
 <script lang="ts" setup>
-  import type { MyTeamRecord } from '@/apis/user-center';
   import { queryMyTeamList } from '@/apis/user-center';
 
-  const defaultValue: MyTeamRecord[] = Array.from({ length: 4 }).fill({});
-  const { loading, response: teamList } = useRequest<MyTeamRecord[]>(
-    queryMyTeamList,
-    defaultValue,
-  );
+  const {
+    isLoading: loading,
+    data: teamList,
+  } = useRequest(queryMyTeamList, {
+    initialData: () => Array.from({ length: 4 }).fill({}),
+  });
 </script>
 
 <style scoped lang="less">

@@ -1,3 +1,4 @@
+import type { HttpResponse } from '@/modules/axios/types';
 import { request } from '@/utils/request';
 
 export interface MyProjectRecord {
@@ -12,7 +13,7 @@ export interface MyProjectRecord {
   }[];
 }
 export function queryMyProjectList() {
-  return request.post('/api/user/my-project/list').then(res => res.data);
+  return request.post<HttpResponse<MyProjectRecord[]>>('/api/user/my-project/list').then(res => res.data);
 }
 
 export interface MyTeamRecord {
@@ -22,7 +23,7 @@ export interface MyTeamRecord {
   peopleNumber: number;
 }
 export function queryMyTeamList() {
-  return request.post('/api/user/my-team/list').then(res => res.data);
+  return request.post<HttpResponse<MyTeamRecord[]>>('/api/user/my-team/list').then(res => res.data);
 }
 
 export interface LatestActivity {

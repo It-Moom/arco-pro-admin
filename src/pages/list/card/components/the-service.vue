@@ -44,14 +44,14 @@
 
 <script lang="ts" setup>
   import CardWrap from './card-wrap.vue';
-  import type { ServiceRecord } from '@/apis/list';
   import { queryTheServiceList } from '@/apis/list';
 
-  const defaultValue: ServiceRecord[] = Array.from({ length: 4 }).fill({});
-  const { loading, response: renderData } = useRequest<ServiceRecord[]>(
-    queryTheServiceList,
-    defaultValue,
-  );
+  const {
+    isLoading: loading,
+    data: renderData,
+  } = useRequest(queryTheServiceList, {
+    initialData: () => Array.from({ length: 4 }).fill({}),
+  });
 </script>
 
 <style scoped lang="less"></style>

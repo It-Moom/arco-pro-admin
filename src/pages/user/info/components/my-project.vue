@@ -47,14 +47,14 @@
 </template>
 
 <script lang="ts" setup>
-  import type { MyProjectRecord } from '@/apis/user-center';
   import { queryMyProjectList } from '@/apis/user-center';
 
-  const defaultValue = Array(6).fill({} as MyProjectRecord);
-  const { loading, response: projectList } = useRequest<MyProjectRecord[]>(
-    queryMyProjectList,
-    defaultValue,
-  );
+  const {
+    isLoading: loading,
+    data: projectList,
+  } = useRequest(queryMyProjectList, {
+    initialData: () => Array.from({ length: 6 }).fill({}),
+  });
 </script>
 
 <style scoped lang="less">
