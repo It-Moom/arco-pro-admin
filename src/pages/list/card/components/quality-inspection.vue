@@ -74,6 +74,7 @@
     isLoading: loading,
     data: renderData,
   } = useRequest(queryInspectionList, {
+    immediate: true,
     initialData: () => Array.from({ length: 3 }).fill({}),
   });
 </script>

@@ -53,6 +53,7 @@
     isLoading: loading,
     data: projectList,
   } = useRequest(queryMyProjectList, {
+    immediate: true,
     initialData: () => Array.from({ length: 6 }).fill({}),
   });
 </script>

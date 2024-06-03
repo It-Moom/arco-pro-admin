@@ -50,6 +50,7 @@
     isLoading: loading,
     data: renderData,
   } = useRequest(queryTheServiceList, {
+    immediate: true,
     initialData: () => Array.from({ length: 4 }).fill({}),
   });
 </script>

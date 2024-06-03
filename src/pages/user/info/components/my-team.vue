@@ -41,6 +41,7 @@
     isLoading: loading,
     data: teamList,
   } = useRequest(queryMyTeamList, {
+    immediate: true,
     initialData: () => Array.from({ length: 4 }).fill({}),
   });
 </script>

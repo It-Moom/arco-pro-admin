@@ -44,6 +44,7 @@
     isLoading: loading,
     data: renderData,
   } = useRequest(queryRulesPresetList, {
+    immediate: true,
     initialData: () => Array.from({ length: 6 }).fill({}),
   });
 </script>
