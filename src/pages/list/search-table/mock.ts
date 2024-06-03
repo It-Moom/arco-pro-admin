@@ -1,6 +1,6 @@
 import Mock from 'mockjs';
 import qs from 'query-string';
-import setupMock, { successResponseWrap } from '@/utils/setup-mock';
+import setupMock, { successResponseWrap } from '@/mock/setup-mock';
 import type { GetParams } from '@/types/global';
 
 const { Random } = Mock;

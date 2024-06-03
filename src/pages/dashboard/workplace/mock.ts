@@ -2,7 +2,7 @@ import Mock from 'mockjs';
 import qs from 'query-string';
 import dayjs from 'dayjs';
 import type { GetParams } from '@/types/global';
-import setupMock, { successResponseWrap } from '@/utils/setup-mock';
+import setupMock, { successResponseWrap } from '@/mock/setup-mock';
 
 const textList = [
   {
