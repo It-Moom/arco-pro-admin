@@ -13,7 +13,6 @@ export default {
   'userSetting.label.name': '用户名',
   'userSetting.label.location': '办公地点',
   'userSetting.label.introduction': '个人简介',
-  'userSetting.label.personalWebsite': '个人网站',
   'userSetting.save': '保存',
   'userSetting.cancel': '取消',
   'userSetting.reset': '重置',

@@ -26,8 +26,6 @@ export interface UserState {
   locationName?: string;
   /** 介绍 */
   introduction?: string;
-  /** 个人网站 */
-  personalWebsite?: string;
   /** 电话号码 */
   phone?: string;
   /** 注册日期 */
@@ -49,7 +47,6 @@ export const useUserStore = defineStore('user', {
     location: undefined,
     email: undefined,
     introduction: undefined,
-    personalWebsite: undefined,
     jobName: undefined,
     organizationName: undefined,
     locationName: undefined,

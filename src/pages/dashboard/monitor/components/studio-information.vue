@@ -3,7 +3,7 @@
     <a-form :model="{}" layout="vertical">
       <a-form-item :label="$t('monitor.studioInfo.label.studioTitle')" required>
         <a-input
-          :placeholder="`王立群${$t(
+          :placeholder="`管理员${$t(
             'monitor.studioInfo.placeholder.studioTitle',
           )}`"
         />

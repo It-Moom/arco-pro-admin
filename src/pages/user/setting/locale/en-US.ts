@@ -13,7 +13,6 @@ export default {
   'userSetting.label.name': 'User Name',
   'userSetting.label.location': 'Office Location',
   'userSetting.label.introduction': 'Introduction',
-  'userSetting.label.personalWebsite': 'Website',
   'userSetting.save': 'Save',
   'userSetting.cancel': 'Cancel',
   'userSetting.reset': 'Reset',
