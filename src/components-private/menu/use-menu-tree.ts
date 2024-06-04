@@ -52,6 +52,9 @@ export default function useMenuTree() {
         if (!permission.accessRouter(element))
           return null;
 
+        if (element.meta?.hideInMenu)
+          return null;
+
         // leaf node
         if (element.meta?.hideChildrenInMenu || !element.children) {
           element.children = [];
