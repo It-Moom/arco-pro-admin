@@ -5,9 +5,21 @@ import finalRoutes from '@/modules/router/routes';
 
 function formatRoute(originRoutes: RouteRecordRaw[]) {
   const routes = originRoutes.map((route) => {
-    return route.meta?.isLayout
-      ? { ...route.children![0] as RouteRecordRaw, path: route.path }
-      : route;
+    // 定义了布局的路由
+    if (route.meta?.isLayout) {
+      // xxx
+      //  ├ index.vue
+      if (!route.component && route.children![0].children?.length === 1 && route.children![0].path === '')
+        return route.children![0].children[0];
+
+      // xxx.vue
+      // xxx
+      //  ├ yyy.vue
+      //  ├ zzz.vue
+      return { ...route.children![0] as RouteRecordRaw, path: route.path };
+    }
+
+    return route;
   });
 
   routes.sort((a: RouteRecordRaw, b: RouteRecordRaw) => {
