@@ -4,7 +4,15 @@
   "private": true,
   "packageManager": "pnpm@9.1.4",
   "description": "Arco Design Pro for Vue",
-  "author": "It-Moom Team",
+  "author": "It-Moom Team <https://github.com/It-Moom>",
+  "homepage": "https://github.com/It-Moom/arco-pro-admin#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/It-Moom/arco-pro-admin.git"
+  },
+  "bugs": {
+    "url": "https://github.com/It-Moom/arco-pro-admin/issues"
+  },
   "scripts": {
     "dev": "pnpm install && vite --host",
     "build": "pnpm install && vite build",
