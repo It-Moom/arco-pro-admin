@@ -45,6 +45,10 @@
       "path": "src/composables"
     },
     {
+      "name": "Directives",
+      "path": "src/directives"
+    },
+    {
       "name": "Components",
       "path": "src/components"
     },
@@ -105,9 +109,11 @@
       "*.code-workspace": true,
       "node_modules": true,
       "src/apis": true,
+      "src/assets": true,
       "src/components": true,
       "src/components-private": true,
       "src/composables": true,
+      "src/directives": true,
       "src/layouts": true,
       "src/libs": true,
       "src/modules": true,
