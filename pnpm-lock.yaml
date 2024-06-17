@@ -12,17 +12,17 @@ importers:
         specifier: ^2.55.3
         version: 2.55.3(vue@3.4.27(typescript@5.4.5))
       '@mixte/components':
-        specifier: ^1.13.1
-        version: 1.13.1(vue@3.4.27(typescript@5.4.5))
+        specifier: ^1.13.2
+        version: 1.13.2(vue@3.4.27(typescript@5.4.5))
       '@mixte/snippets':
-        specifier: ^1.13.1
-        version: 1.13.1
+        specifier: ^1.13.2
+        version: 1.13.2
       '@mixte/use':
-        specifier: ^1.13.1
-        version: 1.13.1(vue@3.4.27(typescript@5.4.5))
+        specifier: ^1.13.2
+        version: 1.13.2(vue@3.4.27(typescript@5.4.5))
       '@mixte/validator':
-        specifier: ^1.13.1
-        version: 1.13.1
+        specifier: ^1.13.2
+        version: 1.13.2
       '@vueuse/core':
         specifier: ^10.11.0
         version: 10.11.0(vue@3.4.27(typescript@5.4.5))
@@ -45,8 +45,8 @@ importers:
         specifier: ^3.0.1
         version: 3.0.1
       mixte:
-        specifier: ^1.13.1
-        version: 1.13.1
+        specifier: ^1.13.2
+        version: 1.13.2
       nprogress:
         specifier: ^0.2.0
         version: 0.2.0
@@ -862,17 +862,17 @@ packages:
     resolution: {integrity: sha512-f5DRIOZf7wxogefH03RjMPMdBF7ADTWUMoOs9kaJo06EfwF+aFhMZMDZxHg/Xe12hptN9xoZjGso2fdjapBRIA==}
     engines: {node: '>=10'}
 
-  '@mixte/components@1.13.1':
-    resolution: {integrity: sha512-XQEbebSuPto7Bhyts65196jFTERHkszsh6njiyi2dHfkVDzlGZ/Cs9tnAB3PtdAv3RdO1vuugGEXkNwwJvwg1A==}
+  '@mixte/components@1.13.2':
+    resolution: {integrity: sha512-EnuKGdnjlrCAFzRquHBZfQP1G9OaR+f9ln5GEHJiNajCzflZm4qpy/i3OoFeoP1GG26yuIBWyhG8lkspgOjN5A==}
 
-  '@mixte/snippets@1.13.1':
-    resolution: {integrity: sha512-A2oCSau6NjZLDM2n3zr7btl1KovKtN9IE+g8LwZUf+bUdXghtE4UrMXEwQOo4D1ZaTdkB5ugTNZBYGs0ivGLGw==}
+  '@mixte/snippets@1.13.2':
+    resolution: {integrity: sha512-XTYdvUlukNdOHICi3Ev33FLdKTQOMdNTcGb4srm31U114rLP5sVS9Dclgj/2rcNTbeyeqqKm7WcqMcbxJucEjg==}
 
-  '@mixte/use@1.13.1':
-    resolution: {integrity: sha512-TdQBTsEq1tq5fXjBp0l8+hKNJFkGeBeYWwOe/p2dRieLRhv08Oml5MCiJUNlwVLKl7JRU3bC0ImT86faGawPjg==}
+  '@mixte/use@1.13.2':
+    resolution: {integrity: sha512-spFYUl1WmqMgXszOm+G4XBt7HAoAvDM7mvLSXBxhEZwhfn8WU9NTWpJTjTNZrdlVZwrZG4+oxFryKPvw8GqNhQ==}
 
-  '@mixte/validator@1.13.1':
-    resolution: {integrity: sha512-+lohrZsLw7OC62TQfEkRA3SXAmWPNovf7kf2UUFsoa5PKa49dEl1MJKvsfOTyR141W45rSz5V5Ze9AmhgIDVJA==}
+  '@mixte/validator@1.13.2':
+    resolution: {integrity: sha512-yOoxWH6wQnRw65aR3BwqXV2WhQzUPAMzfVoW3UedYag5qPAWaeSzs9yWz0QzaAO5+vK9PaZpkwaZKVJVYD7u9A==}
 
   '@moomfe/eslint-config@3.0.0':
     resolution: {integrity: sha512-kc04auvNIrERVbb6d1BRm6b+VReaktFPMGJdXw6KkqVjl3ZKmDglR061SRCtDRTnAxi7FyYMBPXuwYB6JHjoFQ==}
@@ -2400,8 +2400,8 @@ packages:
   mitt@3.0.1:
     resolution: {integrity: sha512-vKivATfr97l2/QBCYAkXYDbrIWPM2IIKEl7YPhjCvKlG3kE2gm+uBo6nEXK3M5/Ffh/FLpKExzOQ3JJoJGFKBw==}
 
-  mixte@1.13.1:
-    resolution: {integrity: sha512-UdpuFIgstkE2P6s4wDeFU6CjBeyqdbxZ89JrOP89s0AQ+n45D3y0f02LGpZdfuTPKgl1mOKN96wYz37ifKZiLg==}
+  mixte@1.13.2:
+    resolution: {integrity: sha512-IRwhdsTMxwUSl7JIWv00jtoCZXU25Vj0UPq6RJ4W9BLOxPuPR/9SXywf4n1WGm3y8l1AODdGOFbye5yeCDU3Cg==}
 
   mlly@1.6.1:
     resolution: {integrity: sha512-vLgaHvaeunuOXHSmEbZ9izxPx3USsk8KCQ8iC+aTlp5sKRSoZvwhHh5L9VbKSaVC6sJDqbyohIS76E2VmHIPAA==}
@@ -4062,28 +4062,28 @@ snapshots:
       string-argv: 0.3.2
       type-detect: 4.0.8
 
-  '@mixte/components@1.13.1(vue@3.4.27(typescript@5.4.5))':
+  '@mixte/components@1.13.2(vue@3.4.27(typescript@5.4.5))':
     dependencies:
-      '@mixte/use': 1.13.1(vue@3.4.27(typescript@5.4.5))
+      '@mixte/use': 1.13.2(vue@3.4.27(typescript@5.4.5))
       '@vueuse/core': 10.11.0(vue@3.4.27(typescript@5.4.5))
-      mixte: 1.13.1
-      vue-demi: 0.14.7(vue@3.4.27(typescript@5.4.5))
+      mixte: 1.13.2
+      vue-demi: 0.14.8(vue@3.4.27(typescript@5.4.5))
     transitivePeerDependencies:
       - '@vue/composition-api'
       - vue
 
-  '@mixte/snippets@1.13.1': {}
+  '@mixte/snippets@1.13.2': {}
 
-  '@mixte/use@1.13.1(vue@3.4.27(typescript@5.4.5))':
+  '@mixte/use@1.13.2(vue@3.4.27(typescript@5.4.5))':
     dependencies:
       '@vueuse/core': 10.11.0(vue@3.4.27(typescript@5.4.5))
-      mixte: 1.13.1
-      vue-demi: 0.14.7(vue@3.4.27(typescript@5.4.5))
+      mixte: 1.13.2
+      vue-demi: 0.14.8(vue@3.4.27(typescript@5.4.5))
     transitivePeerDependencies:
       - '@vue/composition-api'
       - vue
 
-  '@mixte/validator@1.13.1': {}
+  '@mixte/validator@1.13.2': {}
 
   '@moomfe/eslint-config@3.0.0(@vue/compiler-sfc@3.4.27)':
     dependencies:
@@ -5820,7 +5820,7 @@ snapshots:
 
   mitt@3.0.1: {}
 
-  mixte@1.13.1: {}
+  mixte@1.13.2: {}
 
   mlly@1.6.1:
     dependencies:
