@@ -27,7 +27,7 @@
     "@mixte/snippets": "^1.13.2",
     "@mixte/use": "^1.13.2",
     "@mixte/validator": "^1.13.2",
-    "@vueuse/core": "^10.11.1",
+    "@vueuse/core": "^11.1.0",
     "@vueuse/math": "^10.11.1",
     "axios": "^1.7.7",
     "dayjs": "^1.11.13",

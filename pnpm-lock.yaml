@@ -24,8 +24,8 @@ importers:
         specifier: ^1.13.2
         version: 1.13.2
       '@vueuse/core':
-        specifier: ^10.11.1
-        version: 10.11.1(vue@3.4.38(typescript@5.5.4))
+        specifier: ^11.1.0
+        version: 11.1.0(vue@3.4.38(typescript@5.5.4))
       '@vueuse/math':
         specifier: ^10.11.1
         version: 10.11.1(vue@3.4.38(typescript@5.5.4))
@@ -137,7 +137,7 @@ importers:
         version: 0.5.3(unocss@0.62.3(postcss@8.4.42)(rollup@4.21.2)(vite@5.4.2(@types/node@20.12.7)(less@4.2.0)))
       unplugin-auto-import:
         specifier: ^0.18.2
-        version: 0.18.2(@vueuse/core@10.11.1(vue@3.4.38(typescript@5.5.4)))(rollup@4.21.2)
+        version: 0.18.2(@vueuse/core@11.1.0(vue@3.4.38(typescript@5.5.4)))(rollup@4.21.2)
       unplugin-icons:
         specifier: ^0.19.2
         version: 0.19.2(@vue/compiler-sfc@3.4.38)(vue-template-compiler@2.7.14)
@@ -1193,17 +1193,20 @@ packages:
   '@vue/shared@3.4.38':
     resolution: {integrity: sha512-q0xCiLkuWWQLzVrecPb0RMsNWyxICOjPrcrwxTUEHb1fsnvni4dcuyG7RT/Ie7VPTvnjzIaWzRMUBsrqNj/hhw==}
 
-  '@vueuse/core@10.11.1':
-    resolution: {integrity: sha512-guoy26JQktXPcz+0n3GukWIy/JDNKti9v6VEMu6kV2sYBsWuGiTU8OWdg+ADfUbHg3/3DlqySDe7JmdHrktiww==}
+  '@vueuse/core@11.1.0':
+    resolution: {integrity: sha512-P6dk79QYA6sKQnghrUz/1tHi0n9mrb/iO1WTMk/ElLmTyNqgDeSZ3wcDf6fRBGzRJbeG1dxzEOvLENMjr+E3fg==}
 
   '@vueuse/math@10.11.1':
     resolution: {integrity: sha512-fkdaNEOn22Vjz/A3vNWO2+eysunlK74ODmJRosweKMEA07oi5WH/CYQ8oGxu2Fa641fhs4hXS7XxdALsGVYlpw==}
 
-  '@vueuse/metadata@10.11.1':
-    resolution: {integrity: sha512-IGa5FXd003Ug1qAZmyE8wF3sJ81xGLSqTqtQ6jaVfkeZ4i5kS2mwQF61yhVqojRnenVew5PldLyRgvdl4YYuSw==}
+  '@vueuse/metadata@11.1.0':
+    resolution: {integrity: sha512-l9Q502TBTaPYGanl1G+hPgd3QX5s4CGnpXriVBR5fEZ/goI6fvDaVmIl3Td8oKFurOxTmbXvBPSsgrd6eu6HYg==}
 
   '@vueuse/shared@10.11.1':
     resolution: {integrity: sha512-LHpC8711VFZlDaYUXEBbFBCQ7GS3dVU9mjOhhMhXP6txTV4EhYQg/KGnQuvt/sPAtoUKq7VVUnL6mVtFoL42sA==}
+
+  '@vueuse/shared@11.1.0':
+    resolution: {integrity: sha512-YUtIpY122q7osj+zsNMFAfMTubGz0sn5QzE5gPzAIiCmtt2ha3uQUY1+JPyL4gRCTsLPX82Y9brNbo/aqlA91w==}
 
   acorn-jsx@5.3.2:
     resolution: {integrity: sha512-rq9s+JNhf0IChjtDXxllJ7g41oZk5SlXtp0LHwyA5cejwn7vKmKp4pPri6YEePv2PU65sAsegbXtIinmDFDXgQ==}
@@ -3815,7 +3818,7 @@ snapshots:
   '@mixte/components@1.13.2(vue@3.4.38(typescript@5.5.4))':
     dependencies:
       '@mixte/use': 1.13.2(vue@3.4.38(typescript@5.5.4))
-      '@vueuse/core': 10.11.1(vue@3.4.38(typescript@5.5.4))
+      '@vueuse/core': 11.1.0(vue@3.4.38(typescript@5.5.4))
       mixte: 1.13.2
       vue-demi: 0.14.8(vue@3.4.38(typescript@5.5.4))
     transitivePeerDependencies:
@@ -3826,7 +3829,7 @@ snapshots:
 
   '@mixte/use@1.13.2(vue@3.4.38(typescript@5.5.4))':
     dependencies:
-      '@vueuse/core': 10.11.1(vue@3.4.38(typescript@5.5.4))
+      '@vueuse/core': 11.1.0(vue@3.4.38(typescript@5.5.4))
       mixte: 1.13.2
       vue-demi: 0.14.8(vue@3.4.38(typescript@5.5.4))
     transitivePeerDependencies:
@@ -4500,12 +4503,12 @@ snapshots:
 
   '@vue/shared@3.4.38': {}
 
-  '@vueuse/core@10.11.1(vue@3.4.38(typescript@5.5.4))':
+  '@vueuse/core@11.1.0(vue@3.4.38(typescript@5.5.4))':
     dependencies:
       '@types/web-bluetooth': 0.0.20
-      '@vueuse/metadata': 10.11.1
-      '@vueuse/shared': 10.11.1(vue@3.4.38(typescript@5.5.4))
-      vue-demi: 0.14.8(vue@3.4.38(typescript@5.5.4))
+      '@vueuse/metadata': 11.1.0
+      '@vueuse/shared': 11.1.0(vue@3.4.38(typescript@5.5.4))
+      vue-demi: 0.14.10(vue@3.4.38(typescript@5.5.4))
     transitivePeerDependencies:
       - '@vue/composition-api'
       - vue
@@ -4518,11 +4521,18 @@ snapshots:
       - '@vue/composition-api'
       - vue
 
-  '@vueuse/metadata@10.11.1': {}
+  '@vueuse/metadata@11.1.0': {}
 
   '@vueuse/shared@10.11.1(vue@3.4.38(typescript@5.5.4))':
     dependencies:
-      vue-demi: 0.14.8(vue@3.4.38(typescript@5.5.4))
+      vue-demi: 0.14.10(vue@3.4.38(typescript@5.5.4))
+    transitivePeerDependencies:
+      - '@vue/composition-api'
+      - vue
+
+  '@vueuse/shared@11.1.0(vue@3.4.38(typescript@5.5.4))':
+    dependencies:
+      vue-demi: 0.14.10(vue@3.4.38(typescript@5.5.4))
     transitivePeerDependencies:
       - '@vue/composition-api'
       - vue
@@ -6222,7 +6232,7 @@ snapshots:
       - rollup
       - supports-color
 
-  unplugin-auto-import@0.18.2(@vueuse/core@10.11.1(vue@3.4.38(typescript@5.5.4)))(rollup@4.21.2):
+  unplugin-auto-import@0.18.2(@vueuse/core@11.1.0(vue@3.4.38(typescript@5.5.4)))(rollup@4.21.2):
     dependencies:
       '@antfu/utils': 0.7.10
       '@rollup/pluginutils': 5.1.0(rollup@4.21.2)
@@ -6233,7 +6243,7 @@ snapshots:
       unimport: 3.9.1(rollup@4.21.2)
       unplugin: 1.12.0
     optionalDependencies:
-      '@vueuse/core': 10.11.1(vue@3.4.38(typescript@5.5.4))
+      '@vueuse/core': 11.1.0(vue@3.4.38(typescript@5.5.4))
     transitivePeerDependencies:
       - rollup
 
