@@ -47,7 +47,7 @@
   "devDependencies": {
     "@arco-plugins/vite-vue": "^1.4.5",
     "@iconify/json": "^2.2.254",
-    "@moomfe/eslint-config": "^3.0.0",
+    "@moomfe/eslint-config": "^3.4.0",
     "@rollup/pluginutils": "^5.1.2",
     "@types/lodash": "^4.17.9",
     "@types/mockjs": "^1.0.10",
@@ -57,7 +57,7 @@
     "@vitejs/plugin-vue": "^5.1.4",
     "@vitejs/plugin-vue-jsx": "^4.0.1",
     "cross-env": "^7.0.3",
-    "eslint": "^9.4.0",
+    "eslint": "^9.13.0",
     "fs-extra": "^11.2.0",
     "less": "^4.2.0",
     "lint-staged": "^15.2.10",
