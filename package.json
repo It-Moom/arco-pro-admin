@@ -2,7 +2,7 @@
   "name": "arco-design-pro-vue",
   "version": "1.0.0",
   "private": true,
-  "packageManager": "pnpm@9.14.4",
+  "packageManager": "pnpm@9.15.0",
   "description": "Arco Design Pro for Vue",
   "author": "It-Moom Team <https://github.com/It-Moom>",
   "homepage": "https://github.com/It-Moom/arco-pro-admin#readme",
